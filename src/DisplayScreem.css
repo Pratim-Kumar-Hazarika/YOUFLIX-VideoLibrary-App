@@ -1,0 +1,30 @@
+.mainvideodiv {
+  margin-left: 14rem;
+}
+.video_div {
+  color: white;
+  display: flex;
+
+  max-height: 350px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.video_contents {
+  font-size: 14px;
+  margin-left: 2rem;
+}
+.display_video_iframe {
+  border: 0;
+}
+.thubmnail_div {
+  overflow: hidden;
+  width: 30%;
+}
+.thumbnail_img {
+  width: 100%;
+
+  margin-top: 1rem;
+  margin-left: 2rem;
+}

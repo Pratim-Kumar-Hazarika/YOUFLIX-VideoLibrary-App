@@ -1,0 +1,27 @@
+.leftbar_icons {
+  color: #aaaaaa;
+  font-size: 30px;
+}
+.left_div > div {
+  margin-bottom: 2rem;
+  display: flex;
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+
+  cursor: pointer;
+}
+/* .left_div > div:hover {
+  background-color: #aaaaaa;
+  
+} */
+.left_div > span {
+  text-align: center;
+}
+.left_bar_text {
+  margin-left: 2rem;
+  margin-top: 0.2rem;
+  font-weight: 800;
+}
+.left_div {
+  position: fixed;
+}

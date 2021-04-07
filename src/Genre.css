@@ -1,0 +1,24 @@
+.genre_main {
+  position: relative;
+}
+.genre {
+  display: flex;
+  justify-content: center;
+}
+.genre_btn {
+  cursor: pointer;
+  background-color: rgba(51, 51, 51, 0.5);
+  color: #fff;
+  outline: none;
+  border: 0;
+  padding: 0.6rem 2rem;
+  margin: 1rem;
+  font-weight: 700;
+  border-radius: 0.2vw;
+  border: 1px solid red;
+}
+.genre_btn:hover {
+  color: #000;
+  background-color: #e6e6e6;
+  transition: all 0.2s ease-in;
+}

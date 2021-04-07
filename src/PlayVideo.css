@@ -1,0 +1,35 @@
+.video {
+  position: relative;
+  width: 100%;
+  margin-left: 20rem;
+  width: 55%;
+  overflow: hidden;
+}
+
+.playvideoIcons {
+  color: #aaaaaa;
+  font-size: 2rem;
+  margin-top: -0.8rem;
+}
+.likes_controls {
+  display: flex;
+  cursor: pointer;
+}
+.likes_controls > div {
+  margin: 10px;
+  text-align: center;
+  right: 0;
+}
+.numbers {
+  margin-top: -10px;
+  margin-left: 10px;
+}
+.like_items {
+  display: flex;
+}
+.image_avatar {
+  width: 100%;
+  border-radius: 50%;
+  max-width: 2.7rem;
+  margin-top: 10px;
+}
