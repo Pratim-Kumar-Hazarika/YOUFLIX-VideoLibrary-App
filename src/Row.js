@@ -1,5 +1,6 @@
 import "./Row.css";
 import { useVideo } from "./VideoProvider";
+import { Link } from "react-router-dom";
 export function Row() {
   const { state } = useVideo();
   const metalBlues = state.videodata.filter(
@@ -18,11 +19,13 @@ export function Row() {
               return (
                 <div className="iframe_row">
                   <div style={{ height: "100%" }}>
-                    <img
-                      className="video_image"
-                      src={item.thumbnail}
-                      alt="video_image"
-                    />
+                    <Link to={`/video/${item.id}`}>
+                      <img
+                        className="video_image"
+                        src={item.thumbnail}
+                        alt="video_image"
+                      />
+                    </Link>
                     <div style={{ display: "flex", position: "relative" }}>
                       <div>
                         <img className="avatar" src={item.image} alt="avatar" />
@@ -55,11 +58,13 @@ export function Row() {
               return (
                 <div className="iframe_row">
                   <div style={{ height: "100%" }}>
-                    <img
-                      className="video_image"
-                      src={item.thumbnail}
-                      alt="video_image"
-                    />
+                    <Link to={`/video/${item.id}`}>
+                      <img
+                        className="video_image"
+                        src={item.thumbnail}
+                        alt="video_image"
+                      />
+                    </Link>
                     <div style={{ display: "flex", position: "relative" }}>
                       <div>
                         <img className="avatar" src={item.image} alt="avatar" />

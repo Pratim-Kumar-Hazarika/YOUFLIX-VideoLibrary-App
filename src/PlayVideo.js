@@ -8,7 +8,6 @@ export function PlayVideo({ url, name, views, artist, image }) {
   const { videoId } = useParams();
   const { state } = useVideo();
   const item = state.videodata.find((item) => item.id === Number(videoId));
-
   return (
     <>
       <div style={{ padding: "1rem", marginTop: "5rem" }}>
