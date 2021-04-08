@@ -22,3 +22,21 @@
   background-color: #e6e6e6;
   transition: all 0.2s ease-in;
 }
+.img {
+  /* border: 1px solid white; */
+  /* position: absolute; */
+  margin-left: 15rem;
+  display: flex;
+}
+/* .img>div{
+  margin:1rem;
+} */
+.john {
+  width: 100%;
+  /* height: 40vh;  */
+  margin-left: 7rem;
+}
+.john:hover {
+  transform: scale(1.1);
+  transition: transform ease 0.2s;
+}
