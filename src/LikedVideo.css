@@ -1,0 +1,28 @@
+.likedVideoDiv {
+  width: 40%;
+  margin-left: 1rem;
+  overflow: hidden;
+}
+.video_div_liked {
+  color: white;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.thubmnail_div_liked {
+  overflow: hidden;
+  width: 65%;
+}
+.video_contents_liked {
+  font-size: 12px;
+  margin-left: 1rem;
+  color: #aaaaaa;
+  max-width: 35%;
+}
+.dustbinIcon {
+  color: #aaaaaa;
+}
+.thumbnail_img_liked {
+  width: 100%;
+}

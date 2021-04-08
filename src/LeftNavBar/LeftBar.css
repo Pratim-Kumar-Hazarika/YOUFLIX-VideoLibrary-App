@@ -2,27 +2,24 @@
   color: #aaaaaa;
   font-size: 30px;
   transition: transform ease 0.2s;
+  margin-top: 1rem;
 }
-.left_div > div {
-  margin-bottom: 2rem;
-  display: flex;
-  margin-top: 1.5rem;
-  padding: 0.5rem;
-
-  cursor: pointer;
-}
-/* .left_div > div:hover {
-  background-color: #aaaaaa;
-  
-} */
 .left_div > span {
   text-align: center;
+  color: white;
 }
 .left_bar_text {
-  margin-left: 2rem;
-  margin-top: 0.2rem;
   font-weight: 800;
+  margin-left: 3rem;
+  margin-top: 1.2rem;
+  text-decoration: none;
 }
 .left_div {
   position: fixed;
+  margin-left: -1rem;
+}
+.leftBarDivContents {
+  padding: 1rem;
+  color: white;
+  display: flex;
 }

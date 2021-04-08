@@ -20,7 +20,13 @@ export const VideoProvider = ({ children }) => {
           ...state,
           onClickLikeVideos: [...state.onClickLikeVideos, action.payload]
         };
-
+      case "DELETE_VIDEO":
+        return {
+          ...state,
+          onClickLikeVideos: state.onClickLikeVideos.filter(
+            (item) => item !== action.payload
+          )
+        };
       default:
         return state;
     }
