@@ -68,14 +68,14 @@ export const videodata = [
   },
   {
     id: 7,
-    url: "https://www.youtube.com/embed/tAGnKpE4NCI",
+    url: "https://www.youtube.com/embed/OMguFafuqrg",
     name: "Metallica: Nothing Else Matters (Official Music Video)",
     artist: "Metallica",
     genre: "metal",
     views: "205M views • 8 years ago",
     image:
       "https://yt3.ggpht.com/ytc/AAUvwnipqfY2qnY44ZuZWGZGpqxCaaolR5nb_shioUcngw=s176-c-k-c0x00ffffff-no-rj",
-    thumbnail: "https://img.youtube.com/vi/9et5qzuzbQM/maxresdefault.jpg"
+    thumbnail: "https://img.youtube.com/vi/OMguFafuqrg/maxresdefault.jpg"
   },
   {
     id: 8,
