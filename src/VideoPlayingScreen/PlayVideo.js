@@ -8,7 +8,8 @@ export function PlayVideo({ url, name, views, artist, image }) {
   const { state } = useVideo();
   const item = state.videodata.find((item) => item.id === Number(videoId));
   const metalBlues = state.videodata.filter(
-    (item) => item.genre === "blues" || item.genre === "metal"
+    (item) =>
+      item.genre === "sobs" || item.genre === "metal" || item.genre === "rock"
   );
   return (
     <div>
