@@ -1,9 +1,8 @@
 import "./PlayVideo.css";
 import { useParams } from "react-router-dom";
 import { useVideo } from "../VideoProvider";
-import { LeftBar } from "../LeftNavBar/LeftBar";
 import { Link } from "react-router-dom";
-export function PlayVideo({ url, name, views, artist, image }) {
+export function PlayVideo() {
   const { videoId } = useParams();
   const { state, dispatch } = useVideo();
   const itemFound = state.videodata.find((item) => item.id === Number(videoId));
@@ -12,6 +11,12 @@ export function PlayVideo({ url, name, views, artist, image }) {
     (item) =>
       item.genre === "sobs" || item.genre === "metal" || item.genre === "rock"
   );
+  function buttonCLick() {
+    if (itemFound) {
+      dispatch({ type: "LIKED_VIDEO", payload: itemFound });
+      console.log("i m dispatched", { itemFound });
+    }
+  }
 
   return (
     <div>
@@ -41,13 +46,7 @@ export function PlayVideo({ url, name, views, artist, image }) {
                 </div>
                 <div className="likes_controls">
                   <div className="like_items">
-                    <button
-                      onClick={() =>
-                        dispatch({ type: "LIKE_VIDEO", payload: itemFound })
-                      }
-                    >
-                      Click me
-                    </button>
+                    <button onClick={buttonCLick}>Click me</button>
                     <span
                       class="iconify playvideoIcons"
                       data-icon="mdi:thumb-up"
@@ -116,7 +115,7 @@ export function PlayVideo({ url, name, views, artist, image }) {
                 <div key={id}>
                   <div className="video_div_right">
                     <div className="thubmnail_div_right">
-                      <Link to={`/video/${id}`}>
+                      <Link to={{ pathname: `/video/${id}` }}>
                         <img
                           className="thumbnail_img_right"
                           src={thumbnail}

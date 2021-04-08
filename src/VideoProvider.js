@@ -6,8 +6,15 @@ export const VideoContext = createContext();
 export const VideoProvider = ({ children }) => {
   function reducer(state, action) {
     switch (state.type) {
-      case "LIKE_VIDEO":
-        return {};
+      case "LIKED_VIDEO":
+        return {
+          ...state,
+          onClickLikeVideos: {
+            ...state,
+            onClickLikeVideos: state.onClickLikeVideos.push(action.payload)
+          }
+        };
+
       default:
         return { state };
     }

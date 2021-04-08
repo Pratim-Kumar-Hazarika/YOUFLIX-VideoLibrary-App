@@ -15,7 +15,7 @@ export const DisplayScreen = ({
         <div>
           <div className="video_div">
             <div className="thubmnail_div">
-              <Link to={`/video/${id}`}>
+              <Link to={{ pathname: `/video/${id}` }}>
                 <img
                   className="thumbnail_img"
                   src={thumbnail}
