@@ -42,6 +42,18 @@ export function Navbar() {
             <button className="nav-btn1">LIKED VIDEO</button>
           </Link>
         </div>
+        <div>
+          <img
+            style={{
+              borderRadius: "50%",
+              width: "3rem",
+              marginLeft: "5rem",
+              marginTop: "1rem"
+            }}
+            src="https://pbs.twimg.com/profile_images/1361579179959939072/ArgCDKFe_400x400.jpg"
+            alt="avatar"
+          />
+        </div>
       </div>
     </div>
   );
