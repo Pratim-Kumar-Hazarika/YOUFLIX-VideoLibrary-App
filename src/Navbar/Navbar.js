@@ -46,9 +46,9 @@ export function Navbar() {
           <img
             style={{
               borderRadius: "50%",
-              width: "3rem",
+              width: "2.5rem",
               marginLeft: "5rem",
-              marginTop: "1rem"
+              marginTop: "1.5rem"
             }}
             src="https://pbs.twimg.com/profile_images/1361579179959939072/ArgCDKFe_400x400.jpg"
             alt="avatar"
