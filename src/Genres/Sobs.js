@@ -1,4 +1,5 @@
-import { DisplayScreen } from "../DisplayScreen";
+import { DisplayScreen } from "../DisplayGenreVideoScreen/DisplayScreen";
+import { LeftBar } from "../LeftNavBar/LeftBar";
 import { useVideo } from "../VideoProvider";
 
 export const Sobs = () => {
@@ -8,6 +9,9 @@ export const Sobs = () => {
 
   return (
     <>
+      <div style={{ padding: "1rem", marginTop: "5rem" }}>
+        <LeftBar />
+      </div>
       {filteredSobs.map((item) => (
         <DisplayScreen
           url={item.url}
