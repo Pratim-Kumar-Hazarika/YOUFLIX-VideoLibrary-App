@@ -19,6 +19,7 @@ export const Blues = () => {
           views={item.views}
           image={item.image}
           thumbnail={item.thumbnail}
+          id={item.id}
         />
       ))}
     </>

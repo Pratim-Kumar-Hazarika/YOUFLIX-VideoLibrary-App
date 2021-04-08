@@ -1,12 +1,19 @@
 import "./PlayVideo.css";
+import { useParams } from "react-router-dom";
+import { useVideo } from "./VideoProvider";
+
 export function PlayVideo({ url, name, views, artist, image }) {
+  const { videoId } = useParams();
+  const { state } = useVideo();
+  const item = state.videodata.find((item) => item.id === Number(videoId));
+
   return (
     <>
       <div className="video">
         <iframe
           width="830"
           height="515"
-          src={`${url}?autoplay=1&mute=1"`}
+          src={`${item.url}?autoplay=1&mute=1"`}
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -14,7 +21,7 @@ export function PlayVideo({ url, name, views, artist, image }) {
         ></iframe>
         <div className="videoDiv">
           <div className="video_contents_">
-            <h3>{name}</h3>
+            <h3>{item.name}</h3>
             <div
               style={{
                 display: "flex",
@@ -22,7 +29,7 @@ export function PlayVideo({ url, name, views, artist, image }) {
               }}
             >
               <div>
-                <span>{views}</span>
+                <span>{item.views}</span>
               </div>
               <div className="likes_controls">
                 <div className="like_items">
@@ -73,9 +80,9 @@ export function PlayVideo({ url, name, views, artist, image }) {
                 borderTop: "1px solid rgba(225,225,225,0.1)"
               }}
             >
-              <img className="image_avatar" src={image} alt="avatar" />
+              <img className="image_avatar" src={item.image} alt="avatar" />
               <span style={{ marginTop: "20px", marginLeft: "10px" }}>
-                {artist} ♪
+                {item.artist} ♪
               </span>
             </div>
           </div>

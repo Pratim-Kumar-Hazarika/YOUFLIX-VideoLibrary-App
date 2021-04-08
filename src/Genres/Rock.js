@@ -15,7 +15,7 @@ export const Rock = () => {
           views={item.views}
           image={item.image}
           thumbnail={item.thumbnail}
-          item={item}
+          id={item.id}
         />
       ))}
     </>

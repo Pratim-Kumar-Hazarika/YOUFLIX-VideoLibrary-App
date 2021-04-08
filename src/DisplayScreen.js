@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./DisplayScreem.css";
 import { PlayVideo } from "./PlayVideo";
 import { useVideo } from "./VideoProvider";
-
+import { Link } from "react-router-dom";
 export const DisplayScreen = ({
   url,
   name,
@@ -10,7 +10,7 @@ export const DisplayScreen = ({
   views,
   image,
   thumbnail,
-  item
+  id
 }) => {
   const { dispatch } = useVideo();
   const [route, setRoute] = useState("");
@@ -26,6 +26,7 @@ export const DisplayScreen = ({
         />
       )}
       <div className="mainvideodiv">
+        <Link to={`/video/${id}`}>Play Video</Link>
         <div>
           <div
             onClick={() => setRoute("playvideo")}
