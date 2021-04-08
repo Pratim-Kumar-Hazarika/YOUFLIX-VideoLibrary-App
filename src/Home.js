@@ -1,11 +1,12 @@
 import { LeftBar } from "./LeftBar";
 import { Row } from "./Row";
+import "./LeftBar.css";
 export const Home = () => {
   return (
     <div>
-      {/* <div style={{ padding: "1rem", marginTop: "5rem" }}>
+      <div style={{ padding: "1rem", marginTop: "5rem" }}>
         <LeftBar />
-      </div> */}
+      </div>
       <div
         style={{
           overflow: "hidden",

@@ -1,6 +1,7 @@
 import "./Nav.css";
+import { Link } from "react-router-dom";
 
-export function Navbar({ setRoute }) {
+export function Navbar() {
   return (
     <div>
       <div className="navbar-div">
@@ -31,18 +32,15 @@ export function Navbar({ setRoute }) {
           </div>
         </div>
         <div className="buttons">
-          <button className="nav-btn1" onClick={() => setRoute("home")}>
-            Home
-          </button>
-          <button className="nav-btn2" onClick={() => setRoute("genre")}>
-            Genre
-          </button>
-          <button className="nav-btn3" onClick={() => setRoute("likedVideos")}>
-            Liked Videos
-          </button>
-          <button className="nav-btn4" onClick={() => setRoute("genre")}>
-            History
-          </button>
+          <Link to="/">
+            <button className="nav-btn1">HOME</button>
+          </Link>
+          <Link to="/genre">
+            <button className="nav-btn1">GENRE</button>
+          </Link>
+          <Link to="/">
+            <button className="nav-btn1">LIKED VIDEO</button>
+          </Link>
         </div>
       </div>
     </div>

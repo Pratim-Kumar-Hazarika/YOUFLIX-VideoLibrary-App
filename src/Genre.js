@@ -3,12 +3,16 @@ import { Blues } from "./Genres/Blues";
 import { Metal } from "./Genres/Metal";
 import { Rock } from "./Genres/Rock";
 import { Sobs } from "./Genres/Sobs";
+import { LeftBar } from "./LeftBar";
 import "./Genre.css";
-
+import "./LeftBar.css";
 export const Genre = () => {
   const [route, setRoute] = useState("sobs");
   return (
     <div className="genre_main">
+      <div style={{ padding: "1rem", marginTop: "5rem" }}>
+        <LeftBar />
+      </div>
       <div className="genre">
         <button className="genre_btn" onClick={() => setRoute("blues")}>
           BLUES
