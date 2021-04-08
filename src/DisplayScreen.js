@@ -12,13 +12,17 @@ export const DisplayScreen = ({
   return (
     <div>
       <div className="mainvideodiv">
-        <Link to={`/video/${id}`}>Play Video</Link>
         <div>
-          <div className="video_div" style={{ cursor: "pointer" }}>
+          <div className="video_div" style={{ border: "1px solid white" }}>
             <div className="thubmnail_div">
-              <img className="thumbnail_img" src={thumbnail} alt="thumbnail" />
-            </div>
-            <div className="video_contents">
+              <Link to={`/video/${id}`}>
+                {" "}
+                <img
+                  className="thumbnail_img"
+                  src={thumbnail}
+                  alt="thumbnail"
+                />
+              </Link>
               <h3>{name}</h3>
               <span>{views}</span>
               <div style={{ display: "flex", marginTop: "20px" }}>
