@@ -1,9 +1,7 @@
 import "./PlayVideo.css";
 import { useParams } from "react-router-dom";
-import { useVideo } from "./VideoProvider";
-import "./LeftBar.css";
-import { LeftBar } from "./LeftBar";
-
+import { useVideo } from "../VideoProvider";
+import { LeftBar } from "../LeftNavBar/LeftBar";
 export function PlayVideo({ url, name, views, artist, image }) {
   const { videoId } = useParams();
   const { state } = useVideo();

@@ -1,11 +1,16 @@
 import { useState } from "react";
-import { Navbar } from "./Navbar";
+import { Navbar } from "./Navbar/Navbar";
 import "./styles.css";
 import { Home } from "./Home";
-import { Genre } from "./Genre";
+
 import Iconify from "@iconify/iconify";
 import { Routes, Route, useParams } from "react-router-dom";
-import { PlayVideo } from "./PlayVideo";
+import { PlayVideo } from "./VideoPlayingScreen/PlayVideo";
+import { Blues } from "./Genres/Blues";
+import { Sobs } from "./Genres/Sobs";
+import { Rock } from "./Genres/Rock";
+import { Metal } from "./Genres/Metal";
+import { Genre } from "./SongGenre/Genre";
 export default function App() {
   return (
     <>
@@ -15,6 +20,10 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/genre" element={<Genre />} />
           <Route path="/video/:videoId" element={<PlayVideo />} />
+          <Route path="/blues" element={<Blues />} />
+          <Route path="/sad" element={<Sobs />} />
+          <Route path="/rock" element={<Rock />} />
+          <Route path="/metal" element={<Metal />} />
         </Routes>
       </div>
     </>

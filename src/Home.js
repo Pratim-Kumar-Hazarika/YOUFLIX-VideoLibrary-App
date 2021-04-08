@@ -1,6 +1,6 @@
-import { LeftBar } from "./LeftBar";
-import { Row } from "./Row";
-import "./LeftBar.css";
+import { LeftBar } from "./LeftNavBar/LeftBar";
+import { Row } from "./Row/Row";
+import "./LeftNavBar/LeftBar.css";
 export const Home = () => {
   return (
     <div>
