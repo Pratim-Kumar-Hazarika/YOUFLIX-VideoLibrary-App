@@ -46,13 +46,20 @@ export function PlayVideo() {
                 </div>
                 <div className="likes_controls">
                   <div className="like_items">
-                    <button onClick={buttonCLick}>Click me</button>
-                    <span
-                      class="iconify playvideoIcons"
-                      data-icon="mdi:thumb-up"
-                      data-inline="false"
-                    ></span>
-                    <span className="numbers">289K</span>
+                    {/* <button onClick={buttonCLick}>Click me</button> */}
+                    <div onClick={buttonCLick} className="likeButton">
+                      <span
+                        class="iconify playvideoIcons"
+                        data-icon="mdi:thumb-up"
+                        data-inline="false"
+                      ></span>
+                      <span
+                        className="numbers_liked"
+                        style={{ marginTop: "-0.7rem" }}
+                      >
+                        289K
+                      </span>
+                    </div>
                   </div>
                   <div className="like_items">
                     <span

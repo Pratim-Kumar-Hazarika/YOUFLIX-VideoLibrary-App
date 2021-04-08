@@ -12,10 +12,14 @@ export const VideoProvider = ({ children }) => {
   function reducer(state, action) {
     switch (action.type) {
       case "LIKED_VIDEO":
-        return (state = {
+        // return (state = {
+        //   ...state,
+        //   onClickLikeVideos: [...state.onClickLikeVideos, action.payload]
+        // });
+        return {
           ...state,
           onClickLikeVideos: [...state.onClickLikeVideos, action.payload]
-        });
+        };
 
       default:
         return state;

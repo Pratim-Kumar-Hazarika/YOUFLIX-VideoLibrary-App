@@ -20,6 +20,19 @@
   text-align: center;
   right: 0;
 }
+.likeButton{
+  /* border:1px solid white; */
+  margin:0;
+  /* margin-top: -0.3rem */
+  margin-right: 2.4rem;
+}
+.numbers_liked{
+  /* margin-top: -20px;
+  margin-left: 10px; */
+  position: absolute;
+  margin-left: 7px;
+  margin-bottom: -20px
+}
 .numbers {
   margin-top: -10px;
   margin-left: 10px;
