@@ -35,8 +35,8 @@
 }
 .right_div {
   width: 40%;
-  overflow: none;
   margin-left: 1rem;
+  overflow: hidden;
 }
 /*  */
 .video_div_right {

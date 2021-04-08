@@ -12,6 +12,7 @@ export function PlayVideo({ url, name, views, artist, image }) {
     (item) =>
       item.genre === "sobs" || item.genre === "metal" || item.genre === "rock"
   );
+
   return (
     <div>
       <div className="2div" style={{ display: "flex", marginTop: "7rem" }}>
@@ -40,10 +41,14 @@ export function PlayVideo({ url, name, views, artist, image }) {
                 </div>
                 <div className="likes_controls">
                   <div className="like_items">
-                    <span
+                    <button
                       onClick={() =>
-                        dispatch({ type: "LIKED_VIDEO", payload: itemFound })
+                        dispatch({ type: "LIKE_VIDEO", payload: itemFound })
                       }
+                    >
+                      Click me
+                    </button>
+                    <span
                       class="iconify playvideoIcons"
                       data-icon="mdi:thumb-up"
                       data-inline="false"
