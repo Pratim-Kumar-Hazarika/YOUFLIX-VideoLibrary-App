@@ -1,17 +1,16 @@
-import { useState } from "react";
 import { Navbar } from "./Navbar/Navbar";
 import "./styles.css";
 import { Home } from "./Home";
-
 import Iconify from "@iconify/iconify";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { PlayVideo } from "./VideoPlayingScreen/PlayVideo";
 import { Blues } from "./Genres/Blues";
 import { Sobs } from "./Genres/Sobs";
 import { Rock } from "./Genres/Rock";
 import { Metal } from "./Genres/Metal";
 import { Genre } from "./SongGenre/Genre";
-import { LikedVideo } from "./LikedVideo";
+import { LikedVideo } from "./LikedVideos/LikedVideo";
+
 export default function App() {
   return (
     <>
