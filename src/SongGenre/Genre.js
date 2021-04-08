@@ -28,7 +28,7 @@ export const Genre = () => {
             <Link to="/blues">
               <img
                 className="john"
-                src="https://7wallpapers.net/wp-content/uploads/15_John-Mayer.jpg"
+                src="https://blog.truefire.com/wp-content/uploads/2015/10/john-mayer-guitar-lessons.jpg"
                 alt="john mayer"
               />
             </Link>
@@ -45,19 +45,19 @@ export const Genre = () => {
         </div>
         <div className="img">
           <div style={{ width: "30%", margin: "1rem" }}>
-            <Link to="/sad">
+            <Link to="/rock">
               <img
                 className="john"
-                src="https://m.media-amazon.com/images/I/91NrWSDqMmL._SS500_.jpg"
+                src="https://i.pinimg.com/originals/8b/df/4c/8bdf4c12d664b92dfdcb6482bb579fa9.jpg"
                 alt="john mayer"
               />
             </Link>
           </div>
           <div style={{ width: "30%", margin: "1rem" }}>
-            <Link to="/rock">
+            <Link to="/sad">
               <img
                 className="john"
-                src="https://i.pinimg.com/originals/8b/df/4c/8bdf4c12d664b92dfdcb6482bb579fa9.jpg"
+                src="https://m.media-amazon.com/images/I/91NrWSDqMmL._SS500_.jpg"
                 alt="john mayer"
               />
             </Link>

@@ -1,6 +1,7 @@
 .leftbar_icons {
   color: #aaaaaa;
   font-size: 30px;
+  transition: transform ease 0.2s;
 }
 .left_div > div {
   margin-bottom: 2rem;

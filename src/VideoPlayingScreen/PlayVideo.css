@@ -1,7 +1,7 @@
 .video {
   position: relative;
   width: 100%;
-  margin-left: 20rem;
+  margin-left: 3rem;
   width: 55%;
   overflow: hidden;
 }
@@ -32,4 +32,33 @@
   border-radius: 50%;
   max-width: 2.7rem;
   margin-top: 10px;
+}
+.right_div {
+  width: 40%;
+  overflow: none;
+  margin-left: 1rem;
+}
+/*  */
+.video_div_right {
+  color: white;
+  display: flex;
+  max-height: 350px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.video_contents_right {
+  font-size: 14px;
+  margin-left: 1rem;
+  color: #aaaaaa;
+}
+
+.thubmnail_div_right {
+  overflow: hidden;
+  max-width: 40%;
+}
+.thumbnail_img_right {
+  width: 100%;
+  margin-top: 1.4rem;
 }
