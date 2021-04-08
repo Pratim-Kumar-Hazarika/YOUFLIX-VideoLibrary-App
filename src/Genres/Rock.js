@@ -13,6 +13,7 @@ export const Rock = () => {
       </div>
       {filteredRock.map((item) => (
         <DisplayScreen
+          key={item.id}
           url={item.url}
           name={item.name}
           artist={item.artist}

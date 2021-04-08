@@ -14,6 +14,7 @@ export const Sobs = () => {
       </div>
       {filteredSobs.map((item) => (
         <DisplayScreen
+          key={item.id}
           url={item.url}
           name={item.name}
           artist={item.artist}
