@@ -38,7 +38,7 @@ export function Navbar() {
           <Link to="/genre">
             <button className="nav-btn1">GENRE</button>
           </Link>
-          <Link to="/">
+          <Link to="/likedvideo">
             <button className="nav-btn1">LIKED VIDEO</button>
           </Link>
         </div>

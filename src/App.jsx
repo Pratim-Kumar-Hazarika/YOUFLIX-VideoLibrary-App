@@ -11,6 +11,7 @@ import { Sobs } from "./Genres/Sobs";
 import { Rock } from "./Genres/Rock";
 import { Metal } from "./Genres/Metal";
 import { Genre } from "./SongGenre/Genre";
+import { LikedVideo } from "./LikedVideo";
 export default function App() {
   return (
     <>
@@ -19,6 +20,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/genre" element={<Genre />} />
+          <Route path="/likedvideo" element={<LikedVideo />} />
           <Route path="/video/:videoId" element={<PlayVideo />} />
           <Route path="/blues" element={<Blues />} />
           <Route path="/sad" element={<Sobs />} />

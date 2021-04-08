@@ -6,18 +6,20 @@ export const VideoContext = createContext();
 export const VideoProvider = ({ children }) => {
   function reducer(state, action) {
     switch (state.type) {
-      case "ADD_VIDEO":
-        return {
+      case "LIKED_VIDEO":
+        return (state = {
           ...state,
-          likedVideo: [...state.likedVideo, action.payload]
-        };
-
+          onClickLikeVideos: [...state.onClickLikeVideos, action.payload]
+        });
       default:
-        return state;
+        return { state };
     }
   }
 
-  const [state, dispatch] = useReducer(reducer, { videodata, likedVideo: [] });
+  const [state, dispatch] = useReducer(reducer, {
+    videodata,
+    onClickLikeVideos: []
+  });
   return (
     <>
       <VideoContext.Provider value={{ state, dispatch }}>
