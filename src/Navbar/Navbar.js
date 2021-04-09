@@ -10,11 +10,13 @@ export function Navbar() {
             <h1>YouFlix</h1>
           </div>
           <div>
-            <span
-              class="iconify"
-              data-icon="mdi:video-box"
-              data-inline="false"
-            ></span>
+            <Link to="/">
+              <span
+                class="iconify"
+                data-icon="mdi:video-box"
+                data-inline="false"
+              ></span>
+            </Link>
           </div>
         </div>
         <div className="searchbar">
@@ -47,11 +49,7 @@ export function Navbar() {
         </div>
         <div>
           <img
-            style={{
-              borderRadius: "50%",
-              width: "2.5rem",
-              marginTop: "1.5rem"
-            }}
+            className="nav_avatar"
             src="https://pbs.twimg.com/profile_images/1361579179959939072/ArgCDKFe_400x400.jpg"
             alt="avatar"
           />

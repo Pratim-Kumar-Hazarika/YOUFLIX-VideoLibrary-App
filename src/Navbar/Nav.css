@@ -78,21 +78,24 @@
 .iconify2 {
   font-size: 20px;
 }
+.nav_avatar {
+  border-radius: 50%;
+  width: 2.5rem;
+  margin-top: 1.5rem;
+}
 @media only screen and (min-width: 600px) {
-  .navbar-div {
-    border: 1px solid white;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 5rem;
-    overflow-y: hidden;
-    overflow-x: hidden;
-  }
 }
 /* //small// */
 @media only screen and (max-width: 600px) {
+  .searchbar {
+    display: none;
+  }
   .buttons {
     display: none;
+  }
+  .nav_avatar {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
   }
 }

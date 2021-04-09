@@ -1,4 +1,5 @@
 import "./PlayVideo.css";
+
 import { useParams } from "react-router-dom";
 import { useVideo } from "../VideoProvider";
 import { Link } from "react-router-dom";
@@ -22,7 +23,6 @@ export function PlayVideo() {
       console.log("i m dispatched", { itemFound });
     }
   }
-
   return (
     <div>
       <div className="div2">
