@@ -25,7 +25,7 @@ export function PlayVideo() {
 
   return (
     <div>
-      <div className="2div" style={{ display: "flex", marginTop: "7rem" }}>
+      <div className="div2">
         <div className="video">
           <iframe
             width="100%"
@@ -40,13 +40,8 @@ export function PlayVideo() {
           <div className="videoDiv">
             <div className="video_contents_">
               <h3>{itemFound.name}</h3>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between"
-                }}
-              >
-                <div>
+              <div className="view_years">
+                <div className="viewsyears">
                   <span>{itemFound.views}</span>
                 </div>
                 <div className="likes_controls">
@@ -60,7 +55,7 @@ export function PlayVideo() {
                       ></span>
                       <span
                         className="numbers_liked"
-                        style={{ marginTop: "-0.7rem" }}
+                        style={{ marginTop: "-0.3rem" }}
                       >
                         289K
                       </span>

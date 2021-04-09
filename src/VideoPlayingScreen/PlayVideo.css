@@ -4,34 +4,38 @@
   margin-left: 3rem;
   width: 55%;
   overflow: hidden;
+  /* border: 1px solid white; */
 }
 
 .playvideoIcons {
   color: #aaaaaa;
   font-size: 2rem;
   margin-top: -0.8rem;
+  /* border: 1px solid white; */
 }
 .likes_controls {
   display: flex;
   cursor: pointer;
+  /* border: 1px solid white; */
 }
 .likes_controls > div {
   margin: 10px;
   text-align: center;
   right: 0;
+  /* border: 1px solid white */
 }
-.likeButton{
+.likeButton {
   /* border:1px solid white; */
-  margin:0;
-  /* margin-top: -0.3rem */
+  margin: 0;
+  margin-top: -0.4rem;
   margin-right: 2.4rem;
 }
-.numbers_liked{
+.numbers_liked {
   /* margin-top: -20px;
   margin-left: 10px; */
   position: absolute;
   margin-left: 7px;
-  margin-bottom: -20px
+  margin-bottom: -20px;
 }
 .numbers {
   margin-top: -10px;
@@ -39,6 +43,7 @@
 }
 .like_items {
   display: flex;
+  /* border: 2px solid white; */
 }
 .image_avatar {
   width: 100%;
@@ -75,4 +80,51 @@
 .thumbnail_img_right {
   width: 100%;
   margin-top: 1.4rem;
+}
+.div2 {
+  /* border: 1px solid white; */
+  display: flex;
+  margin-top: 7rem;
+}
+.view_years {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  .div2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .video {
+    position: relative;
+    width: 100%;
+    margin-left: 0.1rem;
+    overflow: hidden;
+    /* border: 1px solid white; */
+  }
+  .viewsyears {
+    /* border: 1px solid white; */
+    font-size: 12px;
+  }
+  .playvideoIcons {
+    font-size: 1.5rem;
+  }
+  .view_years {
+    display: flex;
+    flex-direction: column;
+  }
+  .likes_controls {
+    margin-top: 1rem;
+    /* margin-left: 1rem; */
+  }
+  .like_items {
+    margin-left: 2rem;
+  }
+  .right_div {
+    /* border: 1px solid white; */
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 0.1rem;
+  }
 }
