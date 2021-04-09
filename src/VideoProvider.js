@@ -29,9 +29,29 @@ export const VideoProvider = ({ children }) => {
           )
         };
       case "HISTORY_VIDEO":
+        if (state.historyVideos.length >= 0) {
+          const itemInArray = state.historyVideos.find(
+            (item) => item === action.payload
+          );
+          if (itemInArray) {
+            return {
+              ...state,
+              historyVideos: state.historyVideos.map((item) =>
+                item === action.payload ? item : item
+              )
+            };
+          } else {
+            return {
+              ...state,
+              historyVideos: [...state.historyVideos, action.payload]
+            };
+          }
+        }
+        break;
+      case "DELETE_HISTORY":
         return {
           ...state,
-          historyVideos: [...state.historyVideos, action.payload]
+          historyVideos: []
         };
       default:
         return state;
