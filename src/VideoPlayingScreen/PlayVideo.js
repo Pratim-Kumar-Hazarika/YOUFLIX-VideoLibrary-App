@@ -99,11 +99,13 @@ export function PlayVideo() {
                   borderTop: "1px solid rgba(225,225,225,0.1)"
                 }}
               >
-                <img
-                  className="image_avatar_play"
-                  src={itemFound.image}
-                  alt="avatar"
-                />
+                <div style={{ border: "1px solid white" }}>
+                  <img
+                    className="image_avatar_play"
+                    src={itemFound.image}
+                    alt="avatar"
+                  />
+                </div>
                 <span style={{ marginTop: "20px", marginLeft: "10px" }}>
                   {itemFound.artist} ♪
                 </span>
