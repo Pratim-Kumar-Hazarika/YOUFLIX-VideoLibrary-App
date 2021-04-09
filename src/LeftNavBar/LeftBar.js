@@ -43,7 +43,7 @@ export function LeftBar() {
           <span className="left_bar_text">PLAYLIST</span>
         </div>
       </Link>
-      <Link to="/likedvideo" style={{ textDecoration: "none" }}>
+      <Link to="/historyvideo" style={{ textDecoration: "none" }}>
         <div className="leftBarDivContents">
           <span
             class="iconify leftbar_icons"

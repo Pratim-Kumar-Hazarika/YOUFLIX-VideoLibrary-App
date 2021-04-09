@@ -2,6 +2,7 @@ import "./PlayVideo.css";
 import { useParams } from "react-router-dom";
 import { useVideo } from "../VideoProvider";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 export function PlayVideo() {
   const { videoId } = useParams();
   const { state, dispatch } = useVideo();
@@ -11,6 +12,10 @@ export function PlayVideo() {
     (item) =>
       item.genre === "sobs" || item.genre === "metal" || item.genre === "rock"
   );
+  useEffect(() => {
+    dispatch({ type: "HISTORY_VIDEO", payload: itemFound });
+  }, []);
+
   function buttonCLick() {
     if (itemFound) {
       dispatch({ type: "LIKED_VIDEO", payload: itemFound });

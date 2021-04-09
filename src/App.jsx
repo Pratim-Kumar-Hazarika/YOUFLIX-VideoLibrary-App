@@ -10,6 +10,7 @@ import { Rock } from "./Genres/Rock";
 import { Metal } from "./Genres/Metal";
 import { Genre } from "./SongGenre/Genre";
 import { LikedVideo } from "./LikedVideos/LikedVideo";
+import { HistoryVideo } from "./HistoryVideo";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/genre" element={<Genre />} />
           <Route path="/likedvideo" element={<LikedVideo />} />
+          <Route path="/historyvideo" element={<HistoryVideo />} />
           <Route path="/video/:videoId" element={<PlayVideo />} />
           <Route path="/blues" element={<Blues />} />
           <Route path="/sad" element={<Sobs />} />

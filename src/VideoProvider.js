@@ -6,7 +6,8 @@ export const VideoContext = createContext();
 export const VideoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
     videodata,
-    onClickLikeVideos: []
+    onClickLikeVideos: [],
+    historyVideos: []
   });
 
   function reducer(state, action) {
@@ -26,6 +27,11 @@ export const VideoProvider = ({ children }) => {
           onClickLikeVideos: state.onClickLikeVideos.filter(
             (item) => item !== action.payload
           )
+        };
+      case "HISTORY_VIDEO":
+        return {
+          ...state,
+          historyVideos: [...state.historyVideos, action.payload]
         };
       default:
         return state;

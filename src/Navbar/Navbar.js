@@ -39,7 +39,10 @@ export function Navbar() {
             <button className="nav-btn1">GENRE</button>
           </Link>
           <Link to="/likedvideo">
-            <button className="nav-btn1">LIKED VIDEO</button>
+            <button className="nav-btn1">LIKED</button>
+          </Link>
+          <Link to="/historyvideo">
+            <button className="nav-btn1">HISTORY</button>
           </Link>
         </div>
         <div>
@@ -47,7 +50,6 @@ export function Navbar() {
             style={{
               borderRadius: "50%",
               width: "2.5rem",
-              marginLeft: "5rem",
               marginTop: "1.5rem"
             }}
             src="https://pbs.twimg.com/profile_images/1361579179959939072/ArgCDKFe_400x400.jpg"
