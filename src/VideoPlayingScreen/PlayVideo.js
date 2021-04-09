@@ -28,10 +28,8 @@ export function PlayVideo() {
       <div className="div2">
         <div className="video">
           <iframe
-            width="100%"
-            height="450"
             frameBorder="0"
-            style={{ border: "0" }}
+            className="videoPlayingScreen"
             src={`${itemFound.url}?autoplay=1&mute=1"`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
