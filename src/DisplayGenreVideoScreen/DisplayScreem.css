@@ -1,6 +1,7 @@
 @media only screen and (max-width: 600px) {
   .ds_video_content {
     margin-bottom: 1rem;
+    position: relative;
   }
   .ds_img {
     width: 100%;
@@ -61,16 +62,16 @@
   }
   .ds_artist_div {
     margin-left: 4rem;
-    margin-top: 3.5rem;
+    margin-top: 2.5rem;
   }
   .ds_artist {
     font-weight: 800;
     font-size: 12px;
   }
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (min-width: 992px) {
   .ds_artist_div {
     margin-left: 4rem;
-    margin-top: 2.4rem;
+    margin-top: 3.6rem;
   }
 }
