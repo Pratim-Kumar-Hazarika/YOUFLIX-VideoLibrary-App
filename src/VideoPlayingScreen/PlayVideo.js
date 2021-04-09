@@ -96,10 +96,11 @@ export function PlayVideo() {
                 style={{
                   display: "flex",
                   marginTop: "20px",
-                  borderTop: "1px solid rgba(225,225,225,0.1)"
+                  borderTop: "1px solid rgba(225,225,225,0.1)",
+                  overflow: "hidden"
                 }}
               >
-                <div style={{ border: "1px solid white" }}>
+                <div style={{ overflow: "hidden" }}>
                   <img
                     className="image_avatar_play"
                     src={itemFound.image}
