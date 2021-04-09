@@ -41,3 +41,17 @@
   transform: scale(1.1);
   transition: transform ease 0.2s;
 }
+.img_div {
+  width: 30%;
+  margin: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .img {
+    margin-left: -15rem;
+    flex-direction: column;
+  }
+  .john {
+    margin-left: 22rem;
+  }
+}

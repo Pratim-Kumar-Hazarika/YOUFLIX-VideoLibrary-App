@@ -24,7 +24,7 @@ export const Genre = () => {
           </Link>
         </div> */}
         <div className="img">
-          <div style={{ width: "30%", margin: "1rem" }}>
+          <div className="img_div">
             <Link to="/blues">
               <img
                 className="john"
@@ -33,7 +33,7 @@ export const Genre = () => {
               />
             </Link>
           </div>
-          <div style={{ width: "30%", margin: "1rem" }}>
+          <div className="img_div">
             <Link to="/metal">
               <img
                 className="john"
@@ -44,7 +44,7 @@ export const Genre = () => {
           </div>
         </div>
         <div className="img">
-          <div style={{ width: "30%", margin: "1rem" }}>
+          <div className="img_div">
             <Link to="/rock">
               <img
                 className="john"
@@ -53,7 +53,7 @@ export const Genre = () => {
               />
             </Link>
           </div>
-          <div style={{ width: "30%", margin: "1rem" }}>
+          <div className="img_div">
             <Link to="/sad">
               <img
                 className="john"

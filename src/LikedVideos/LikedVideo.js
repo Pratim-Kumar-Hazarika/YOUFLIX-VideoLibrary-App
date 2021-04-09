@@ -10,11 +10,11 @@ export function LikedVideo() {
   } = useVideo();
   console.log("i am state", { onClickLikeVideos });
   return (
-    <div>
+    <div className="like_content_div">
       <div style={{ padding: "1rem", marginTop: "5rem" }}>
         <LeftBar />
       </div>
-      <div style={{ marginLeft: "13rem", width: "80%" }}>
+      <div className="likesssss">
         <div style={{ display: "flex" }}>
           <h1 style={{ color: "white", fontWeight: "400" }}>Liked Videos</h1>
           <div style={{ marginTop: "1rem", marginLeft: ".5rem" }}>
