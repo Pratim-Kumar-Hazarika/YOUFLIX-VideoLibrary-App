@@ -14,7 +14,7 @@ export function PlayVideo() {
   );
   useEffect(() => {
     dispatch({ type: "HISTORY_VIDEO", payload: itemFound });
-  }, []);
+  }, [itemFound]);
 
   function buttonCLick() {
     if (itemFound) {

@@ -13,14 +13,25 @@ export const VideoProvider = ({ children }) => {
   function reducer(state, action) {
     switch (action.type) {
       case "LIKED_VIDEO":
-        // return (state = {
-        //   ...state,
-        //   onClickLikeVideos: [...state.onClickLikeVideos, action.payload]
-        // });
-        return {
-          ...state,
-          onClickLikeVideos: [...state.onClickLikeVideos, action.payload]
-        };
+        if (state.onClickLikeVideos.length >= 0) {
+          const itemInArray = state.onClickLikeVideos.find(
+            (item) => item === action.payload
+          );
+          if (itemInArray) {
+            return {
+              ...state,
+              onClickLikeVideos: state.onClickLikeVideos.map((item) =>
+                item === action.payload ? item : item
+              )
+            };
+          } else {
+            return {
+              ...state,
+              onClickLikeVideos: [...state.onClickLikeVideos, action.payload]
+            };
+          }
+        }
+        break;
       case "DELETE_VIDEO":
         return {
           ...state,
