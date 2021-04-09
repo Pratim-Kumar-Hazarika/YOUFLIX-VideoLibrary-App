@@ -10,7 +10,7 @@ export const DisplayScreen = ({
   id
 }) => {
   return (
-    <div>
+    <div className="main_display_div">
       <div className="mainvideodiv">
         <div>
           <div className="video_div">
@@ -32,7 +32,7 @@ export const DisplayScreen = ({
                   {artist} ♪
                 </span>
               </div>
-              <p style={{ marginTop: "3rem" }}>
+              <p className="para">
                 Tommee Profitt - In The End (Mellen Gi Remix) [Fleurie Cover]
                 Follow TrapMusicHD Facebook: ...
               </p>

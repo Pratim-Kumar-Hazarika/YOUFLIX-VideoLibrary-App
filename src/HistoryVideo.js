@@ -9,11 +9,11 @@ export function HistoryVideo() {
   } = useVideo();
   console.log("i am state", { historyVideos });
   return (
-    <div>
+    <div className="like_content_div">
       <div style={{ padding: "1rem", marginTop: "5rem" }}>
         <LeftBar />
       </div>
-      <div style={{ marginLeft: "13rem", width: "80%" }}>
+      <div className="likesssss">
         <div style={{ display: "flex" }}>
           <h1 style={{ color: "white", fontWeight: "400" }}>Watch History</h1>
           <div style={{ marginTop: "1.1rem", marginLeft: "1rem" }}>
