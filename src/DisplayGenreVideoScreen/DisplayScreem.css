@@ -59,8 +59,11 @@
     font-size: 7px;
     margin-left: 0.4rem;
   }
-  .image_avatar {
-    width: 2rem;
+  .image_avatar_display {
+    width: 100%;
+    border-radius: 50%;
+    max-width: 2rem;
+    margin-top: 10px;
   }
   .para {
     margin-top: 2rem;
@@ -83,5 +86,11 @@
   .video_div {
     margin-left: -5rem;
     margin-top: 1rem;
+  }
+  .image_avatar_display {
+    width: 100%;
+    border-radius: 50%;
+    max-width: 2.7rem;
+    margin-top: 10px;
   }
 }

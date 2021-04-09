@@ -27,7 +27,11 @@ export const DisplayScreen = ({
               <h3>{name}</h3>
               <span>{views}</span>
               <div style={{ display: "flex", marginTop: "20px" }}>
-                <img className="image_avatar" src={image} alt="avatar" />
+                <img
+                  className="image_avatar_display"
+                  src={image}
+                  alt="avatar"
+                />
                 <span style={{ marginTop: "20px", marginLeft: "10px" }}>
                   {artist} ♪
                 </span>

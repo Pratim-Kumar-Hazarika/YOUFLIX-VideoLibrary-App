@@ -100,7 +100,7 @@ export function PlayVideo() {
                 }}
               >
                 <img
-                  className="image_avatar"
+                  className="image_avatar_play"
                   src={itemFound.image}
                   alt="avatar"
                 />
