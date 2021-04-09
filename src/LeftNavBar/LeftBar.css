@@ -17,9 +17,30 @@
 .left_div {
   position: fixed;
   margin-left: -1rem;
+  /* border: 1px solid white; */
+  height: 100vh;
 }
 .leftBarDivContents {
   padding: 1rem;
   color: white;
   display: flex;
+}
+@media only screen and (max-width: 600px) {
+  .left_div {
+    display: flex;
+    flex-direction: row;
+    bottom: 0;
+    height: 10vh;
+    width: 100%;
+    z-index: 1;
+    background-color: black;
+
+    justify-content: space-between;
+  }
+  .left_bar_text {
+    display: none;
+  }
+  .leftbar_icons:hover {
+    color: white;
+  }
 }
