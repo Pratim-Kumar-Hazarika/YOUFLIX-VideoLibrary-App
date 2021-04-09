@@ -75,8 +75,11 @@
 }
 @media only screen and (max-width: 600px) {
   .row_div {
-    border: 3px solid green;
+    /* border: 3px solid green; */
     margin-left: 1rem;
+    margin-top: -1rem;
+  }
+  .row-1 {
     margin-top: -2rem;
   }
   .iframe_row {
@@ -87,7 +90,7 @@
     width: 210px;
   }
   .titles {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 /* large */
