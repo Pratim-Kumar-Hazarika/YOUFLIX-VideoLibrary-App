@@ -10,40 +10,32 @@ export const DisplayScreen = ({
   id
 }) => {
   return (
-    <div className="main_display_div">
-      <div className="mainvideodiv">
-        <div>
-          <div className="video_div">
-            <div className="thubmnail_div">
-              <Link to={{ pathname: `/video/${id}` }}>
-                <img
-                  className="thumbnail_img"
-                  src={thumbnail}
-                  alt="thumbnail"
-                />
-              </Link>
+    <>
+      <div className="ds_video_content">
+        <div className="ds_img_div">
+          <Link to={{ pathname: `/video/${id}` }}>
+            <img alt="artist" src={thumbnail} className="ds_img" />
+          </Link>
+        </div>
+
+        <div className="ds_titles_views_avatar">
+          <div className="ds_avatar">
+            <img className="ds_avatar_img" src={image} alt="avatar" />
+          </div>
+
+          <div className="ds_title_views">
+            <div className="ds_name_div">
+              <span className="ds_name">{name}</span>
             </div>
-            <div className="video_contents">
-              <h3>{name}</h3>
-              <span>{views}</span>
-              <div style={{ display: "flex", marginTop: "20px" }}>
-                <img
-                  className="image_avatar_display"
-                  src={image}
-                  alt="avatar"
-                />
-                <span style={{ marginTop: "20px", marginLeft: "10px" }}>
-                  {artist} ♪
-                </span>
-              </div>
-              <p className="para">
-                Tommee Profitt - In The End (Mellen Gi Remix) [Fleurie Cover]
-                Follow TrapMusicHD Facebook: ...
-              </p>
+            <div className="ds_views_div">
+              <span className="ds_views">{views}</span>
+            </div>
+            <div className="ds_artist_div">
+              <span className="ds_artist">{artist} ♪</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
