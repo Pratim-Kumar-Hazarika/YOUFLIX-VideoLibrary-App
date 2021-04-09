@@ -1,12 +1,10 @@
 .mainvideodiv {
   margin-left: 14rem;
-  /* border: 5px solid white; */
   height: 250px;
 }
 .video_div {
   color: white;
   display: flex;
-  /* border: 4px solid green; */
   max-height: 350px;
   position: relative;
   overflow: hidden;
@@ -16,7 +14,6 @@
 .video_contents {
   font-size: 14px;
   margin-left: 2rem;
-  /* border: 1px solid red; */
 }
 .display_video_iframe {
   border: 0;
@@ -24,16 +21,13 @@
 .thubmnail_div {
   overflow: hidden;
   width: 30%;
-  /* border: 4px solid yellowgreen; */
 }
 .thumbnail_img {
   width: 100%;
-  /* border: 1px solid yellow; */
   margin-top: 1rem;
   margin-left: 2rem;
 }
 .main_display_div {
-  /* border: 3px solid purple; */
   width: 80%;
   margin: auto;
   overflow: hidden;
@@ -50,17 +44,13 @@
   }
   .mainvideodiv {
     width: 100%;
-    /* border: 5px solid blue; */
     margin-left: -0.1rem;
     margin-bottom: 2rem;
   }
   .thubmnail_div {
-    /* overflow: hidden; */
     width: 100%;
-    /* border: 4px solid red; */
   }
   .thumbnail_img {
-    /* border: 1px solid white; */
     width: 110%;
     margin-left: -0.1rem;
     margin-top: -0.1rem;
@@ -68,8 +58,6 @@
   .video_contents {
     font-size: 7px;
     margin-left: 0.4rem;
-    /* border: 1px solid yellow; */
-    /* margin-top: 1rem */
   }
   .image_avatar {
     width: 2rem;
@@ -80,20 +68,16 @@
 }
 @media only screen and (min-width: 600px) {
   .thubmnail_div {
-    /* overflow: hidden; */
     width: 50%;
-    /* border: 4px solid yellowgreen; */
   }
   .thumbnail_img {
     width: 100%;
-    /* border: 1px solid yellow; */
     margin: 0;
   }
   .video_contents {
     font-size: 12px;
     margin-left: 2rem;
     width: 70%;
-    /* border: 5px solid red; */
     margin-top: -1rem;
   }
   .video_div {
