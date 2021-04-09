@@ -7,14 +7,7 @@ export const Home = () => {
       <div style={{ padding: "1rem", marginTop: "5rem" }}>
         <LeftBar />
       </div>
-      <div
-        style={{
-          overflow: "hidden",
-          marginLeft: "12rem",
-          marginTop: "-1rem",
-          zIndex: 1
-        }}
-      >
+      <div className="row_div">
         <Row />
       </div>
     </div>

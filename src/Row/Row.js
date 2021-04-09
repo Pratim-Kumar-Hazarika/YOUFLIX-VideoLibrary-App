@@ -26,11 +26,15 @@ export function Row() {
                         alt="video_image"
                       />
                     </Link>
-                    <div style={{ display: "flex", position: "relative" }}>
+                    <div
+                      className="titles"
+                      style={{ display: "flex", position: "relative" }}
+                    >
                       <div>
                         <img className="avatar" src={item.image} alt="avatar" />
                       </div>
                       <div
+                        className="titleviews"
                         style={{
                           positon: "absolute",
                           right: "0",
@@ -65,17 +69,21 @@ export function Row() {
                         alt="video_image"
                       />
                     </Link>
-                    <div style={{ display: "flex", position: "relative" }}>
+                    <div
+                      className="titles"
+                      style={{ display: "flex", position: "relative" }}
+                    >
                       <div>
                         <img className="avatar" src={item.image} alt="avatar" />
                       </div>
                       <div
+                        className="titleviews"
                         style={{
                           positon: "absolute",
                           right: "0",
                           marginLeft: "20px",
                           bottom: "0",
-                          marginTop: "15px"
+                          marginTop: "13px"
                         }}
                       >
                         <span style={{ fontWeight: "400", marginTop: "10px" }}>

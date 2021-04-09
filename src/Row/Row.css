@@ -73,3 +73,27 @@
   transition: transform ease 0.2s;
   cursor: pointer;
 }
+@media only screen and (max-width: 600px) {
+  .row_div {
+    border: 3px solid green;
+    margin-left: 1rem;
+    margin-top: -2rem;
+  }
+  .iframe_row {
+    margin: 1rem;
+    width: 100%;
+  }
+  .video_image {
+    width: 210px;
+  }
+  .titles {
+    font-size: 11px;
+  }
+}
+/* large */
+@media only screen and (min-width: 600px) {
+  .row_div {
+    margin-left: 12rem;
+    overflow: hidden;
+  }
+}
