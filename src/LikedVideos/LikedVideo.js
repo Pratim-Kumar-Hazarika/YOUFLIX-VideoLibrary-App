@@ -15,7 +15,17 @@ export function LikedVideo() {
         <LeftBar />
       </div>
       <div style={{ marginLeft: "13rem", width: "80%" }}>
-        <h1 style={{ color: "white", fontWeight: "400" }}>Liked Videos</h1>
+        <div style={{ display: "flex" }}>
+          <h1 style={{ color: "white", fontWeight: "400" }}>Liked Videos</h1>
+          <div style={{ marginTop: "1rem", marginLeft: ".5rem" }}>
+            {" "}
+            <span
+              class="iconify leftbar_icons"
+              data-icon="bx:bxs-like"
+              data-inline="false"
+            ></span>
+          </div>
+        </div>
         <div className="likedVideoDiv">
           {onClickLikeVideos.map((item) => {
             const { id, thumbnail, name, views, artist } = item;

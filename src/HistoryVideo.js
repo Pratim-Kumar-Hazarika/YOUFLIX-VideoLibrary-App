@@ -16,15 +16,27 @@ export function HistoryVideo() {
       <div style={{ marginLeft: "13rem", width: "80%" }}>
         <div style={{ display: "flex" }}>
           <h1 style={{ color: "white", fontWeight: "400" }}>Watch History</h1>
+          <div style={{ marginTop: "1.1rem", marginLeft: "1rem" }}>
+            <span
+              class="iconify leftbar_icons"
+              data-icon="ri:history-fill"
+              data-inline="false"
+            ></span>
+          </div>
+        </div>
+        <div style={{ display: "flex" }}>
           <div
             onClick={() => dispatch({ type: "DELETE_HISTORY" })}
-            style={{ cursor: "pointer", marginTop: "1.6rem" }}
+            style={{ cursor: "pointer" }}
           >
             <span
               class="iconify dustbinIcon"
               data-icon="mdi:delete"
               data-inline="false"
             ></span>
+          </div>
+          <div style={{ marginTop: "0.5rem" }}>
+            <span>CLEAR HISTORY</span>
           </div>
         </div>
         <div className="likedVideoDiv">
