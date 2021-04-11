@@ -107,9 +107,7 @@ export function PlayVideo() {
                     alt="avatar"
                   />
                 </div>
-                <span style={{ marginTop: "20px", marginLeft: "10px" }}>
-                  {itemFound.artist} ♪
-                </span>
+                <span className="artist__name">{itemFound.artist} ♪</span>
               </div>
             </div>
           </div>

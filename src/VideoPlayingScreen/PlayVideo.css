@@ -126,4 +126,14 @@
     border-radius: 50%;
     max-width: 2rem;
   }
+  .artist__name {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .artist__name {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
 }
