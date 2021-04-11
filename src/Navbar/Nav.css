@@ -6,7 +6,6 @@
   display: flex;
   z-index: 1;
   background-color: black;
-  max-height: 12vh;
 }
 .header {
   display: flex;
@@ -83,6 +82,9 @@
   margin-top: 1.5rem;
 }
 @media only screen and (min-width: 600px) {
+  .navbar-div {
+    height: 10vh;
+  }
 }
 /* //small// */
 @media only screen and (max-width: 600px) {
@@ -96,5 +98,8 @@
     position: absolute;
     right: 0;
     margin-right: 10px;
+  }
+  .navbar-div {
+    height: 10vh;
   }
 }

@@ -17,7 +17,7 @@ export function LikedVideo() {
       <div className="likesssss">
         <div style={{ display: "flex" }}>
           <h1 style={{ color: "white", fontWeight: "400" }}>Liked Videos</h1>
-          <div style={{ marginTop: "1rem", marginLeft: ".5rem" }}>
+          <div style={{ marginTop: "10px", marginLeft: ".5rem" }}>
             {" "}
             <span
               class="iconify leftbar_icons"

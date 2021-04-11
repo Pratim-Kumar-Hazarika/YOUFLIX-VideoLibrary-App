@@ -6,7 +6,7 @@ export const Genre = () => {
   return (
     <>
       <div className="genre_main">
-        <div style={{ padding: "1rem", marginTop: "5rem" }}>
+        <div style={{ padding: "1rem", marginTop: "3rem" }}>
           <LeftBar />
         </div>
         {/* <div className="genre">

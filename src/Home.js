@@ -4,7 +4,7 @@ import "./LeftNavBar/LeftBar.css";
 export const Home = () => {
   return (
     <div>
-      <div style={{ padding: "1rem", marginTop: "5rem" }}>
+      <div style={{ padding: "1rem", marginTop: "3rem" }}>
         <LeftBar />
       </div>
       <div className="row_div">
