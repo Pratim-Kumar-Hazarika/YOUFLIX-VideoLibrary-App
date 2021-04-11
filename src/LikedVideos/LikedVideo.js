@@ -31,32 +31,30 @@ export function LikedVideo() {
             const { id, thumbnail, name, views, artist } = item;
             return (
               <>
-                <div key={id}>
-                  <div className="video_div_liked">
-                    <div className="thubmnail_div_liked">
-                      <Link to={{ pathname: `/video/${id}` }}>
-                        <img
-                          className="thumbnail_img_liked"
-                          src={thumbnail}
-                          alt="thumbnail"
-                        />
-                      </Link>
-                    </div>
-                    <div className="video_contents_liked">
-                      <h3 style={{ color: "white" }}>{name}</h3>
-                      <span> {artist} ♪</span>
-                      <div
-                        onClick={() =>
-                          dispatch({ type: "DELETE_VIDEO", payload: item })
-                        }
-                        style={{ cursor: "pointer" }}
-                      >
-                        <span
-                          class="iconify dustbinIcon"
-                          data-icon="mdi:delete"
-                          data-inline="false"
-                        ></span>
-                      </div>
+                <div className="video_div_liked">
+                  <div className="thubmnail_div_liked">
+                    <Link to={{ pathname: `/video/${id}` }}>
+                      <img
+                        className="thumbnail_img_liked"
+                        src={thumbnail}
+                        alt="thumbnail"
+                      />
+                    </Link>
+                  </div>
+                  <div className="video_contents_liked">
+                    <h3 style={{ color: "white" }}>{name}</h3>
+                    <span> {artist} ♪</span>
+                    <div
+                      onClick={() =>
+                        dispatch({ type: "DELETE_VIDEO", payload: item })
+                      }
+                      style={{ cursor: "pointer" }}
+                    >
+                      <span
+                        class="iconify dustbinIcon"
+                        data-icon="mdi:delete"
+                        data-inline="false"
+                      ></span>
                     </div>
                   </div>
                 </div>

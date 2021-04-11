@@ -8,11 +8,9 @@
   position: relative;
   overflow: hidden;
   margin-bottom: 1rem;
+  border: 1px solid red;
 }
-.thubmnail_div_liked {
-  overflow: hidden;
-  width: 65%;
-}
+
 .dustbinIcon {
   color: #aaaaaa;
 }
@@ -31,9 +29,16 @@
   .video_contents_liked {
     font-size: 10px;
     margin-left: 1rem;
+    border: 1px solid white;
+    width: 50%;
   }
   .dustbinIcon {
     font-size: 18px;
+  }
+  .thubmnail_div_liked {
+    overflow: hidden;
+    width: 50%;
+    border: 1px solid white;
   }
 }
 @media only screen and (min-width: 600px) {
@@ -55,13 +60,15 @@
   }
   .thubmnail_div_liked {
     overflow: hidden;
-    width: 100%;
+    width: 70%;
+    border: 1px solid white;
   }
   .video_contents_liked {
     font-size: 12px;
     margin-left: 1rem;
     color: #aaaaaa;
-    max-width: 35%;
+    width: 30%;
+    border: 1px solid white;
 
     font-size: 10px;
   }
