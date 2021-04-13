@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 import { videodata } from "./dataofvideo.js";
 
 export const VideoContext = createContext();
@@ -68,10 +68,23 @@ export const VideoProvider = ({ children }) => {
         return state;
     }
   }
-
+  const [show, setShow] = useState(false);
+  const [inputText, setInput] = useState("");
+  const [list, setList] = useState([]);
   return (
     <>
-      <VideoContext.Provider value={{ state, dispatch }}>
+      <VideoContext.Provider
+        value={{
+          state,
+          dispatch,
+          list,
+          setList,
+          inputText,
+          setInput,
+          show,
+          setShow
+        }}
+      >
         {children}
       </VideoContext.Provider>
     </>

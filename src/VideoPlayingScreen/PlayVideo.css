@@ -9,7 +9,7 @@
 .playvideoIcons {
   color: #aaaaaa;
   font-size: 2rem;
-  margin-top: -0.8rem;
+  margin-top: -0.9rem;
 }
 .likes_controls {
   display: flex;
@@ -31,7 +31,7 @@
   margin-bottom: -20px;
 }
 .numbers {
-  margin-top: -10px;
+  margin-top: -12px;
   margin-left: 10px;
 }
 .like_items {
@@ -135,10 +135,74 @@
     width: 100%;
     height: 300px;
   }
+  .playvideoIcons {
+    color: #aaaaaa;
+    margin-top: -0.75rem;
+  }
 }
 @media only screen and (min-width: 600px) {
   .artist__name {
     margin-top: 20px;
     margin-left: 10px;
   }
+}
+/* model */
+.model {
+  border: 1px solid black;
+  z-index: 1;
+  position: absolute;
+  background-color: #212121;
+  margin-top: 5rem;
+  overflow: hidden;
+  color: white;
+  margin-left: 35rem;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+}
+.div1 {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #aaaa;
+}
+.btn_close {
+  height: 3vh;
+  margin-top: 20px;
+  background-color: #212121;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+}
+.closeIconify {
+  font-size: 20px;
+  color: white;
+}
+.input1 {
+  padding: 1rem;
+  display: flex;
+  border-bottom: 1px solid #aaaa;
+}
+.modeladd {
+  display: flex;
+  justify-content: space-around;
+}
+.add_playlist {
+  padding: 0.5rem;
+  background-color: #212121;
+  outline: none;
+  color: white;
+  border: none;
+  margin-left: 1rem;
+}
+::placeholder {
+  color: white;
+}
+.add_playlist_btn {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  color: #3ea6ff;
+  background-color: #212121;
+  font-weight: bold;
 }

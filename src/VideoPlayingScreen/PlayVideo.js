@@ -1,12 +1,21 @@
 import "./PlayVideo.css";
-
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useVideo } from "../VideoProvider";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 export function PlayVideo() {
   const { videoId } = useParams();
-  const { state, dispatch } = useVideo();
+  const {
+    state,
+    dispatch,
+    list,
+    setList,
+    inputText,
+    setInput,
+    show,
+    setShow
+  } = useVideo();
   const itemFound = state.videodata.find((item) => item.id === Number(videoId));
   console.log("I am the item you wanted", itemFound);
   const metalBlues = state.videodata.filter(
@@ -23,8 +32,59 @@ export function PlayVideo() {
       console.log("i m dispatched", { itemFound });
     }
   }
+
+  function onChangeClickHandler(e) {
+    setInput(e.target.value);
+  }
+  function addClickHandLer(e) {
+    e.preventDefault();
+    if (inputText !== "") {
+      setList([...list, inputText]);
+      setInput("");
+    }
+  }
   return (
     <div>
+      <div className="model" style={{ display: show ? "" : "none" }}>
+        <div className="div1">
+          <h3>Save To..</h3>
+          <button className="btn_close" onClick={() => setShow(false)}>
+            <span
+              class="iconify closeIconify"
+              data-icon="akar-icons:cross"
+              data-inline="false"
+            ></span>
+          </button>
+        </div>
+        <div className="input1">
+          <input type="checkbox" />
+          <label>Watch Later</label>
+        </div>
+        {list.map((item) => {
+          return (
+            <div className="input1">
+              <input type="checkbox" />
+              <label> {item}</label>
+            </div>
+          );
+        })}
+
+        <div className="modeladd">
+          <form>
+            <input
+              className="add_playlist"
+              type="input"
+              name="name"
+              placeholder="New Playlist..."
+              value={inputText}
+              onChange={onChangeClickHandler}
+            />
+          </form>
+          <button className="add_playlist_btn" onClick={addClickHandLer}>
+            CREATE
+          </button>
+        </div>
+      </div>
       <div className="div2">
         <div className="video">
           <iframe
@@ -75,7 +135,7 @@ export function PlayVideo() {
                     ></span>
                     <span className="numbers">SHARE</span>
                   </div>
-                  <div className="like_items">
+                  <div onClick={() => setShow(true)} className="like_items">
                     <span
                       class="iconify playvideoIcons"
                       data-icon="ic:outline-playlist-add"
