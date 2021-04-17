@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import "./LikedVideos/LikedVideo.css";
-import { LeftBar } from "./LeftNavBar/LeftBar";
-import { useVideo } from "./VideoProvider";
+import "../LikedVideos/LikedVideo.css";
+import { LeftBar } from "../LeftNavBar/LeftBar";
+import { useVideo } from "../Context/VideoProvider";
 export function HistoryVideo() {
   const {
     state: { historyVideos },

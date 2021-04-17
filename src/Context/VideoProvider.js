@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useState } from "react";
-import { videodata } from "./dataofvideo.js";
+import { videodata } from "../dataofvideo.js";
 
 export const VideoContext = createContext();
 

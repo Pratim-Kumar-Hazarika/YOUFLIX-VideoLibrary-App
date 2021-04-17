@@ -10,7 +10,10 @@ import { Rock } from "./Genres/Rock";
 import { Metal } from "./Genres/Metal";
 import { Genre } from "./SongGenre/Genre";
 import { LikedVideo } from "./LikedVideos/LikedVideo";
-import { HistoryVideo } from "./HistoryVideo";
+import { HistoryVideo } from "./HistoryVideos/HistoryVideo";
+import { Login } from "./Login/Login";
+import { PlayList } from "./PlayList";
+import { PrivateRoute } from "./Login/PrivateRoute/PrivateRoute";
 
 export default function App() {
   return (
@@ -20,13 +23,15 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/genre" element={<Genre />} />
-          <Route path="/likedvideo" element={<LikedVideo />} />
-          <Route path="/historyvideo" element={<HistoryVideo />} />
           <Route path="/video/:videoId" element={<PlayVideo />} />
           <Route path="/blues" element={<Blues />} />
           <Route path="/sad" element={<Sobs />} />
           <Route path="/rock" element={<Rock />} />
           <Route path="/metal" element={<Metal />} />
+          <Route path="/login" element={<Login />} />
+          <PrivateRoute path="/likedvideo" element={<LikedVideo />} />
+          <PrivateRoute path="/historyvideo" element={<HistoryVideo />} />
+          <PrivateRoute path="/playlist" element={<PlayList />} />
         </Routes>
       </div>
     </>
