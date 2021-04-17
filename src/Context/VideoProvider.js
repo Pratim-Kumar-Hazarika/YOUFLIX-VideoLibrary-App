@@ -8,16 +8,14 @@ export const VideoProvider = ({ children }) => {
     videodata,
     onClickLikeVideos: [],
     historyVideos: [],
-    toastMessage: null
+    toastMessage: false
   });
+  const { toastMessage } = state;
 
   function reducer(state, action) {
     switch (action.type) {
       case "SHOW_TOAST":
-        return {
-          ...state,
-          toastMessage: state.toastMessage
-        };
+        return { ...state, toastMessage };
       case "LIKED_VIDEO":
         if (state.onClickLikeVideos.length >= 0) {
           const itemInArray = state.onClickLikeVideos.find(
@@ -91,7 +89,8 @@ export const VideoProvider = ({ children }) => {
           inputText,
           setInput,
           show,
-          setShow
+          setShow,
+          toastMessage
         }}
       >
         {children}

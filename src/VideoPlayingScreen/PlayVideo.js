@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useVideo } from "../Context/VideoProvider";
-import { Toast } from "../Toast";
+import { Toast } from "../Toast/Toast";
 export function PlayVideo() {
   const [stateofcolor, setColorState] = useState(false);
   const [stateofcolor2, setColorState2] = useState(false);
@@ -19,8 +19,10 @@ export function PlayVideo() {
     inputText,
     setInput,
     show,
-    setShow
+    setShow,
+    toastMessage
   } = useVideo();
+
   const itemFound = state.videodata.find((item) => item.id === Number(videoId));
   console.log("I am the item you wanted", itemFound);
   const metalBlues = state.videodata.filter(
@@ -160,14 +162,7 @@ export function PlayVideo() {
                 </div>
                 <div className="likes_controls">
                   <div className="like_items">
-                    {/* <button onClick={buttonCLick}>Click me</button> */}
                     <div className="likeButton">
-                      {/* <span
-                        class="iconify playvideoIcons"
-                        data-icon="mdi:thumb-up"
-                        data-inline="false"
-                
-                      ></span> */}
                       <MdiThumbUp />
                       <span
                         className="numbers_liked"
@@ -178,11 +173,6 @@ export function PlayVideo() {
                     </div>
                   </div>
                   <div className="like_items">
-                    {/* <span
-                      class="iconify playvideoIcons"
-                      data-icon="mdi:thumb-down"
-                      data-inline="false"
-                    ></span> */}
                     <MdiThumbDown />
                     <span className="numbers">{counter2}</span>
                   </div>
@@ -230,7 +220,7 @@ export function PlayVideo() {
               </div>
             </div>
           </div>
-          {state.toastmessage && <Toast />}
+          {toastMessage && <Toast />}
         </div>
 
         <div className="right_div">
