@@ -1,9 +1,10 @@
 import "./PlayVideo.css";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { useVideo } from "../VideoProvider";
+
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { useVideo } from "../Context/VideoProvider";
 export function PlayVideo() {
   const { videoId } = useParams();
   const {

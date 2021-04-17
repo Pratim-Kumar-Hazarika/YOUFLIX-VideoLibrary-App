@@ -1,6 +1,6 @@
+import { useVideo } from "../Context/VideoProvider";
 import { DisplayScreen } from "../DisplayGenreVideoScreen/DisplayScreen";
 import { LeftBar } from "../LeftNavBar/LeftBar";
-import { useVideo } from "../VideoProvider";
 
 export const Metal = () => {
   const { state } = useVideo();

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./LikedVideo.css";
 import { LeftBar } from "../LeftNavBar/LeftBar";
-import { useVideo } from "../VideoProvider";
+import { useVideo } from "../Context/VideoProvider";
 
 export function LikedVideo() {
   const {
