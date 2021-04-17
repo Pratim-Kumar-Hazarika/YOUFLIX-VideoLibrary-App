@@ -1,15 +1,6 @@
-<<<<<<< Codesandbox
-import { DisplayScreen } from "../DisplayGenreVideoScreen/DisplayScreen";
-=======
 import { useVideo } from "../Context/VideoProvider";
->>>>>>> GitHub
 import { DisplayScreen } from "../DisplayGenreVideoScreen/DisplayScreen";
 import { LeftBar } from "../LeftNavBar/LeftBar";
-<<<<<<< Codesandbox
-import { useVideo } from "../Context/VideoProvider";
-=======
-
->>>>>>> GitHub
 
 export const Sobs = () => {
   const { state } = useVideo();
