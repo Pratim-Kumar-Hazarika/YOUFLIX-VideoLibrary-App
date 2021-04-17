@@ -7,11 +7,17 @@ export const VideoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
     videodata,
     onClickLikeVideos: [],
-    historyVideos: []
+    historyVideos: [],
+    toastMessage: null
   });
 
   function reducer(state, action) {
     switch (action.type) {
+      case "SHOW_TOAST":
+        return {
+          ...state,
+          toastMessage: state.toastMessage
+        };
       case "LIKED_VIDEO":
         if (state.onClickLikeVideos.length >= 0) {
           const itemInArray = state.onClickLikeVideos.find(
@@ -27,6 +33,7 @@ export const VideoProvider = ({ children }) => {
           } else {
             return {
               ...state,
+              toastMessage: "ADDED TO LIKED VIDEOS",
               onClickLikeVideos: [...state.onClickLikeVideos, action.payload]
             };
           }
@@ -35,6 +42,7 @@ export const VideoProvider = ({ children }) => {
       case "DELETE_VIDEO":
         return {
           ...state,
+          toastMessage: "REMOVED FROM LIKED VIDEOS",
           onClickLikeVideos: state.onClickLikeVideos.filter(
             (item) => item !== action.payload
           )
@@ -64,6 +72,7 @@ export const VideoProvider = ({ children }) => {
           ...state,
           historyVideos: []
         };
+
       default:
         return state;
     }

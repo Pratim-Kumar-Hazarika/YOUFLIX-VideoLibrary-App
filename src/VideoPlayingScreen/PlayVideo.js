@@ -4,7 +4,12 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useVideo } from "../Context/VideoProvider";
+import { Toast } from "../Toast";
 export function PlayVideo() {
+  const [stateofcolor, setColorState] = useState(false);
+  const [stateofcolor2, setColorState2] = useState(false);
+  const [counter, setCounter] = useState(389);
+  const [counter2, setCounter2] = useState(99);
   const { videoId } = useParams();
   const {
     state,
@@ -29,6 +34,9 @@ export function PlayVideo() {
   function buttonCLick() {
     if (itemFound) {
       dispatch({ type: "LIKED_VIDEO", payload: itemFound });
+      setColorState(true);
+      setColorState2(false);
+      setCounter((e) => ++e);
       console.log("i m dispatched", { itemFound });
     }
   }
@@ -42,6 +50,53 @@ export function PlayVideo() {
       setList([...list, inputText]);
       setInput("");
     }
+  }
+
+  function dislikeClickHanlder() {
+    dispatch({ type: "DELETE_VIDEO", payload: itemFound });
+    setColorState2(true);
+    setColorState(false);
+    setCounter((e) => --e);
+    setCounter2((e) => ++e);
+  }
+
+  function MdiThumbUp(props) {
+    return (
+      <svg
+        // onClick={onbuttonCLick}
+        onClick={buttonCLick}
+        style={{ color: stateofcolor && "#3EA6ff" }}
+        className="iconify playvideoIcons"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        {...props}
+      >
+        <path
+          d="M23 10a2 2 0 0 0-2-2h-6.32l.96-4.57c.02-.1.03-.21.03-.32c0-.41-.17-.79-.44-1.06L14.17 1L7.59 7.58C7.22 7.95 7 8.45 7 9v10a2 2 0 0 0 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2M1 21h4V9H1v12z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    );
+  }
+
+  function MdiThumbDown(props) {
+    return (
+      <svg
+        onClick={dislikeClickHanlder}
+        style={{ color: stateofcolor2 && "#3EA6ff" }}
+        className="iconify playvideoIcons"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        {...props}
+      >
+        <path
+          d="M19 15h4V3h-4m-4 0H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2a2 2 0 0 0 2 2h6.31l-.95 4.57c-.02.1-.03.2-.03.31c0 .42.17.79.44 1.06L9.83 23l6.58-6.59c.37-.36.59-.86.59-1.41V5a2 2 0 0 0-2-2z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    );
   }
   return (
     <div>
@@ -95,6 +150,7 @@ export function PlayVideo() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
+
           <div className="videoDiv">
             <div className="video_contents_">
               <h3>{itemFound.name}</h3>
@@ -105,27 +161,30 @@ export function PlayVideo() {
                 <div className="likes_controls">
                   <div className="like_items">
                     {/* <button onClick={buttonCLick}>Click me</button> */}
-                    <div onClick={buttonCLick} className="likeButton">
-                      <span
+                    <div className="likeButton">
+                      {/* <span
                         class="iconify playvideoIcons"
                         data-icon="mdi:thumb-up"
                         data-inline="false"
-                      ></span>
+                
+                      ></span> */}
+                      <MdiThumbUp />
                       <span
                         className="numbers_liked"
                         style={{ marginTop: "-0.3rem" }}
                       >
-                        289K
+                        {counter}
                       </span>
                     </div>
                   </div>
                   <div className="like_items">
-                    <span
+                    {/* <span
                       class="iconify playvideoIcons"
                       data-icon="mdi:thumb-down"
                       data-inline="false"
-                    ></span>
-                    <span className="numbers">29K</span>
+                    ></span> */}
+                    <MdiThumbDown />
+                    <span className="numbers">{counter2}</span>
                   </div>
                   <div className="like_items">
                     <span
@@ -171,6 +230,7 @@ export function PlayVideo() {
               </div>
             </div>
           </div>
+          {state.toastmessage && <Toast />}
         </div>
 
         <div className="right_div">
