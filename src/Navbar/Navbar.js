@@ -1,7 +1,9 @@
 import "./Nav.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../Context/AuthProvider";
 
 export function Navbar() {
+  const { logOutHandler, login } = useAuth();
   return (
     <div>
       <div className="navbar-div">
@@ -34,26 +36,63 @@ export function Navbar() {
           </div>
         </div>
         <div className="buttons">
-          <Link to="/">
-            <button className="nav-btn1">HOME</button>
-          </Link>
-          <Link to="/genre">
-            <button className="nav-btn1">GENRE</button>
-          </Link>
-          <Link to="/likedvideo">
-            <button className="nav-btn1">LIKED</button>
-          </Link>
-          <Link to="/historyvideo">
-            <button className="nav-btn1">HISTORY</button>
-          </Link>
+          <div>
+            <Link to="/">
+              <span
+                class="iconify nav_icons"
+                data-icon="mdi:home"
+                data-inline="false"
+              ></span>
+            </Link>
+          </div>
+
+          <div>
+            <Link to="/genre">
+              <span
+                class="iconify nav_icons"
+                data-icon="zondicons:explore"
+                data-inline="false"
+              ></span>
+            </Link>
+          </div>
+
+          <div>
+            <Link to="/likedvideo">
+              <span
+                class="iconify nav_icons"
+                data-icon="bx:bxs-like"
+                data-inline="false"
+              ></span>
+            </Link>
+          </div>
+
+          <div>
+            <Link to="/historyvideo">
+              <span
+                class="iconify nav_icons"
+                data-icon="ri:history-fill"
+                data-inline="false"
+              ></span>
+            </Link>
+          </div>
+
+          <div>
+            <Link to="/login">
+              <button className="nav-btn1" onClick={logOutHandler}>
+                {login ? "SIGN OUT" : "SIGN IN"}
+              </button>
+            </Link>
+          </div>
         </div>
-        <div>
-          <img
-            className="nav_avatar"
-            src="https://pbs.twimg.com/profile_images/1361579179959939072/ArgCDKFe_400x400.jpg"
-            alt="avatar"
-          />
-        </div>
+        {login && (
+          <div>
+            <img
+              className="nav_avatar"
+              src="https://pbs.twimg.com/profile_images/1361579179959939072/ArgCDKFe_400x400.jpg"
+              alt="avatar"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

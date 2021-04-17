@@ -33,11 +33,16 @@
 }
 .buttons {
   display: flex;
-  justify-content: flex-end;
-  right: 0;
-  margin-top: 1.6rem;
+  justify-content: space-between;
+  margin-left: 9rem;
+  overflow: hidden;
+  margin-top: -1rem;
+}
+.buttons > div {
+  margin: 1rem;
 }
 .nav-btn1 {
+  margin-top: 1rem;
   cursor: pointer;
   color: #fff;
   outline: none;
@@ -79,11 +84,25 @@
 .nav_avatar {
   border-radius: 50%;
   width: 2.5rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+}
+.nav_icons {
+  color: #aaaaaa;
+  font-size: 30px;
+  transition: transform ease 0.2s;
+  margin-top: 1.4rem;
+}
+.nav_icons:hover {
+  color: white;
 }
 @media only screen and (min-width: 600px) {
   .navbar-div {
     height: 10vh;
+  }
+  .nav_avatar {
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
   }
 }
 /* //small// */

@@ -1,10 +1,18 @@
 import "./PlayVideo.css";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+<<<<<<< Codesandbox
+import { useVideo } from "../Context/VideoProvider";
+=======
 
+>>>>>>> GitHub
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+<<<<<<< Codesandbox
+export function PlayVideo() {
+=======
 import { useVideo } from "../Context/VideoProvider";
+>>>>>>> GitHub
 export function PlayVideo() {
   const { videoId } = useParams();
   const {
