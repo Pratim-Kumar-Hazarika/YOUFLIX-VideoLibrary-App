@@ -1,0 +1,13 @@
+.toast-div {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 1rem;
+  width: 15rem;
+  background-color: #323232;
+  padding: 1rem;
+  z-index: 11111;
+  transition: all 0.5s ease-in-out;
+}
+.toast-message {
+  color: white;
+}
