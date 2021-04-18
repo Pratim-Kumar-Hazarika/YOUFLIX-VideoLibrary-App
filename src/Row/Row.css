@@ -4,12 +4,12 @@
 }
 
 .row-1::-webkit-scrollbar {
-  width: 1px;
-  height: 10px;
+  /* width: 1px; */
+  height: 11px;
 }
 
 .row-1::-webkit-scrollbar-track {
-  background: black;
+  background: #aaaaaa;
 }
 
 .row-1::-webkit-scrollbar-thumb {

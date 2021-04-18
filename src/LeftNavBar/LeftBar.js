@@ -1,6 +1,8 @@
 import "./LeftBar.css";
 import { Link } from "react-router-dom";
+import { useVideo } from "../Context/VideoProvider";
 export function LeftBar() {
+  const { darkMode } = useVideo();
   return (
     <div className="left_div">
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -10,7 +12,12 @@ export function LeftBar() {
             data-icon="mdi:home"
             data-inline="false"
           ></span>
-          <span className="left_bar_text">HOME</span>
+          <span
+            style={{ color: darkMode && "white" }}
+            className="left_bar_text"
+          >
+            HOME
+          </span>
         </div>
       </Link>
       <Link to="/genre" style={{ textDecoration: "none" }}>
@@ -20,7 +27,12 @@ export function LeftBar() {
             data-icon="zondicons:explore"
             data-inline="false"
           ></span>
-          <span className="left_bar_text">EXPLORE</span>
+          <span
+            style={{ color: darkMode && "white" }}
+            className="left_bar_text"
+          >
+            EXPLORE
+          </span>
         </div>
       </Link>
       <Link to="/likedvideo" style={{ textDecoration: "none" }}>
@@ -30,7 +42,12 @@ export function LeftBar() {
             data-icon="bx:bxs-like"
             data-inline="false"
           ></span>
-          <span className="left_bar_text">LIKED </span>
+          <span
+            style={{ color: darkMode && "white" }}
+            className="left_bar_text"
+          >
+            LIKED{" "}
+          </span>
         </div>
       </Link>
       <Link to="/playlist" style={{ textDecoration: "none" }}>
@@ -40,7 +57,12 @@ export function LeftBar() {
             data-icon="zmdi:playlist-plus"
             data-inline="false"
           ></span>
-          <span className="left_bar_text">PLAYLIST</span>
+          <span
+            style={{ color: darkMode && "white" }}
+            className="left_bar_text"
+          >
+            PLAYLIST
+          </span>
         </div>
       </Link>
       <Link to="/historyvideo" style={{ textDecoration: "none" }}>
@@ -50,7 +72,12 @@ export function LeftBar() {
             data-icon="ri:history-fill"
             data-inline="false"
           ></span>
-          <span className="left_bar_text">HISTORY</span>
+          <span
+            style={{ color: darkMode && "white" }}
+            className="left_bar_text"
+          >
+            HISTORY
+          </span>
         </div>
       </Link>
     </div>

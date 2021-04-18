@@ -5,7 +5,6 @@
   position: fixed;
   display: flex;
   z-index: 1;
-  background-color: black;
 }
 .header {
   display: flex;
@@ -93,7 +92,7 @@
   margin-top: 1.4rem;
 }
 .nav_icons:hover {
-  color: white;
+  color: red;
 }
 @media only screen and (min-width: 600px) {
   .navbar-div {
@@ -103,6 +102,9 @@
     position: absolute;
     right: 0;
     margin-right: 15px;
+  }
+  .buttons {
+    margin-left: 5rem;
   }
 }
 /* //small// */

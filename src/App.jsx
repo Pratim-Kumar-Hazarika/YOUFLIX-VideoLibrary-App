@@ -14,11 +14,19 @@ import { HistoryVideo } from "./HistoryVideos/HistoryVideo";
 import { Login } from "./Login/Login";
 import { PlayList } from "./PlayList";
 import { PrivateRoute } from "./Login/PrivateRoute/PrivateRoute";
+import { useVideo } from "./Context/VideoProvider";
 
 export default function App() {
+  const { darkMode } = useVideo();
   return (
     <>
-      <div className="App">
+      <div
+        className="App"
+        style={{
+          backgroundColor: darkMode ? "black" : "white",
+          color: darkMode ? "white" : "black"
+        }}
+      >
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

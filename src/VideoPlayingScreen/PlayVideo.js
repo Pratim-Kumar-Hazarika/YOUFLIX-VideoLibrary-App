@@ -20,7 +20,8 @@ export function PlayVideo() {
     setInput,
     show,
     setShow,
-    toastMessage
+    toastMessage,
+    darkMode
   } = useVideo();
 
   const itemFound = state.videodata.find((item) => item.id === Number(videoId));
@@ -101,7 +102,7 @@ export function PlayVideo() {
     );
   }
   return (
-    <div>
+    <div className="main_video_playing_screen">
       <div className="model" style={{ display: show ? "" : "none" }}>
         <div className="div1">
           <h3>Save To..</h3>
@@ -240,11 +241,20 @@ export function PlayVideo() {
                       </Link>
                     </div>
                     <div className="video_contents_right">
-                      <h3 style={{ color: "white" }}>{name}</h3>
-                      <span> {artist} ♪</span>
+                      <h3 style={{ color: darkMode ? "white" : "black" }}>
+                        {name}
+                      </h3>
+                      <span style={{ color: darkMode ? "#aaaaaa" : "#606060" }}>
+                        {" "}
+                        {artist} ♪
+                      </span>
                       <div>
                         <span>
-                          <span>{views}</span>
+                          <span
+                            style={{ color: darkMode ? "#aaaaaa" : "#606060" }}
+                          >
+                            {views}
+                          </span>
                         </span>
                       </div>
                     </div>

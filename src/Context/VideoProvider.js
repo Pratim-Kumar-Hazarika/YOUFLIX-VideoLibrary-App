@@ -78,6 +78,7 @@ export const VideoProvider = ({ children }) => {
   const [show, setShow] = useState(false);
   const [inputText, setInput] = useState("");
   const [list, setList] = useState([]);
+  const [darkMode, setDarkMode] = useState(true);
   return (
     <>
       <VideoContext.Provider
@@ -90,7 +91,9 @@ export const VideoProvider = ({ children }) => {
           setInput,
           show,
           setShow,
-          toastMessage
+          toastMessage,
+          darkMode,
+          setDarkMode
         }}
       >
         {children}

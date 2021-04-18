@@ -1,29 +1,27 @@
+.left_div {
+  position: fixed;
+  margin-left: -1rem;
+  margin-top: 1rem;
+  height: 100vh;
+}
 .leftbar_icons {
   color: #aaaaaa;
   font-size: 30px;
   transition: transform ease 0.2s;
   margin-top: 1rem;
 }
-.left_div > span {
-  text-align: center;
-  color: white;
-}
+
 .left_bar_text {
   font-weight: 800;
   margin-left: 3rem;
   margin-top: 1.2rem;
   text-decoration: none;
+  color: black;
 }
-.left_div {
-  position: fixed;
-  margin-left: -1rem;
-  margin-top: 1rem;
 
-  height: 100vh;
-}
 .leftBarDivContents {
   padding: 1rem;
-  color: white;
+  /* color: white; */
   display: flex;
 }
 @media only screen and (max-width: 600px) {

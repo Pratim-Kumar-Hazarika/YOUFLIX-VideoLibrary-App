@@ -6,7 +6,8 @@ import { useVideo } from "../Context/VideoProvider";
 export function LikedVideo() {
   const {
     state: { onClickLikeVideos },
-    dispatch
+    dispatch,
+    darkMode
   } = useVideo();
   console.log("i am state", { onClickLikeVideos });
   return (
@@ -16,7 +17,7 @@ export function LikedVideo() {
       </div>
       <div className="likesssss">
         <div style={{ display: "flex" }}>
-          <h1 style={{ color: "white", fontWeight: "400" }}>Liked Videos</h1>
+          <h1 style={{ fontWeight: "700" }}>Liked Videos</h1>
           <div style={{ marginTop: "10px", marginLeft: ".5rem" }}>
             {" "}
             <span
@@ -42,7 +43,9 @@ export function LikedVideo() {
                     </Link>
                   </div>
                   <div className="video_contents_liked">
-                    <h3 style={{ color: "white" }}>{name}</h3>
+                    <h3 style={{ color: darkMode ? "white" : "black" }}>
+                      {name}
+                    </h3>
                     <span> {artist} ♪</span>
                     <div
                       onClick={() =>

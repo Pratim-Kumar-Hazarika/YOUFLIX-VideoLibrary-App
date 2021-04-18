@@ -8,6 +8,7 @@ export function HistoryVideo() {
     dispatch
   } = useVideo();
   console.log("i am state", { historyVideos });
+  const { darkMode } = useVideo();
   return (
     <div className="like_content_div">
       <div style={{ padding: "1rem", marginTop: "5rem" }}>
@@ -15,7 +16,7 @@ export function HistoryVideo() {
       </div>
       <div className="likesssss">
         <div style={{ display: "flex" }}>
-          <h1 style={{ color: "white", fontWeight: "400" }}>Watch History</h1>
+          <h1 style={{ fontWeight: "700" }}>Watch History</h1>
           <div style={{ marginTop: "1.1rem", marginLeft: "1rem" }}>
             <span
               class="iconify leftbar_icons"
@@ -56,7 +57,9 @@ export function HistoryVideo() {
                       </Link>
                     </div>
                     <div className="video_contents_liked">
-                      <h3 style={{ color: "white" }}>{name}</h3>
+                      <h3 style={{ color: darkMode ? "white" : "black" }}>
+                        {name}
+                      </h3>
                       <span> {artist} ♪</span>
                     </div>
                   </div>

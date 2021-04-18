@@ -12,7 +12,7 @@ export function Row() {
   return (
     <div className="rows">
       <div>
-        <h2 style={{ color: "white" }}>BLUES AND METAL</h2>
+        <h2>BLUES AND METAL</h2>
         <div className="row-1">
           <div style={{ display: "flex" }}>
             {metalBlues.map((item) => {
@@ -55,7 +55,7 @@ export function Row() {
             })}
           </div>
         </div>
-        <h2 style={{ color: "white" }}>SAD AND ROCK</h2>
+        <h2>SAD AND ROCK</h2>
         <div className="row-1">
           <div style={{ display: "flex" }}>
             {sobsRock.map((item) => {
