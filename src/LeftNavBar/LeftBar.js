@@ -6,7 +6,10 @@ export function LeftBar() {
   return (
     <div
       className="left_div"
-      style={{ backgroundColor: darkMode ? "black" : "white" }}
+      style={{
+        backgroundColor: darkMode ? "black" : "white",
+        borderBottom: !darkMode && "3px solid whitesmoke"
+      }}
     >
       <Link to="/" style={{ textDecoration: "none" }}>
         <div className="leftBarDivContents">

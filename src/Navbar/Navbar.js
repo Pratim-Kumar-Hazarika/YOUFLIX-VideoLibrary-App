@@ -43,7 +43,10 @@ export function Navbar() {
     <div>
       <div
         className="navbar-div"
-        style={{ backgroundColor: darkMode ? "black" : "white" }}
+        style={{
+          backgroundColor: darkMode ? "black" : "white",
+          borderBottom: !darkMode && "3px solid whitesmoke"
+        }}
       >
         <div className="header">
           <div>

@@ -17,7 +17,7 @@ export function HistoryVideo() {
       <div className="likesssss">
         <div style={{ display: "flex" }}>
           <h1 style={{ fontWeight: "700" }}>Watch History</h1>
-          <div style={{ marginTop: "1.1rem", marginLeft: "1rem" }}>
+          <div style={{ marginTop: "1.9rem", marginLeft: "1rem" }}>
             <span
               class="iconify leftbar_icons"
               data-icon="ri:history-fill"
@@ -60,7 +60,10 @@ export function HistoryVideo() {
                       <h3 style={{ color: darkMode ? "white" : "black" }}>
                         {name}
                       </h3>
-                      <span> {artist} ♪</span>
+                      <span style={{ color: darkMode ? "white" : "black" }}>
+                        {" "}
+                        {artist} ♪
+                      </span>
                     </div>
                   </div>
                 </div>

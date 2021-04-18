@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthProvider";
+import { useVideo } from "../Context/VideoProvider";
 import { LeftBar } from "../LeftNavBar/LeftBar";
 import "./Login.css";
 
@@ -14,7 +15,6 @@ export function Login() {
   } = useAuth();
   const { state } = useLocation();
   const navigate = useNavigate();
-
   return (
     <>
       <div style={{ padding: "1rem", marginTop: "3rem" }}>
@@ -23,7 +23,7 @@ export function Login() {
       <div className="login-div">
         <div className="signupScreen">
           <form>
-            <h1>Sign In</h1>
+            <h1 style={{ color: "white" }}>Sign In</h1>
 
             <input
               value={inputText}

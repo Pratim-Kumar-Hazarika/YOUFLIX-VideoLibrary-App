@@ -18,7 +18,7 @@ export function LikedVideo() {
       <div className="likesssss">
         <div style={{ display: "flex" }}>
           <h1 style={{ fontWeight: "700" }}>Liked Videos</h1>
-          <div style={{ marginTop: "10px", marginLeft: ".5rem" }}>
+          <div style={{ marginTop: "30px", marginLeft: ".5rem" }}>
             {" "}
             <span
               class="iconify leftbar_icons"
@@ -46,7 +46,10 @@ export function LikedVideo() {
                     <h3 style={{ color: darkMode ? "white" : "black" }}>
                       {name}
                     </h3>
-                    <span> {artist} ♪</span>
+                    <span style={{ color: darkMode ? "white" : "black" }}>
+                      {" "}
+                      {artist} ♪
+                    </span>
                     <div
                       onClick={() =>
                         dispatch({ type: "DELETE_VIDEO", payload: item })
