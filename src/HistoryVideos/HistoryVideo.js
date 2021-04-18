@@ -17,7 +17,7 @@ export function HistoryVideo() {
       <div className="likesssss">
         <div style={{ display: "flex" }}>
           <h1 style={{ fontWeight: "700" }}>Watch History</h1>
-          <div style={{ marginTop: "1.9rem", marginLeft: "1rem" }}>
+          <div className="symbol">
             <span
               class="iconify leftbar_icons"
               data-icon="ri:history-fill"

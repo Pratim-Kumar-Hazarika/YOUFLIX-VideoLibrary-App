@@ -43,8 +43,16 @@
     overflow: hidden;
     width: 50%;
   }
+  .symbol {
+    margin-top: 28px;
+    margin-left: 10px;
+  }
 }
 @media only screen and (min-width: 600px) {
+  .symbol {
+    margin-top: 13px;
+    margin-left: 10px;
+  }
   .likedVideoDiv {
     max-width: 400px;
     margin-left: 1rem;
