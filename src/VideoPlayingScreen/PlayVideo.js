@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useVideo } from "../Context/VideoProvider";
 import { Toast } from "../Toast/Toast";
+import { LeftBar } from "../LeftNavBar/LeftBar";
 export function PlayVideo() {
   const [stateofcolor, setColorState] = useState(false);
   const [stateofcolor2, setColorState2] = useState(false);
@@ -142,6 +143,9 @@ export function PlayVideo() {
             CREATE
           </button>
         </div>
+      </div>
+      <div className="leftBar">
+        <LeftBar />
       </div>
       <div className="div2">
         <div className="video">

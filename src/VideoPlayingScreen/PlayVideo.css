@@ -147,13 +147,12 @@
     margin-top: 20px;
     margin-left: 10px;
   }
-
+  .leftBar {
+    display: none;
+  }
   .div2 {
     margin-top: 5rem;
   }
-  /* .main_video_playing_screen{
-    margin-top: -3rem;
-  } */
 }
 /* model */
 .model {

@@ -4,7 +4,10 @@ import { useVideo } from "../Context/VideoProvider";
 export function LeftBar() {
   const { darkMode } = useVideo();
   return (
-    <div className="left_div">
+    <div
+      className="left_div"
+      style={{ backgroundColor: darkMode ? "black" : "white" }}
+    >
       <Link to="/" style={{ textDecoration: "none" }}>
         <div className="leftBarDivContents">
           <span
