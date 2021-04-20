@@ -1,5 +1,6 @@
 .genre_main {
   position: relative;
+  height: 120vh;
 }
 .genre {
   display: flex;

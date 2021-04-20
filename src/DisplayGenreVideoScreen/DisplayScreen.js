@@ -11,14 +11,14 @@ export const DisplayScreen = ({
 }) => {
   return (
     <>
-      <div className="ds_video_content">
+      <div className="ds_video_content" >
         <div className="ds_img_div">
           <Link to={{ pathname: `/video/${id}` }}>
             <img alt="artist" src={thumbnail} className="ds_img" />
           </Link>
         </div>
 
-        <div className="ds_titles_views_avatar">
+        <div className="ds_titles_views_avatar" >
           <div className="ds_avatar">
             <img className="ds_avatar_img" src={image} alt="avatar" />
           </div>

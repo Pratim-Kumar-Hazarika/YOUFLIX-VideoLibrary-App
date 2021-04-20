@@ -7,8 +7,7 @@ export function PlayList() {
         <LeftBar />
       </div>
 
-      <div style={{ marginTop: "15rem", marginLeft: "10rem" }}>
-        <h1>I am platlist</h1>
+      <div style={{ marginTop: "15rem", marginLeft: "10rem",height:"100vh" }}>
       </div>
     </>
   );
