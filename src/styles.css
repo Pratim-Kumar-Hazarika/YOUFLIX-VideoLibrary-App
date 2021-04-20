@@ -15,4 +15,5 @@ body {
 }
 .App {
   margin-top: -1rem;
+  overflow: hidden;
 }

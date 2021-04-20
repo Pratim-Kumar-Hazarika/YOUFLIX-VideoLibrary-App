@@ -1,6 +1,6 @@
 .genre_main {
   position: relative;
-  height: 120vh;
+  height: auto;
 }
 .genre {
   display: flex;
