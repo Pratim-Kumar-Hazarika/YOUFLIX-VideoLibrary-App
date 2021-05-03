@@ -8,7 +8,13 @@ export const VideoProvider = ({ children }) => {
     videodata,
     onClickLikeVideos: [],
     historyVideos: [],
-    toastMessage: false
+    toastMessage: false,
+    customplaylists :[
+      {
+        name :"Watch Later",
+        videos:[]
+      }
+    ]
   });
   const { toastMessage } = state;
 
@@ -65,12 +71,23 @@ export const VideoProvider = ({ children }) => {
           }
         }
         break;
+        
       case "DELETE_HISTORY":
         return {
           ...state,
           historyVideos: []
         };
-
+      case "ADD_TO_PLAYLIST":
+        return{
+          ...state,
+          customplaylists :state.customplaylists.map((existingPlaylist)=>{
+              if(existingPlaylist.name ==="Watch Later"){
+               return {...existingPlaylist, videos:[...existingPlaylist.videos,action.payload]}
+              }else{
+                return existingPlaylist
+              }
+          })
+        }
       default:
         return state;
     }

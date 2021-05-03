@@ -83,7 +83,11 @@ export function PlayVideo() {
       </svg>
     );
   }
-
+function addToPlaylistClickHandler(){
+  console.log("clicked on playlist")
+  console.log("the item found from checkbox is",itemFound)
+  dispatch({type:"ADD_TO_PLAYLIST",payload:itemFound})
+}
   function MdiThumbDown(props) {
     return (
       <svg
@@ -116,20 +120,20 @@ export function PlayVideo() {
           </button>
         </div>
         <div className="input1">
-          <input type="checkbox" />
+          <input type="checkbox" onClick={addToPlaylistClickHandler}/>
           <label>Watch Later</label>
         </div>
         {list.map((item) => {
           return (
             <div className="input1">
-              <input type="checkbox" />
+              <input type="checkbox"  />
               <label> {item}</label>
             </div>
           );
         })}
 
         <div className="modeladd">
-          <form>
+      
             <input
               className="add_playlist"
               type="input"
@@ -138,7 +142,7 @@ export function PlayVideo() {
               value={inputText}
               onChange={onChangeClickHandler}
             />
-          </form>
+        
           <button className="add_playlist_btn" onClick={addClickHandLer}>
             CREATE
           </button>
