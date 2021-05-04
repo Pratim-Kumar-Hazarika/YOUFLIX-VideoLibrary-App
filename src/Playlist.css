@@ -2,7 +2,7 @@
     display: flex;
     /* overflow-x: scroll; */
     flex-direction: column;
-   
+   height:400vh
   }
   
   .playlist::-webkit-scrollbar {

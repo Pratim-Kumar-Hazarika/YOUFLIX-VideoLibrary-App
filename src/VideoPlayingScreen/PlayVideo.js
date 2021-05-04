@@ -22,7 +22,8 @@ export function PlayVideo() {
     show,
     setShow,
     toastMessage,
-    darkMode
+    darkMode,
+   
   } = useVideo();
 
   const itemFound = state.videodata.find((item) => item.id === Number(videoId));
@@ -61,7 +62,6 @@ export function PlayVideo() {
   function MdiThumbUp(props) {
     return (
       <svg
-        // onClick={onbuttonCLick}
         onClick={buttonCLick}
         style={{ color: stateofcolor && "#3EA6ff" }}
         className="iconify playvideoIcons"
@@ -80,7 +80,12 @@ export function PlayVideo() {
 function addToPlaylistClickHandler(){
   console.log("clicked on playlist")
   console.log("the item found from checkbox is",itemFound)
+  const itemIfExist =state.customplaylists.map((item)=>{
+    return item.videos.find((item)=>item === itemFound)
+  })
+  console.log("if item exist ", itemIfExist)
   dispatch({type:"ADD_TO_PLAYLIST",payload:{itemFound,itemName:"Watch Later"}})
+  
 }
   function MdiThumbDown(props) {
     return (
@@ -133,8 +138,8 @@ function addToPlaylistClickHandler(){
         {list.map((itemName) => {
           return (
             <div className="input1">
-              <input type="checkbox" onClick={()=>checkBoxAddToPlaylistHandler(itemName)} />
-              <label> {itemName} x</label>
+              <input type="checkbox"  onClick={()=>checkBoxAddToPlaylistHandler(itemName)} />
+              <label> {itemName} </label>
             </div>
           );
         })}
