@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import "../LikedVideos/LikedVideo.css";
 import { LeftBar } from "../LeftNavBar/LeftBar";
 import { useVideo } from "../Context/VideoProvider";
+import { Toast } from "../Toast/Toast";
 export function HistoryVideo() {
   const {
     state: { historyVideos },
-    dispatch
+    dispatch,
+    toastMessage 
   } = useVideo();
   console.log("i am state", { historyVideos });
   const { darkMode } = useVideo();
@@ -37,9 +39,10 @@ export function HistoryVideo() {
             ></span>
           </div>
           <div>
-            <span>CLEAR HISTORY</span>
+            <span>CLEAR HISTORY   {toastMessage && <Toast/>} </span>
           </div>
         </div>
+      
         <div className="likedVideoDiv">
           {historyVideos.map((item) => {
             const { id, thumbnail, name, views, artist } = item;

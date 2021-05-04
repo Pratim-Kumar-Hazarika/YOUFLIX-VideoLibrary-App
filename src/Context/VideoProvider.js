@@ -2,20 +2,20 @@ import { createContext, useContext, useReducer, useState } from "react";
 import { videodata } from "../dataofvideo.js";
 
 export const VideoContext = createContext();
-
+const videoObj = {
+  videodata,
+  onClickLikeVideos: [],
+  historyVideos: [],
+  toastMessage: false,
+  customplaylists :[
+    {
+      name :"Watch Later",
+      videos:[]
+    }
+  ]
+}
 export const VideoProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, {
-    videodata,
-    onClickLikeVideos: [],
-    historyVideos: [],
-    toastMessage: false,
-    customplaylists :[
-      {
-        name :"Watch Later",
-        videos:[]
-      }
-    ]
-  });
+  const [state, dispatch] = useReducer(reducer,videoObj);
   const { toastMessage } = state;
 
   function reducer(state, action) {
@@ -75,8 +75,14 @@ export const VideoProvider = ({ children }) => {
       case "DELETE_HISTORY":
         return {
           ...state,
+          toastMessage: "HISTORY CLEARED",
           historyVideos: []
         };
+        case "ADD_NEW_PLAYLIST":
+          return{
+            ...state,
+            customplaylists:[...state.customplaylists,{name :action.payload , videos:[]}]
+          }
       case "ADD_TO_PLAYLIST":
         return{
           ...state,
@@ -88,11 +94,6 @@ export const VideoProvider = ({ children }) => {
               }
           })
         };
-        case "ADD_NEW_PLAYLIST":
-          return{
-            ...state,
-            customplaylists:[...state.customplaylists,{name :action.payload , videos:[]}]
-          }
       default:
         return state;
     }

@@ -25,7 +25,7 @@ export function PlayList() {
           </div>
         </div>
       <div>
-        <span>{customplaylists[0].videos.length ===0 && "No videos added"}</span>
+       
         <div className="playlist" >
             {
               customplaylists.map((currentPlaylist)=>{

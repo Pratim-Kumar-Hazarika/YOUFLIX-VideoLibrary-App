@@ -78,6 +78,7 @@ setIdCheck(true)
   console.log("Video already added to watch later playlist...")
 }else{
   setIdCheck(false)
+
   dispatch({type:"ADD_TO_PLAYLIST",payload:{itemFound,itemName:"Watch Later"}})
 }  
 }
@@ -116,12 +117,21 @@ setIdCheck(true)
       setInput("");
     }
   }
+  const [bgopacity,setBgOpacity] = useState(false)
+  function showModelHandler(){
+    setShow(true)
+    setBgOpacity(true)
+  }
+  function closeModelHandler(){
+    setShow(false)
+    setBgOpacity(false)
+  }
   return (
-    <div className="main_video_playing_screen">
-      <div className="model" style={{ display: show ? "" : "none" }}>
+    <div className="main_video_playing_screen" >
+      <div className="model" style={{ display: show ? "" : "none",opacity :bgopacity ?"1":"1" }}>
         <div className="div1">
           <h3>Save To..</h3>
-          <button className="btn_close" onClick={() => setShow(false)}>
+          <button className="btn_close" onClick={closeModelHandler}>
             <span
               class="iconify closeIconify"
               data-icon="akar-icons:cross"
@@ -158,7 +168,7 @@ setIdCheck(true)
       <div className="leftBar">
         <LeftBar />
       </div>
-      <div className="div2">
+      <div className="div2" style={{opacity :bgopacity ?"0.3":"1"}}>
         <div className="video">
           <iframe
             frameBorder="0"
@@ -199,7 +209,7 @@ setIdCheck(true)
                     ></span>
                     <span className="numbers">SHARE</span>
                   </div>
-                  <div onClick={() => setShow(true)} className="like_items">
+                  <div onClick={showModelHandler} className="like_items">
                     <span
                       class="iconify playvideoIcons"
                       data-icon="ic:outline-playlist-add"

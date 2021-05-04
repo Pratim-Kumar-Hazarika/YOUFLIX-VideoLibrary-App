@@ -76,14 +76,8 @@ export function Navbar() {
             </button>
           </div>
         </div>
-        <div
-          className="color_modes"
-          style={{ cursor: "pointer" }}
-          onClick={() => setDarkMode((prev) => !prev)}
-        >
-          {darkMode ? <RiMoonClearFill /> : <PhSun />}
-        </div>
-        <div className="buttons">
+       
+        <div className="buttons color_modes">
           <div>
             <Link to="/">
               <span
@@ -131,6 +125,13 @@ export function Navbar() {
               </button>
             </Link>
           </div>
+        </div>
+        <div
+           className="color_modes"
+          style={{ cursor: "pointer" }}
+          onClick={() => setDarkMode((prev) => !prev)}
+        >
+          {darkMode ? <RiMoonClearFill /> : <PhSun />}
         </div>
         {login && (
           <div>
