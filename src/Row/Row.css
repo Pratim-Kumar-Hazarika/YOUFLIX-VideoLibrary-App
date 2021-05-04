@@ -35,10 +35,6 @@
 .row-2::-webkit-scrollbar-thumb:hover {
   background: rgb(107, 107, 107);
 }
-.row-2 {
-  display: flex;
-  overflow-x: scroll;
-}
 .iframe_row {
   margin: 1rem;
   width: 100%;

@@ -1,0 +1,82 @@
+.playlist {
+    display: flex;
+    overflow-x: scroll;
+  }
+  
+  .playlist::-webkit-scrollbar {
+
+    height:8px;
+
+  }
+  
+  .playlist::-webkit-scrollbar-track {
+    background: rgb(19, 18, 18);
+  }
+  
+  .playlist::-webkit-scrollbar-thumb {
+    background: rgb(107, 107, 107);
+  }
+  
+  .playlist::-webkit-scrollbar-thumb:hover {
+    background: rgb(107, 107, 107);
+  }
+  .iframe_row {
+    margin: 1rem;
+    width: 100%;
+  }
+  .iframe_frame:hover {
+    transform: scale(1.1);
+    transition: transform ease 0.2s;
+  }
+  .iframe_frame {
+    border: 0;
+  }
+  .rows {
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    top: 8rem;
+    overflow: hidden;
+    margin-top: 0.7rem;
+  }
+  
+  .playlist_img {
+    width: 290px;
+  }
+  .playlist_avatar{
+    width: 100%;
+    border-radius: 50%;
+    max-width: 2.9rem;
+    margin-top: 10px;
+  }
+  .iframe_row:hover {
+    transform: scale(1.1);
+    transition: transform ease 0.2s;
+    cursor: pointer;
+  }
+  @media only screen and (max-width: 600px) {
+    .row_div {
+      margin-top: 1rem;
+    }
+    .row-1 {
+      /* margin-top: -1rem; */
+    }
+    .iframe_row {
+      margin: 1rem;
+      width: 100%;
+    }
+    .video_image {
+      width: 210px;
+    }
+    .titles {
+      font-size: 12px;
+    }
+  }
+  /* large */
+  @media only screen and (min-width: 600px) {
+    .row_div {
+      margin-left: 12rem;
+      overflow: hidden;
+    }
+  }
+  

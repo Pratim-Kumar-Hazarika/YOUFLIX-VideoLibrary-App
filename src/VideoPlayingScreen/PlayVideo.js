@@ -48,13 +48,7 @@ export function PlayVideo() {
   function onChangeClickHandler(e) {
     setInput(e.target.value);
   }
-  function addClickHandLer(e) {
-    e.preventDefault();
-    if (inputText !== "") {
-      setList([...list, inputText]);
-      setInput("");
-    }
-  }
+ 
 
   function dislikeClickHanlder() {
     dispatch({ type: "DELETE_VIDEO", payload: itemFound });
@@ -86,7 +80,7 @@ export function PlayVideo() {
 function addToPlaylistClickHandler(){
   console.log("clicked on playlist")
   console.log("the item found from checkbox is",itemFound)
-  dispatch({type:"ADD_TO_PLAYLIST",payload:itemFound})
+  dispatch({type:"ADD_TO_PLAYLIST",payload:{itemFound,itemName:"Watch Later"}})
 }
   function MdiThumbDown(props) {
     return (
@@ -106,6 +100,19 @@ function addToPlaylistClickHandler(){
       </svg>
     );
   }
+  function checkBoxAddToPlaylistHandler(itemName){
+  dispatch({type:"ADD_TO_PLAYLIST",payload:{itemName,itemFound}})
+ 
+  }
+  function addClickHandLer(e) {
+    // e.preventDefault();
+       dispatch({type:"ADD_NEW_PLAYLIST",payload:inputText})
+       console.log("the input text issssss",inputText)
+    if (inputText !== "") {
+      setList([...list, inputText]);
+      setInput("");
+    }
+  }
   return (
     <div className="main_video_playing_screen">
       <div className="model" style={{ display: show ? "" : "none" }}>
@@ -123,11 +130,11 @@ function addToPlaylistClickHandler(){
           <input type="checkbox" onClick={addToPlaylistClickHandler}/>
           <label>Watch Later</label>
         </div>
-        {list.map((item) => {
+        {list.map((itemName) => {
           return (
             <div className="input1">
-              <input type="checkbox"  />
-              <label> {item}</label>
+              <input type="checkbox" onClick={()=>checkBoxAddToPlaylistHandler(itemName)} />
+              <label> {itemName} x</label>
             </div>
           );
         })}
@@ -143,7 +150,7 @@ function addToPlaylistClickHandler(){
               onChange={onChangeClickHandler}
             />
         
-          <button className="add_playlist_btn" onClick={addClickHandLer}>
+          <button className="add_playlist_btn" onClick={()=>addClickHandLer(inputText)}>
             CREATE
           </button>
         </div>

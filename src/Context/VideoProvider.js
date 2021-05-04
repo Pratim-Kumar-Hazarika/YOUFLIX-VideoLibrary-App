@@ -81,13 +81,18 @@ export const VideoProvider = ({ children }) => {
         return{
           ...state,
           customplaylists :state.customplaylists.map((existingPlaylist)=>{
-              if(existingPlaylist.name ==="Watch Later"){
+              if( existingPlaylist.name === action.payload.itemName && existingPlaylist !== action.payload){
                return {...existingPlaylist, videos:[...existingPlaylist.videos,action.payload]}
               }else{
                 return existingPlaylist
               }
           })
-        }
+        };
+        case "ADD_NEW_PLAYLIST":
+          return{
+            ...state,
+            customplaylists:[...state.customplaylists,{name :action.payload , videos:[]}]
+          }
       default:
         return state;
     }
