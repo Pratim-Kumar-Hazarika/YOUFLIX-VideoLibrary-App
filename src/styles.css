@@ -16,4 +16,5 @@ body {
 .App {
   margin-top: -1rem;
   overflow: hidden;
+  height:100%
 }

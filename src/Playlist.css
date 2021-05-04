@@ -1,6 +1,7 @@
 .playlist {
     display: flex;
     overflow-x: scroll;
+    flex-direction: column;
   }
   
   .playlist::-webkit-scrollbar {

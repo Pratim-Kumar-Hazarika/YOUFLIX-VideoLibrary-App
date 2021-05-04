@@ -8,7 +8,7 @@ export function PlayList() {
   const { state :{customplaylists}} = useVideo();
   console.log("I AM CUSTOM PPLAYLISTSSSS",customplaylists)
   return (
-    <div style={{height:"100vh"}}>
+    <div>
     <div style={{ padding: "1rem", marginTop: "3rem" }}>
     <LeftBar/>
   </div>
@@ -25,18 +25,20 @@ export function PlayList() {
           </div>
         </div>
       <div>
-        <h2>Watch Later</h2>
-        {/* <span>{customplaylists[0].videos.length ===0 && "No videos added"}</span> */}
-        <div className="playlist">
-          <div style={{ display: "flex" }}>
-            {customplaylists[0].videos.map((item) => {
-              return (
-                <div className="iframe_row">
+        <span>{customplaylists[0].videos.length ===0 && "No videos added"}</span>
+        <div className="playlist" >
+            {
+              customplaylists.map((currentPlaylist)=>{
+                return <><h2>{currentPlaylist.name}</h2>
+                <div style={{display:"flex"}}>
+                {  currentPlaylist.videos.map(({itemFound})=>{
+                 return(
+                  <div className="iframe_row">
                   <div style={{ height: "100%" }}>
-                    <Link to={`/video/${item.id}`}>
+                    <Link to={`/video/${itemFound.id}`}>
                       <img
                         className="video_image playlist_img"
-                        src={item.thumbnail}
+                        src={itemFound.thumbnail}
                         alt="video_image"
                       />
                     </Link>
@@ -45,7 +47,7 @@ export function PlayList() {
                       style={{ display: "flex", position: "relative" ,fontSize:"12px"}}
                     >
                       <div>
-                        <img  className="avatar playlist_avatar" src={item.image} alt="avatar" />
+                        <img  className="avatar playlist_avatar" src={itemFound.image} alt="avatar" />
                       </div>
                       <div
                         className="titleviews"
@@ -58,22 +60,23 @@ export function PlayList() {
                         }}
                       >
                         <span style={{ fontWeight: "400", marginTop: "10px" }}>
-                          {item.name}
+                          {itemFound.name}
                         </span>
-                        <p>{item.views}</p>
+                        <p>{itemFound.views}</p>
                       </div>
                     </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+                 )
+               })}
+                </div>
+                </>
+              })
+            } 
         </div>
     </div>
     </div>
     </div>
-   
-
     </div>
   );
 }
