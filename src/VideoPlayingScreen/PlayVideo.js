@@ -23,11 +23,10 @@ export function PlayVideo() {
     setShow,
     toastMessage,
     darkMode,
-   
+    idCheck,setIdCheck
   } = useVideo();
-
   const itemFound = state.videodata.find((item) => item.id === Number(videoId));
-  console.log("I am the item you wanted", itemFound);
+console.log("item found",itemFound)
   const metalBlues = state.videodata.filter(
     (item) =>
       item.genre === "sobs" || item.genre === "metal" || item.genre === "rock"
@@ -35,7 +34,6 @@ export function PlayVideo() {
   useEffect(() => {
     dispatch({ type: "HISTORY_VIDEO", payload: itemFound });
   }, [itemFound]);
-
   function buttonCLick() {
     if (itemFound) {
       dispatch({ type: "LIKED_VIDEO", payload: itemFound });
@@ -45,12 +43,9 @@ export function PlayVideo() {
       console.log("i m dispatched", { itemFound });
     }
   }
-
   function onChangeClickHandler(e) {
     setInput(e.target.value);
   }
- 
-
   function dislikeClickHanlder() {
     dispatch({ type: "DELETE_VIDEO", payload: itemFound });
     setColorState2(true);
@@ -58,7 +53,6 @@ export function PlayVideo() {
     setCounter((e) => --e);
     setCounter2((e) => ++e);
   }
-
   function MdiThumbUp(props) {
     return (
       <svg
@@ -78,14 +72,14 @@ export function PlayVideo() {
     );
   }
 function addToPlaylistClickHandler(){
-  console.log("clicked on playlist")
-  console.log("the item found from checkbox is",itemFound)
-  const itemIfExist =state.customplaylists.map((item)=>{
-    return item.videos.find((item)=>item === itemFound)
-  })
-  console.log("if item exist ", itemIfExist)
+ const ifIdExist = state.customplaylists[0].videos.find((item)=>item.itemFound.id === itemFound.id)
+  if(ifIdExist){
+setIdCheck(true)
+  console.log("Video already added to watch later playlist...")
+}else{
+  setIdCheck(false)
   dispatch({type:"ADD_TO_PLAYLIST",payload:{itemFound,itemName:"Watch Later"}})
-  
+}  
 }
   function MdiThumbDown(props) {
     return (
@@ -106,8 +100,12 @@ function addToPlaylistClickHandler(){
     );
   }
   function checkBoxAddToPlaylistHandler(itemName){
+  const ssss =state.customplaylists.filter((item)=>item.name === itemName)
+ if(ssss[0].videos.find((item)=>item.itemFound.id === itemFound.id)){
+    console.log("Video already added to watch later playlist...")
+ }else{
   dispatch({type:"ADD_TO_PLAYLIST",payload:{itemName,itemFound}})
- 
+ }
   }
   function addClickHandLer(e) {
     // e.preventDefault();
@@ -132,7 +130,7 @@ function addToPlaylistClickHandler(){
           </button>
         </div>
         <div className="input1">
-          <input type="checkbox" onClick={addToPlaylistClickHandler}/>
+           <input type="checkbox"   onClick={addToPlaylistClickHandler}/> 
           <label>Watch Later</label>
         </div>
         {list.map((itemName) => {
@@ -143,9 +141,7 @@ function addToPlaylistClickHandler(){
             </div>
           );
         })}
-
         <div className="modeladd">
-      
             <input
               className="add_playlist"
               type="input"
@@ -154,7 +150,6 @@ function addToPlaylistClickHandler(){
               value={inputText}
               onChange={onChangeClickHandler}
             />
-        
           <button className="add_playlist_btn" onClick={()=>addClickHandLer(inputText)}>
             CREATE
           </button>
@@ -173,7 +168,6 @@ function addToPlaylistClickHandler(){
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
-
           <div className="videoDiv">
             <div className="video_contents_">
               <h3>{itemFound.name}</h3>
@@ -243,7 +237,6 @@ function addToPlaylistClickHandler(){
           </div>
           {toastMessage && <Toast />}
         </div>
-
         <div className="right_div">
           {metalBlues.map((item) => {
             const { id, thumbnail, name, views, artist } = item;
