@@ -15,7 +15,7 @@ export function PlayList() {
     <div className="row_div">
     <div className="rows">
       <div style={{ display: "flex" }}>
-          <h1 style={{ fontWeight: "700" }}>Playlists</h1>
+          <h1 style={{ fontWeight: "700" }}>Your Playlists</h1>
           <div className="symbol">
           <span
             class="iconify leftbar_icons"
