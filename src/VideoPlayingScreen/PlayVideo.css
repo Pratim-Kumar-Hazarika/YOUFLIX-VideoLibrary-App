@@ -224,7 +224,17 @@
     height: 370px;
     margin-top: 1.7rem;
     
-}}
+}
+.video_contents_right>h3{
+  font-size: 14px;
+  margin-top: 1.3rem;
+  
+}
+.main_video_playing_screen{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+}
 @media only screen and (max-width: 300px){
   .videoPlayingScreen {
       width: 100%;
