@@ -15,15 +15,13 @@ export function PlayVideo() {
   const {
     state,
     dispatch,
-   
     setList,
     inputText,
     setInput,
     show,
     setShow,
     toastMessage,
-    darkMode,
-    idCheck,setIdCheck
+    darkMode
   } = useVideo();
   const itemFound = state.videodata.find((item) => item.id === Number(videoId));
 console.log("item found",itemFound)
@@ -74,11 +72,10 @@ console.log("item found",itemFound)
 function addToPlaylistClickHandler(){
  const ifIdExist = state.customplaylists[0].videos.find((item)=>item.itemFound.id === itemFound.id)
   if(ifIdExist){
-setIdCheck(true)
+    setIdCheck(true)
   console.log("Video already added to watch later playlist...")
 }else{
   setIdCheck(false)
-
   dispatch({type:"ADD_TO_PLAYLIST",payload:{itemFound,itemName:"Watch Later"}})
 }  
 }
@@ -104,7 +101,9 @@ setIdCheck(true)
   const ssss =state.customplaylists.filter((item)=>item.name === itemName)
  if(ssss[0].videos.find((item)=>item.itemFound.id === itemFound.id)){
     console.log("Video already added to watch later playlist...")
+    setIdCheck((prev)=>!prev)
  }else{
+  setIdCheck(true)
   dispatch({type:"ADD_TO_PLAYLIST",payload:{itemName,itemFound}})
  }
   }
@@ -125,6 +124,19 @@ setIdCheck(true)
     setShow(false)
     setBgOpacity(false)
   }
+  function idMatch(itemFound){
+    if(state.customplaylists[0].videos.find((item)=>item.itemFound.id === itemFound.id)){
+      return true
+    }else{
+      return false
+    }
+  }
+  function idMatcher(itemName){
+    const itemIs =state.customplaylists.filter((item)=>item.name === itemName)
+    if(itemIs[0].videos.find((item)=>item.itemFound.id === itemFound.id)){
+      return true
+    }return false
+  }
   return (
     <div className="main_video_playing_screen" >
       <div className="model" style={{ display: show ? "" : "none",opacity :bgopacity ?"1":"1" }}>
@@ -139,13 +151,13 @@ setIdCheck(true)
           </button>
         </div>
         <div className="input1">
-           <input type="checkbox"   onClick={addToPlaylistClickHandler}/> 
+           <input type="checkbox"  checked={idMatch(itemFound)} onChange={addToPlaylistClickHandler}/> 
           <label>Watch Later</label>
         </div>
         {state.list.map((itemName) => {
           return (
             <div className="input1">
-              <input type="checkbox"  onClick={()=>checkBoxAddToPlaylistHandler(itemName)} />
+              <input type="checkbox"  checked={idMatcher(itemName)} onChange={()=>checkBoxAddToPlaylistHandler(itemName)} />
               <label> {itemName} </label>
             </div>
           );

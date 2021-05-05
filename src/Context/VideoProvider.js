@@ -13,7 +13,8 @@ const videoObj = {
       videos:[]
     }
   ],
-  list:[]
+  list:[],
+  checkId:false
 }
 export const VideoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer,videoObj);
@@ -109,7 +110,7 @@ export const VideoProvider = ({ children }) => {
   const [inputText, setInput] = useState("");
   const [ setList] = useState(null);
   const [darkMode, setDarkMode] = useState(true);
-  const [idCheck,setIdCheck] = useState(null);
+
   return (
     <>
       <VideoContext.Provider
@@ -125,7 +126,7 @@ export const VideoProvider = ({ children }) => {
           toastMessage,
           darkMode,
           setDarkMode,
-          idCheck,setIdCheck
+      
         }}
       >
         {children}
