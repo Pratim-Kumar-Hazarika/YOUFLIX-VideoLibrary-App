@@ -32,7 +32,8 @@ export function PlayList() {
                 return <>
                 <div style={{display:"flex"}}>
                   <div><h2>{currentPlaylist.name}</h2></div>
-                  <div style={{marginTop:"1.5rem",marginLeft:"0.5rem",cursor:"pointer"}}> {currentPlaylist.name !=="Watch Later" &&<div onClick={()=>dispatch({type:"DELETE_PLAYLIST",payload:currentPlaylist.name})}><span
+                  <div style={{marginTop:"1.5rem",marginLeft:"0.5rem",cursor:"pointer"}}> {currentPlaylist.name !=="Watch Later" &&<div onClick={()=>dispatch({type:"DELETE_PLAYLIST",payload:currentPlaylist.name})}>
+                    <span
                 class="iconify dustbinIcon"
                 data-icon="mdi:delete"
                 data-inline="false"
