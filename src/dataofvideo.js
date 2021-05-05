@@ -175,5 +175,93 @@ export const videodata = [
     image:
       "https://yt3.ggpht.com/ytc/AAUvwniqwRWwcdZSWbkLuMp7QNuf091ENB1fnXwpPd3buak=s176-c-k-c0x00ffffff-no-rj",
     thumbnail: "https://img.youtube.com/vi/dxytyRy-O1k/maxresdefault.jpg"
+  },
+  {
+    id: 17,
+    url: "https://www.youtube.com/embed/C5i-UnuUKUI",
+    name: "Juice WRLD - Wishing Well (Official Music Video)",
+    artist: "Juice WRLD",
+    genre: "hiphop",
+    views: "61M views • 3 years ago",
+    image:
+      "https://yt3.ggpht.com/ytc/AAUvwnilbCkDgiLwPud8ukUw2rf0UcRi4bOBSG0PwPshPA=s88-c-k-c0x00ffffff-no-rj-mo",
+    thumbnail: "https://img.youtube.com/vi/C5i-UnuUKUI/maxresdefault.jpg"
+  },
+  {
+    id: 18,
+    url: "https://www.youtube.com/embed/mzB1VGEGcSU",
+    name: "Juice WRLD - Lucid Dreams (Directed by Cole Bennett)",
+    artist: "Juice WRLD",
+    genre: "hiphop",
+    views: "690M views • 4 years ago",
+    image:
+      "https://yt3.ggpht.com/ytc/AAUvwnilbCkDgiLwPud8ukUw2rf0UcRi4bOBSG0PwPshPA=s88-c-k-c0x00ffffff-no-rj-mo",
+    thumbnail: "https://img.youtube.com/vi/mzB1VGEGcSU/maxresdefault.jpg"
+  },
+  {
+    id: 19,
+    url: "https://www.youtube.com/embed/ZengOKCUBHo",
+    name: "Juice WRLD - Righteous (Official Video)",
+    artist: "Juice WRLD",
+    genre: "hiphop",
+    views: "130M views • 4 years ago",
+    image:
+      "https://yt3.ggpht.com/ytc/AAUvwnilbCkDgiLwPud8ukUw2rf0UcRi4bOBSG0PwPshPA=s88-c-k-c0x00ffffff-no-rj-mo",
+    thumbnail: "https://img.youtube.com/vi/ZengOKCUBHo/maxresdefault.jpg"
+  },
+  {
+    id: 20,
+    url: "https://www.youtube.com/embed/2avPJ9TZNmU",
+    name: "Juice WRLD & The Weeknd - Smile (Official Video)",
+    artist: "Juice WRLD",
+    genre: "hiphop",
+    views: "56M views • 4 years ago",
+    image:
+      "https://yt3.ggpht.com/ytc/AAUvwnilbCkDgiLwPud8ukUw2rf0UcRi4bOBSG0PwPshPA=s88-c-k-c0x00ffffff-no-rj-mo",
+    thumbnail: "https://img.youtube.com/vi/2avPJ9TZNmU/maxresdefault.jpg"
+  },
+  {
+    id: 21,
+    url: "https://www.youtube.com/embed/JFm7YDVlqnI",
+    name: "Drake - Laugh Now Cry Later ",
+    artist: "Drake",
+    genre: "hiphop/rap",
+    views: "456M views • 4 years ago",
+    image:
+      "https://yt3.ggpht.com/ytc/AAUvwnh1mAxc7nv3JTMtQwHoRdhhuIBfALqOYI4Rzy-B6Q=s88-c-k-c0x00ffffff-no-rj-mo",
+    thumbnail: "https://img.youtube.com/vi/JFm7YDVlqnI/maxresdefault.jpg"
+  },
+  {
+    id: 22,
+    url: "https://www.youtube.com/embed/xpVfcZ0ZcFM",
+    name: "Drake - God's Plan",
+    artist: "Drake",
+    genre: "hiphop/rap",
+    views: "416M views • 4 years ago",
+    image:
+      "https://yt3.ggpht.com/ytc/AAUvwnh1mAxc7nv3JTMtQwHoRdhhuIBfALqOYI4Rzy-B6Q=s88-c-k-c0x00ffffff-no-rj-mo",
+    thumbnail: "https://img.youtube.com/vi/xpVfcZ0ZcFM/maxresdefault.jpg"
+  },
+  {
+    id: 23,
+    url: "https://www.youtube.com/embed/R0ykLlhg0AQ",
+    name: "Drake - Money In The Grave ft. Rick Ross",
+    artist: "Drake",
+    genre: "hiphop/rap",
+    views: "416M views • 4 years ago",
+    image:
+      "https://yt3.ggpht.com/ytc/AAUvwnh1mAxc7nv3JTMtQwHoRdhhuIBfALqOYI4Rzy-B6Q=s88-c-k-c0x00ffffff-no-rj-mo",
+    thumbnail: "https://img.youtube.com/vi/R0ykLlhg0AQ/maxresdefault.jpg"
+  },
+  {
+    id: 24,
+    url: "https://www.youtube.com/embed/uxpDa-c-4Mc",
+    name: "Drake - Hotline Bling",
+    artist: "Drake",
+    genre: "hiphop/rap",
+    views: "416M views • 4 years ago",
+    image:
+      "https://yt3.ggpht.com/ytc/AAUvwnh1mAxc7nv3JTMtQwHoRdhhuIBfALqOYI4Rzy-B6Q=s88-c-k-c0x00ffffff-no-rj-mo",
+    thumbnail: "https://img.youtube.com/vi/uxpDa-c-4Mc/maxresdefault.jpg"
   }
 ];

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export function Row() {
   const { state } = useVideo();
   const metalBlues = state.videodata.filter(
-    (item) => item.genre === "blues" || item.genre === "metal"
+    (item) =>  item.genre === "hiphop/rap" || item.genre ==="hiphop"
   );
   const sobsRock = state.videodata.filter(
     (item) => item.genre === "sobs" || item.genre === "rock"
@@ -12,7 +12,7 @@ export function Row() {
   return (
     <div className="rows">
       <div>
-        <h2>BLUES AND METAL</h2>
+        <h2>HIPHOP AND RAP</h2>
         <div className="row-1">
           <div style={{ display: "flex" }}>
             {metalBlues.map((item) => {

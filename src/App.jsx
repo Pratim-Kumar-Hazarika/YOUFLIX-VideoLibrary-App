@@ -15,6 +15,8 @@ import { Login } from "./Login/Login";
 import { PlayList } from "./PlayList";
 import { PrivateRoute } from "./Login/PrivateRoute/PrivateRoute";
 import { useVideo } from "./Context/VideoProvider";
+import { Hiphop } from "./Genres/Hiphop";
+import { Rap } from "./Genres/Rap";
 
 export default function App() {
   const { darkMode } = useVideo();
@@ -36,6 +38,8 @@ export default function App() {
           <Route path="/sad" element={<Sobs />} />
           <Route path="/rock" element={<Rock />} />
           <Route path="/metal" element={<Metal />} />
+          <Route path ="/hiphop" element={<Hiphop/>}/>
+          <Route path ="/rap" element={<Rap/>}/>
           <Route path="/login" element={<Login />} />
           <PrivateRoute path="/likedvideo" element={<LikedVideo />} />
           <PrivateRoute path="/historyvideo" element={<HistoryVideo />} />

@@ -43,20 +43,22 @@ export const Genre = () => {
             </Link>
           </div>
           <div className="img_div">
-            <Link to="/sad">
+          <Link to="/rap">
               <img
                 className="john"
-                src="https://m.media-amazon.com/images/I/91NrWSDqMmL._SS500_.jpg"
+              
+                src="https://pyxis.nymag.com/v1/imgs/85a/25a/2005cfdac120e9a77f4c71881036708137-29-drake-concert-1.rsquare.w700.jpg"
                 alt="john mayer"
               />
             </Link>
+         
           </div>
         </div>
 
 
         <div className="img">
           <div className="img_div">
-            <Link to="/rock">
+            <Link to="/hiphop">
               <img
                 className="john"
                 src="https://cdn.spindizzyrecords.com/uploads/2020/10/juice-wrld-legends-never-die-header-2020.jpg"
@@ -65,10 +67,10 @@ export const Genre = () => {
             </Link>
           </div>
           <div className="img_div">
-            <Link to="/sad">
+          <Link to="/sad">
               <img
                 className="john"
-                src="https://static.posters.cz/image/750/aufkleber/linkin-park-minutes-i7627.jpg"
+                src="https://m.media-amazon.com/images/I/91NrWSDqMmL._SS500_.jpg"
                 alt="john mayer"
               />
             </Link>
