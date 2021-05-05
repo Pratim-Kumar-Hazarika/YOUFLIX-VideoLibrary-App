@@ -9,20 +9,8 @@ export const Genre = () => {
         <div style={{ padding: "1rem", marginTop: "3rem" }}>
           <LeftBar />
         </div>
-        {/* <div className="genre">
-          <Link to="/metal">
-            <button className="genre_btn">METAL</button>
-          </Link>
-          <Link to="/blues">
-            <button className="genre_btn">BLUES</button>
-          </Link>
-          <Link to="/sad">
-            <button className="genre_btn">SAD</button>
-          </Link>
-          <Link to="/rock">
-            <button className="genre_btn">ROCK</button>
-          </Link>
-        </div> */}
+        <div className="img_div_genre">
+
         <div className="img">
           <div className="img_div">
             <Link to="/blues">
@@ -43,12 +31,13 @@ export const Genre = () => {
             </Link>
           </div>
         </div>
+
         <div className="img">
           <div className="img_div">
             <Link to="/rock">
               <img
                 className="john"
-                src="https://i.pinimg.com/originals/8b/df/4c/8bdf4c12d664b92dfdcb6482bb579fa9.jpg"
+                src="https://i.pinimg.com/originals/20/c4/35/20c435b971b2dba5244d1454c7eabbf6.jpg"
                 alt="john mayer"
               />
             </Link>
@@ -63,7 +52,32 @@ export const Genre = () => {
             </Link>
           </div>
         </div>
+
+
+        <div className="img">
+          <div className="img_div">
+            <Link to="/rock">
+              <img
+                className="john"
+                src="https://cdn.spindizzyrecords.com/uploads/2020/10/juice-wrld-legends-never-die-header-2020.jpg"
+                alt="john mayer"
+              />
+            </Link>
+          </div>
+          <div className="img_div">
+            <Link to="/sad">
+              <img
+                className="john"
+                src="https://static.posters.cz/image/750/aufkleber/linkin-park-minutes-i7627.jpg"
+                alt="john mayer"
+              />
+            </Link>
+          </div>
+        </div>
+
       </div>
+    </div>
+       
     </>
   );
 };

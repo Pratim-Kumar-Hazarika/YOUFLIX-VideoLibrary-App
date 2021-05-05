@@ -1,53 +1,67 @@
 .genre_main {
   position: relative;
-  height: auto;
-}
-.genre {
-  display: flex;
-  justify-content: center;
-}
-.genre_btn {
-  cursor: pointer;
-  background-color: rgba(51, 51, 51, 0.5);
-  color: #fff;
-  outline: none;
-  border: 0;
-  padding: 0.6rem 2rem;
-  margin: 1rem;
-  font-weight: 700;
-  border-radius: 0.2vw;
-  border: 1px solid red;
-}
-.genre_btn:hover {
-  color: #000;
-  background-color: #e6e6e6;
-  transition: all 0.2s ease-in;
-}
-.img {
-  margin-left: 15rem;
-  display: flex;
-}
-
-.john {
-  width: 100%;
-
-  margin-left: 7rem;
-}
-.john:hover {
-  transform: scale(1.1);
-  transition: transform ease 0.2s;
-}
-.img_div {
-  width: 30%;
-  margin: 1rem;
 }
 
 @media only screen and (max-width: 600px) {
-  .img {
-    margin-left: -15rem;
-    flex-direction: column;
+  .img_div_genre{
+    width: 80%;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1rem;
   }
-  .john {
-    margin-left: 20rem;
+  .img{
+  overflow: hidden;
+  }
+  .img_div{
+    overflow: hidden;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .john{
+    width: 100%;
+  }
+  .john:hover {
+    transform: scale(1.3);
+    transition: transform ease 0.5s;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .img_div_genre{
+    width: 70%;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+    margin-left: 12rem;
+ 
+  }
+  .img{
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 1rem;
+  }
+  .img_div{
+    overflow: hidden;
+    width: 100%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+
+  }
+  .img_div:hover {
+    transform: scale(1.1);
+    transition: transform ease 0.5s;
+  }
+  .john:hover {
+    transform:none;
+    transition:none;
+  }
+  .john{
+    width: 100%;
+  }
+  .john:hover {
+    transform: scale(1.3);
+    transition: transform ease 0.5s;
   }
 }
