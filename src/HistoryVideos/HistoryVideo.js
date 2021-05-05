@@ -9,7 +9,7 @@ export function HistoryVideo() {
     dispatch,
     toastMessage 
   } = useVideo();
-  console.log("i am state", { historyVideos });
+
   const { darkMode } = useVideo();
   return (
     <div className="like_content_div">

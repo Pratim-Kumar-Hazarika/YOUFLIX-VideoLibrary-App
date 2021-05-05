@@ -9,7 +9,7 @@ export function LikedVideo() {
     dispatch,
     darkMode
   } = useVideo();
-  console.log("i am state", { onClickLikeVideos });
+
   return (
     <div className="like_content_div">
       <div style={{ padding: "1rem", marginTop: "5rem" }}>

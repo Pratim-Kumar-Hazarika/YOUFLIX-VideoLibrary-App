@@ -24,7 +24,7 @@ export function PlayVideo() {
     darkMode
   } = useVideo();
   const itemFound = state.videodata.find((item) => item.id === Number(videoId));
-console.log("item found",itemFound)
+
   const metalBlues = state.videodata.filter(
     (item) =>
       item.genre === "sobs" || item.genre === "metal" || item.genre === "rock"
@@ -38,7 +38,7 @@ console.log("item found",itemFound)
       setColorState(true);
       setColorState2(false);
       setCounter((e) => ++e);
-      console.log("i m dispatched", { itemFound });
+    
     }
   }
   function onChangeClickHandler(e) {
@@ -73,15 +73,12 @@ function addToPlaylistClickHandler(){
  const ifIdExist = state.customplaylists[0].videos.find((item)=>item.itemFound.id === itemFound.id)
   if(ifIdExist){
   console.log("Video already added to watch later playlist...",state.customplaylists[0])
-  // dispatch({type:"REMOVE_A_VIDEO_FROM_PLAYLIST",payload:{itemName:"Watch Later",itemFound,}})
+
 }else{
   dispatch({type:"ADD_TO_PLAYLIST",payload:{itemFound,itemName:"Watch Later"}})
 }  
 }
-// function deleteVideofromP(itemFound){
-//   console.log("Video deleted",state.customplaylists[0])
-  
-// }
+
   function MdiThumbDown(props) {
     return (
       <svg
@@ -101,9 +98,8 @@ function addToPlaylistClickHandler(){
     );
   }
   function checkBoxAddToPlaylistHandler(itemName){
-  const ssss =state.customplaylists.filter((item)=>item.name === itemName)
- if(ssss[0].videos.find((item)=>item.itemFound.id === itemFound.id)){
-    console.log("Video already added to watch later playlist...")
+  const ifIdExist =state.customplaylists.filter((item)=>item.name === itemName)
+ if(ifIdExist[0].videos.find((item)=>item.itemFound.id === itemFound.id)){
     
  }else{
   dispatch({type:"ADD_TO_PLAYLIST",payload:{itemName,itemFound}})
