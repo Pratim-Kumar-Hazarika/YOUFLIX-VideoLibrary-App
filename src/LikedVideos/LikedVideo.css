@@ -1,6 +1,6 @@
 .like_content_div {
   margin-top: -2rem;
-  height: 150vh;
+  /* height: 150vh; */
 }
 
 .likedVideoDiv {
@@ -22,7 +22,7 @@
   width: 100%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .likesssss {
     margin-left: 2rem;
   }
@@ -48,7 +48,7 @@
     margin-left: 10px;
   }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
   .symbol {
     margin-top: 13px;
     margin-left: 10px;

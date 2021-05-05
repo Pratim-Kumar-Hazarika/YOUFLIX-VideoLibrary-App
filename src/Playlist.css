@@ -1,27 +1,34 @@
 .playlist {
     display: flex;
-    /* overflow-x: scroll; */
+    
     flex-direction: column;
-   /* height:400vh; */
+   height:150vh;
+ 
+
+  }
+  .scrollPlaylist{
+    overflow-x: scroll;
+  }
+  
+  .scrollPlaylist::-webkit-scrollbar {
+
+    height:10px;
 
   }
   
-  .playlist::-webkit-scrollbar {
-
-    height:8px;
-
-  }
-  
-  .playlist::-webkit-scrollbar-track {
+  .scrollPlaylist::-webkit-scrollbar-track {
     background: rgb(19, 18, 18);
+   
   }
   
-  .playlist::-webkit-scrollbar-thumb {
+  .scrollPlaylist::-webkit-scrollbar-thumb {
     background: rgb(107, 107, 107);
+   
   }
   
-  .playlist::-webkit-scrollbar-thumb:hover {
+  .scrollPlaylist::-webkit-scrollbar-thumb:hover {
     background: rgb(107, 107, 107);
+   
   }
   .iframe_row_playlist {
     margin: 1rem;
@@ -53,7 +60,7 @@
     max-width: 2.9rem;
     margin-top: 10px;
   }
-  .iframe_row:hover {
+  .iframe_row_.playlist {
     transform: scale(1.1);
     transition: transform ease 0.2s;
     cursor: pointer;
@@ -63,7 +70,7 @@
       margin-top: 1rem;
     }
    
-    .iframe_row {
+    .iframe_row_playlist {
       margin: 1rem;
       /* width: 100%; */
     }
@@ -73,6 +80,7 @@
     .titles {
       font-size: 12px;
     }
+  
   }
   /* large */
   @media only screen and (min-width: 800px) {
@@ -81,4 +89,3 @@
       overflow: hidden;
     }
   }
-  

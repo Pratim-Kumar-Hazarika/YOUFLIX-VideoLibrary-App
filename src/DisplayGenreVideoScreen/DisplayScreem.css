@@ -26,9 +26,7 @@
   .ds_views {
     color: #aaaaaa;
   }
-  /* .left_div{
-    display: none;
-  } */
+ 
   .ds_artistname{
     display:none;
   }
@@ -120,4 +118,3 @@
     margin-top: 3.6rem;
   }
 }
-

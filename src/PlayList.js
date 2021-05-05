@@ -8,7 +8,7 @@ export function PlayList() {
   const { state :{customplaylists}} = useVideo();
   console.log("I AM CUSTOM PPLAYLISTSSSS",customplaylists)
   return (
-    <div style={{height:"100%"}}>
+    <div style={{ height:"150vh"}}>
     <div style={{ padding: "1rem", marginTop: "3rem" }}>
     <LeftBar/>
   </div>
@@ -30,7 +30,7 @@ export function PlayList() {
             {
               customplaylists.map((currentPlaylist)=>{
                 return <><h2>{currentPlaylist.name}</h2>
-                <div style={{display:"flex"}}>
+                <div className="scrollPlaylist" style={{display:"flex"}}>
                 {  currentPlaylist.videos.map(({itemFound})=>{
                  return(
                   <div className="iframe_row_playlist">
