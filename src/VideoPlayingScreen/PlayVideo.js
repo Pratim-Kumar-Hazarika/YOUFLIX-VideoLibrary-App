@@ -15,7 +15,7 @@ export function PlayVideo() {
   const {
     state,
     dispatch,
-    list,
+   
     setList,
     inputText,
     setInput,
@@ -111,9 +111,8 @@ setIdCheck(true)
   function addClickHandLer(e) {
     // e.preventDefault();
        dispatch({type:"ADD_NEW_PLAYLIST",payload:inputText})
-       console.log("the input text issssss",inputText)
     if (inputText !== "") {
-      setList([...list, inputText]);
+      state.list.push(inputText);
       setInput("");
     }
   }
@@ -143,7 +142,7 @@ setIdCheck(true)
            <input type="checkbox"   onClick={addToPlaylistClickHandler}/> 
           <label>Watch Later</label>
         </div>
-        {list.map((itemName) => {
+        {state.list.map((itemName) => {
           return (
             <div className="input1">
               <input type="checkbox"  onClick={()=>checkBoxAddToPlaylistHandler(itemName)} />

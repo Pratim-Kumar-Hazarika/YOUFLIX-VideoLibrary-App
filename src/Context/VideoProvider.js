@@ -12,7 +12,8 @@ const videoObj = {
       name :"Watch Later",
       videos:[]
     }
-  ]
+  ],
+  list:[]
 }
 export const VideoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer,videoObj);
@@ -94,13 +95,19 @@ export const VideoProvider = ({ children }) => {
               }
           })
         };
+        case "DELETE_PLAYLIST":
+          return{
+            ...state,
+            customplaylists:state.customplaylists.filter((playlists)=>playlists.name !== action.payload),
+            list :state.list.filter((item)=>item !== action.payload)
+          }
       default:
         return state;
     }
   }
   const [show, setShow] = useState(false);
   const [inputText, setInput] = useState("");
-  const [list, setList] = useState([]);
+  const [ setList] = useState(null);
   const [darkMode, setDarkMode] = useState(true);
   const [idCheck,setIdCheck] = useState(null);
   return (
@@ -109,7 +116,7 @@ export const VideoProvider = ({ children }) => {
         value={{
           state,
           dispatch,
-          list,
+         
           setList,
           inputText,
           setInput,
