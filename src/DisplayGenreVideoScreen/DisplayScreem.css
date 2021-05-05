@@ -52,7 +52,7 @@
   .ds_titles_views_avatar {
  
     width: 40%; 
-    max-width: 300px;
+    /* max-width: 300px; */
 }
  
   .ds_img {
