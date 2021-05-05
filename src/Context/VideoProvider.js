@@ -102,6 +102,21 @@ export const VideoProvider = ({ children }) => {
             customplaylists:state.customplaylists.filter((playlists)=>playlists.name !== action.payload),
             list :state.list.filter((item)=>item !== action.payload)
           }
+          case "REMOVE_FROM_PLAYLIST":
+            return{
+              ...state,
+              customplaylists:state.customplaylists.map((item)=>{
+                if(item.name === action.payload.itemName && item !== action.payload){
+                 return {
+                   ...item,
+                   videos:item.videos.filter(({itemFound})=>itemFound !== action.payload.itemFound)
+                 }
+                }else{
+                  return item;
+                }
+              })
+
+            }
       default:
         return state;
     }

@@ -72,11 +72,16 @@ console.log("item found",itemFound)
 function addToPlaylistClickHandler(){
  const ifIdExist = state.customplaylists[0].videos.find((item)=>item.itemFound.id === itemFound.id)
   if(ifIdExist){
-  console.log("Video already added to watch later playlist...")
+  console.log("Video already added to watch later playlist...",state.customplaylists[0])
+  // dispatch({type:"REMOVE_A_VIDEO_FROM_PLAYLIST",payload:{itemName:"Watch Later",itemFound,}})
 }else{
   dispatch({type:"ADD_TO_PLAYLIST",payload:{itemFound,itemName:"Watch Later"}})
 }  
 }
+// function deleteVideofromP(itemFound){
+//   console.log("Video deleted",state.customplaylists[0])
+  
+// }
   function MdiThumbDown(props) {
     return (
       <svg
@@ -99,6 +104,7 @@ function addToPlaylistClickHandler(){
   const ssss =state.customplaylists.filter((item)=>item.name === itemName)
  if(ssss[0].videos.find((item)=>item.itemFound.id === itemFound.id)){
     console.log("Video already added to watch later playlist...")
+   
  }else{
   dispatch({type:"ADD_TO_PLAYLIST",payload:{itemName,itemFound}})
  }
@@ -149,12 +155,14 @@ function addToPlaylistClickHandler(){
         <div className="input1">
            <input type="checkbox"  checked={idMatcherForWatchLater(itemFound)} onChange={addToPlaylistClickHandler}/> 
           <label>Watch Later</label>
+          <button onClick={()=>dispatch({type:"REMOVE_FROM_PLAYLIST",payload:{itemName:"Watch Later",itemFound}})}>Delete</button>
         </div>
         {state.list.map((itemName) => {
           return (
             <div className="input1">
               <input type="checkbox"  checked={idMatcherForCheckBox(itemName)} onChange={()=>checkBoxAddToPlaylistHandler(itemName)} />
               <label> {itemName} </label>
+           
             </div>
           );
         })}
