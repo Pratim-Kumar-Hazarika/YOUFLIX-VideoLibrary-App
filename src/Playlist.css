@@ -2,7 +2,8 @@
     display: flex;
     /* overflow-x: scroll; */
     flex-direction: column;
-   height:400vh
+   /* height:400vh; */
+
   }
   
   .playlist::-webkit-scrollbar {
@@ -34,7 +35,7 @@
   .iframe_frame {
     border: 0;
   }
-  .rows {
+  .playlist_rows {
     z-index: -1;
     top: 0;
     bottom: 0;
@@ -57,13 +58,11 @@
     transition: transform ease 0.2s;
     cursor: pointer;
   }
-  @media only screen and (max-width: 600px) {
-    .row_div {
+  @media only screen and (max-width: 800px) {
+    .playlist_row_div {
       margin-top: 1rem;
     }
-    .row-1 {
-      /* margin-top: -1rem; */
-    }
+   
     .iframe_row {
       margin: 1rem;
       /* width: 100%; */
@@ -76,8 +75,8 @@
     }
   }
   /* large */
-  @media only screen and (min-width: 600px) {
-    .row_div {
+  @media only screen and (min-width: 800px) {
+    .playlist_row_div {
       margin-left: 12rem;
       overflow: hidden;
     }

@@ -12,8 +12,8 @@ export function PlayList() {
     <div style={{ padding: "1rem", marginTop: "3rem" }}>
     <LeftBar/>
   </div>
-    <div className="row_div">
-    <div className="rows">
+    <div className="playlist_row_div">
+    <div className="playlist_rows">
       <div style={{ display: "flex" }}>
           <h1 style={{ fontWeight: "700" }}>Your Playlists</h1>
           <div className="symbol">
