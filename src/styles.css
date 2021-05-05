@@ -18,3 +18,29 @@ body {
   overflow: hidden;
  
 }
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(107, 107, 107);
+}
+::-webkit-scrollbar {
+  width:15px;
+
+
+
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(19, 18, 18);
+ 
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(107, 107, 107);
+  min-height: 10px;
+  border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(107, 107, 107);
+ 
+}

@@ -21,7 +21,7 @@ import { Rap } from "./Genres/Rap";
 export default function App() {
   const { darkMode } = useVideo();
   return (
-    <>
+   
       <div
         className="App"
         style={{
@@ -46,6 +46,6 @@ export default function App() {
           <PrivateRoute path="/playlist" element={<PlayList />} />
         </Routes>
       </div>
-    </>
+    
   );
 }

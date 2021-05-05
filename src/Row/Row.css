@@ -9,11 +9,11 @@
 }
 
 .row-1::-webkit-scrollbar-track {
-  background: #aaaaaa;
+  background:black
 }
 
 .row-1::-webkit-scrollbar-thumb {
-  background: rgb(19, 18, 18);
+  background: rgb(107, 107, 107);
 }
 
 .row-1::-webkit-scrollbar-thumb:hover {
@@ -25,17 +25,17 @@
 }
 
 .row-2::-webkit-scrollbar-track {
-  background: black;
+  /* background: rgb(107, 107, 107); */
+  background:black
 }
 
 .row-2::-webkit-scrollbar-thumb {
-  background: rgb(19, 18, 18);
-}
-
-.row-2::-webkit-scrollbar-thumb:hover {
   background: rgb(107, 107, 107);
 }
-.iframe_row {
+ .row-2::-webkit-scrollbar-thumb:hover {
+  background: rgb(107, 107, 107);
+}
+.iframe_row { 
   margin: 1rem;
   width: 100%;
 }
