@@ -12,7 +12,7 @@ import { Genre } from "./SongGenre/Genre";
 import { LikedVideo } from "./LikedVideos/LikedVideo";
 import { HistoryVideo } from "./HistoryVideos/HistoryVideo";
 import { Login } from "./Login/Login";
-import { PlayList } from "./PlayList";
+import { PlayList } from "./PlayListScreen/PlayList";
 import { PrivateRoute } from "./Login/PrivateRoute/PrivateRoute";
 import { useVideo } from "./Context/VideoProvider";
 import { Hiphop } from "./Genres/Hiphop";
