@@ -156,10 +156,10 @@ function addToPlaylistClickHandler(){
            <input type="checkbox"  checked={idMatcherForWatchLater(itemFound)} onChange={addToPlaylistClickHandler}/> 
               <div style={{cursor:"pointer"}}
                onClick={()=>dispatch({type:"REMOVE_FROM_PLAYLIST",payload:{itemName:"Watch Later",itemFound}})}>
-            <span class="iconify dustbinIcon" data-icon="mdi:close-box" data-inline="false"></span>
+            <span class="iconify crossIcon" data-icon="mdi:close-box" data-inline="false"></span>
               </div>
          
-          <label> Watch Later</label>
+          <label className="label"> Watch Later</label>
      
         </div>
         {state.list.map((itemName) => {
@@ -168,9 +168,9 @@ function addToPlaylistClickHandler(){
               <input type="checkbox"  checked={idMatcherForCheckBox(itemName)} onChange={()=>checkBoxAddToPlaylistHandler(itemName)} />
               <div style={{cursor:"pointer"}}
                onClick={()=>dispatch({type:"REMOVE_FROM_PLAYLIST",payload:{itemName,itemFound}})}>
-<span class="iconify dustbinIcon" data-icon="mdi:close-box" data-inline="false"></span>
+<span class="iconify crossIcon" data-icon="mdi:close-box" data-inline="false"></span>
               </div>
-              <label> {itemName} </label>
+              <label className="label"> {itemName} </label>
             </div>
           );
         })}
