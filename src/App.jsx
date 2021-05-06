@@ -41,9 +41,9 @@ export default function App() {
           <Route path ="/hiphop" element={<Hiphop/>}/>
           <Route path ="/rap" element={<Rap/>}/>
           <Route path="/login" element={<Login />} />
-          <PrivateRoute path="/likedvideo" element={<LikedVideo />} />
-          <PrivateRoute path="/historyvideo" element={<HistoryVideo />} />
-          <PrivateRoute path="/playlist" element={<PlayList />} />
+          <Route path="/likedvideo" element={<LikedVideo />} />
+          <Route path="/historyvideo" element={<HistoryVideo />} />
+          <Route path="/playlist" element={<PlayList />} />
         </Routes>
       </div>
     

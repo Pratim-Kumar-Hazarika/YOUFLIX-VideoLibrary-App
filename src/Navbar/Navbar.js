@@ -118,13 +118,13 @@ export function Navbar() {
             </Link>
           </div>
 
-          <div>
+           <div>
             <Link to="/login">
-              <button className="nav-btn1" onClick={logOutHandler}>
+              <button style={{display:"none"}} className="nav-btn1" onClick={logOutHandler}>
                 {login ? "SIGN OUT" : "SIGN IN"}
               </button>
-            </Link>
-          </div>
+            </Link> 
+           </div> 
         </div>
         <div
            className="color_modes"
@@ -133,11 +133,11 @@ export function Navbar() {
         >
           {darkMode ? <RiMoonClearFill /> : <PhSun />}
         </div>
-        {login && (
+       
           <div>
             <img    src="https://pbs.twimg.com/profile_images/1361579179959939072/ArgCDKFe_400x400.jpg" alt="Avatar" className="avatar  nav_avatar"/>
           </div>
-        )}
+        
       </div>
     </div>
   );
