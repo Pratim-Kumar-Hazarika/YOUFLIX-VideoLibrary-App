@@ -31,7 +31,7 @@ export function Row() {
                       style={{ display: "flex", position: "relative" }}
                     >
                       <div>
-                        <img className="avatar" src={item.image} alt="avatar" />
+                         <img src={item.image}  alt="Avatar" className="avatar"/>
                       </div>
                       <div
                         className="titleviews"
@@ -74,7 +74,8 @@ export function Row() {
                       style={{ display: "flex", position: "relative" }}
                     >
                       <div>
-                        <img className="avatar" src={item.image} alt="avatar" />
+                      <img src={item.image}  alt="Avatar" className="avatar row_ava"/>
+                        {/* <img className="avatar"alt="avatar" /> */}
                       </div>
                       <div
                         className="titleviews"
@@ -89,7 +90,7 @@ export function Row() {
                         <span style={{ fontWeight: "400", marginTop: "10px" }}>
                           {item.name}
                         </span>
-                        <p>{item.views}</p>
+                        <p >{item.views}</p>
                       </div>
                     </div>
                   </div>

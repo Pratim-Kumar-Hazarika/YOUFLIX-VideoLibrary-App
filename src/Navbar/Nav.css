@@ -1,3 +1,5 @@
+@import url("https://proton-ui.netlify.app/components.css");
+
 .navbar-div {
   color: white;
   top: 0;
@@ -83,8 +85,7 @@
   font-size: 20px;
 }
 .nav_avatar {
-  border-radius: 50%;
-  width: 2.5rem;
+  max-width: 1rem;
   margin-top: 1rem;
 }
 .nav_icons {

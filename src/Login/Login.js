@@ -50,6 +50,8 @@ export function Login() {
 
   function loginClickHandler() {
     userWithCredentials(inputText, inputPass);
-    navigate(state?.from ? state.from : "/");
+    setInputPass('')
+    setInputText('')
+    navigate("/");
   }
 }

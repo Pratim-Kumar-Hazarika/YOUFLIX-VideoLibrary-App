@@ -135,11 +135,7 @@ export function Navbar() {
         </div>
         {login && (
           <div>
-            <img
-              className="nav_avatar"
-              src="https://pbs.twimg.com/profile_images/1361579179959939072/ArgCDKFe_400x400.jpg"
-              alt="avatar"
-            />
+            <img    src="https://pbs.twimg.com/profile_images/1361579179959939072/ArgCDKFe_400x400.jpg" alt="Avatar" className="avatar  nav_avatar"/>
           </div>
         )}
       </div>

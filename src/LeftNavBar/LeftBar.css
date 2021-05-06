@@ -1,3 +1,6 @@
+@import url("https://proton-ui.netlify.app/components.css");
+
+
 .left_div {
   position: fixed;
   margin-left: -1rem;
@@ -36,6 +39,7 @@
     /* background-color: white; */
 
     justify-content: space-between;
+    margin-bottom: -10px;
   }
   .left_bar_text {
     display: none;
@@ -45,8 +49,10 @@
     margin-top: -0.1rem;
     margin: 0px;
     margin-left: -13px;
+    font-size: 35px;
   }
   .leftbar_icons:hover {
     color: white;
   }
+
 }

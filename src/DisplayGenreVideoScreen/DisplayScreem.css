@@ -1,3 +1,6 @@
+@import url("https://proton-ui.netlify.app/components.css");
+
+
 @media only screen and (max-width: 800px) {
   .ds_video_content {
     margin-bottom: 1rem;
@@ -13,11 +16,11 @@
     display: flex;
   }
   .ds_avatar_img {
-    border-radius: 50%;
-    width: 2.5rem;
+    width: 3rem;
+    margin-top: -1px;
   }
   .ds_title_views {
-    margin-left: 1rem;
+    margin-left: -0.1rem;
     font-size: 12px;
   }
   .ds_name {
@@ -52,7 +55,7 @@
   .ds_titles_views_avatar {
  
     width: 40%; 
-    /* max-width: 300px; */
+    max-width: 300px;
 }
  
   .ds_img {
@@ -68,8 +71,8 @@
     color: #aaaaaa;
   }
   .ds_avatar_img {
-    border-radius: 50%;
-    width: 2.5rem;
+    
+    width: 2.7rem;
    
     bottom: 0;
    
@@ -92,8 +95,8 @@
 .ds_artistname{
   font-weight: 800;
   font-size: 12px;
-  margin-left: 1rem;
-  margin-top:0.5rem;
+  /* margin-left: 1rem; */
+  margin-top:1.2rem;
 }
   .ds_img:hover {
     transform: scale(1.3);
@@ -103,7 +106,7 @@
   
     position: absolute;
     bottom: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     margin-left: 1rem;
     display: flex;
   }

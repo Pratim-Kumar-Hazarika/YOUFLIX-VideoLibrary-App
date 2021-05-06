@@ -21,7 +21,8 @@ export const DisplayScreen = ({
 
         <div className="ds_titles_views_avatar" >
         <div className="ds_avatar">
-            <img className="ds_avatar_img" src={image} alt="avatar" />
+        <img src={image}  alt="Avatar" className="avatar ds_avatar_img"/>
+            {/* <img className="ds_avatar_img" src={image} alt="avatar" /> */}
             <span className="ds_artistname">{artist} ♪</span>
           </div>
 
