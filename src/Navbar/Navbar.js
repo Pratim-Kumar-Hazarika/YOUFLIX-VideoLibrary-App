@@ -37,7 +37,7 @@ export function PhSun(props) {
   );
 }
 export function Navbar() {
-  const { logOutHandler, login } = useAuth();
+  const { logOutHandler, login ,signOutHandler} = useAuth();
   const { setDarkMode, darkMode } = useVideo();
   return (
     <div>
@@ -51,6 +51,7 @@ export function Navbar() {
         <div className="header">
           <div>
             <h1 style={{ color: darkMode ? "white" : "black" }}>YouFlix</h1>
+            <button onClick={signOutHandler}>SIGNOUT</button>
           </div>
           <div>
             <Link to="/">

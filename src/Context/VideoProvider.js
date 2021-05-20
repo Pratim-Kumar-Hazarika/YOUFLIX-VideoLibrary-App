@@ -14,7 +14,8 @@ const videoObj = {
     }
   ],
   list:[],
-  checkId:false
+  checkId:false,
+  data:[],
 }
 export const VideoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer,videoObj);
@@ -22,6 +23,21 @@ export const VideoProvider = ({ children }) => {
 
   function reducer(state, action) {
     switch (action.type) {
+      case "DATA_FROM_SERVER":
+        return{
+          ...state,
+          data:action.payload
+        };
+      case "LIKED_VIDEOS_FROM_SERVER":
+        return{
+          ...state,
+          onClickLikeVideos:action.payload
+        };
+      case "HISTORY_VIDEOS_FROM_SERVER":
+        return{
+          ...state,
+          historyVideos:action.payload
+        }
       case "SHOW_TOAST":
         return { ...state, toastMessage };
       case "LIKED_VIDEO":
@@ -53,6 +69,14 @@ export const VideoProvider = ({ children }) => {
             (item) => item !== action.payload
           )
         };
+        case "DELETE_VIDEO_FROM_HISTORY":
+          return {
+            ...state,
+            toastMessage: "REMOVED FROM LIKED VIDEOS",
+            historyVideos: state.historyVideos.filter(
+              (item) => item !== action.payload
+            )
+          };
       case "HISTORY_VIDEO":
         if (state.historyVideos.length >= 0) {
           const itemInArray = state.historyVideos.find(

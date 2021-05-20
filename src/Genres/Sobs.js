@@ -4,9 +4,7 @@ import { LeftBar } from "../LeftNavBar/LeftBar";
 
 export const Sobs = () => {
   const { state } = useVideo();
-  const filteredSobs = state.videodata.filter((item) => item.genre === "sobs");
-  console.log("Sobsdatas", filteredSobs);
-
+  const filteredSobs = state.data.filter((item) => item.genre === "sobs");
   return (
     <>
       <div style={{ padding: "1rem", marginTop: "5rem" }}>
@@ -21,7 +19,7 @@ export const Sobs = () => {
           views={item.views}
           image={item.image}
           thumbnail={item.thumbnail}
-          id={item.id}
+          id={item._id}
         />
       ))}
     </>

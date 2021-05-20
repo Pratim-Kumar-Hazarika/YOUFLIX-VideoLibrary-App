@@ -45,7 +45,7 @@ export function PlayList() {
                  return(
                   <div className="iframe_row_playlist">
                   <div style={{ height: "100%" }}>
-                    <Link to={`/video/${itemFound.id}`}>
+                    <Link to={`/video/${itemFound._id}`}>
                       <img
                         className="video_image playlist_img"
                         src={itemFound.thumbnail}

@@ -5,8 +5,7 @@ import { useVideo } from "../Context/VideoProvider";
 
 export const Hiphop = () => {
   const { state } = useVideo();
-  console.log("I am datas", state.videodata);
-  const filteredhiphop = state.videodata.filter(
+  const filteredhiphop = state.data.filter(
     (item) => item.genre === "hiphop"
   );
   return (
@@ -23,7 +22,7 @@ export const Hiphop = () => {
           views={item.views}
           image={item.image}
           thumbnail={item.thumbnail}
-          id={item.id}
+          id={item._id}
         />
       ))}
     </>

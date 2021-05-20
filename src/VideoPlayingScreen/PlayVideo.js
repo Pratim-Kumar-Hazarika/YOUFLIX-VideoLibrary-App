@@ -1,17 +1,19 @@
 import "./PlayVideo.css";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useVideo } from "../Context/VideoProvider";
 import { Toast } from "../Toast/Toast";
 import { LeftBar } from "../LeftNavBar/LeftBar";
+import { useAuth } from "../Context/AuthProvider";
+import axios from "axios";
+
 export function PlayVideo() {
   const [stateofcolor, setColorState] = useState(false);
   const [stateofcolor2, setColorState2] = useState(false);
-  const [counter, setCounter] = useState(389);
-  const [counter2, setCounter2] = useState(99);
   const { videoId } = useParams();
+  const navigate = useNavigate()
   const {
     state,
     dispatch,
@@ -23,23 +25,46 @@ export function PlayVideo() {
     toastMessage,
     darkMode
   } = useVideo();
-  const itemFound = state.videodata.find((item) => item.id === Number(videoId));
-
-  const metalBlues = state.videodata.filter(
+  const {login} = useAuth();
+  const itemFound = state.data.find((item) => item._id === String(videoId));
+  console.log('ITEM FOUND',itemFound)
+  const metalBlues = state.data.filter(
     (item) =>
       item.genre === "sobs" || item.genre === "metal" || item.genre === "rock"
   );
+  const userId = JSON.parse(localStorage.getItem("user"));
   useEffect(() => {
-    dispatch({ type: "HISTORY_VIDEO", payload: itemFound });
-  }, [itemFound]);
-  function buttonCLick() {
-    if (itemFound) {
-      dispatch({ type: "LIKED_VIDEO", payload: itemFound });
-      setColorState(true);
-      setColorState2(false);
-      setCounter((e) => ++e);
-    
+    async function sendData(itemFound){
+      try {
+ 
+        dispatch({ type: "HISTORY_VIDEO", payload: itemFound });
+        console.log("inside  use effect", userId)
+        const res = await axios.post(`https://YouFlixBackend.prratim.repl.co/users/${userId[0]._id}/historyVideos`,{
+          _id :itemFound._id
+        })
+        console.log("liked sucessfull", res)
+      } catch (error) {
+        console.log("error occured...")
+      }
     }
+    return sendData()
+  }, [itemFound]);
+ async function buttonCLick() {
+    if(login){
+      if (itemFound) {
+        dispatch({ type: "LIKED_VIDEO", payload: itemFound });
+        const res = await axios.post(`https://YouFlixBackend.prratim.repl.co/users/${userId[0]._id}/likedVideos`,{
+          _id :itemFound._id
+        })
+        console.log("liked sucessfull", res)
+        setColorState(true);
+        setColorState2(false);
+      
+      }
+    }else{
+      navigate("/login")
+    }
+ 
   }
   function onChangeClickHandler(e) {
     setInput(e.target.value);
@@ -48,8 +73,6 @@ export function PlayVideo() {
     dispatch({ type: "DELETE_VIDEO", payload: itemFound });
     setColorState2(true);
     setColorState(false);
-    setCounter((e) => --e);
-    setCounter2((e) => ++e);
   }
   function MdiThumbUp(props) {
     return (
@@ -98,12 +121,15 @@ function addToPlaylistClickHandler(){
     );
   }
   function checkBoxAddToPlaylistHandler(itemName){
-  const ifIdExist =state.customplaylists.filter((item)=>item.name === itemName)
- if(ifIdExist[0].videos.find((item)=>item.itemFound.id === itemFound.id)){
-    
- }else{
-  dispatch({type:"ADD_TO_PLAYLIST",payload:{itemName,itemFound}})
- }
+
+      const ifIdExist =state.customplaylists.filter((item)=>item.name === itemName)
+      if(ifIdExist[0].videos.find((item)=>item.itemFound.id === itemFound.id)){
+         
+      }else{
+       dispatch({type:"ADD_TO_PLAYLIST",payload:{itemName,itemFound}})
+      }
+   
+     
   }
   function addClickHandLer(e) {
     // e.preventDefault();
@@ -115,8 +141,13 @@ function addToPlaylistClickHandler(){
   }
   const [bgopacity,setBgOpacity] = useState(false)
   function showModelHandler(){
-    setShow(true)
-    setBgOpacity(true)
+    if(login){
+      setShow(true)
+      setBgOpacity(true)
+    }else{
+      navigate("/login")
+    }
+  
   }
   function closeModelHandler(){
     setShow(false)
@@ -212,13 +243,13 @@ function addToPlaylistClickHandler(){
                         className="numbers_liked"
                         style={{ marginTop: "-0.3rem" }}
                       >
-                        {counter}
+                       444k
                       </span>
                     </div>
                   </div>
                   <div className="like_items">
                     <MdiThumbDown />
-                    <span className="numbers">{counter2}</span>
+                    <span className="numbers">31k</span>
                   </div>
                   <div className="like_items">
                     <span
@@ -268,13 +299,13 @@ function addToPlaylistClickHandler(){
         </div>
         <div className="right_div">
           {metalBlues.map((item) => {
-            const { id, thumbnail, name, views, artist } = item;
+            const { _id, thumbnail, name, views, artist } = item;
             return (
               <>
-                <div key={id}>
+                <div key={_id}>
                   <div className="video_div_right">
                     <div className="thubmnail_div_right">
-                      <Link to={{ pathname: `/video/${id}` }}>
+                      <Link to={{ pathname: `/video/${_id}` }}>
                         <img
                           className="thumbnail_img_right"
                           src={thumbnail}

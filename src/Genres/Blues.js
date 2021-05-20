@@ -4,12 +4,9 @@ import { useVideo } from "../Context/VideoProvider";
 
 export const Blues = () => {
   const { state } = useVideo();
-  console.log("I am datas", state.videodata);
-  const filteredBlues = state.videodata.filter(
+  const filteredBlues = state.data.filter(
     (item) => item.genre === "blues"
   );
-  console.log("I am filtered datas", filteredBlues);
-
   return (
     <>
       <div style={{ padding: "1rem", marginTop: "5rem" }}>
@@ -24,7 +21,7 @@ export const Blues = () => {
           views={item.views}
           image={item.image}
           thumbnail={item.thumbnail}
-          id={item.id}
+          id={item._id}
         />
       ))}
     </>

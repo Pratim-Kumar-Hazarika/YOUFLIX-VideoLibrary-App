@@ -3,10 +3,10 @@ import { useVideo } from "../Context/VideoProvider";
 import { Link } from "react-router-dom";
 export function Row() {
   const { state } = useVideo();
-  const metalBlues = state.videodata.filter(
+  const metalBlues = state.data.filter(
     (item) =>  item.genre === "hiphop/rap" || item.genre ==="hiphop"
   );
-  const sobsRock = state.videodata.filter(
+  const sobsRock = state.data.filter(
     (item) => item.genre === "sobs" || item.genre === "rock"
   );
   return (
@@ -19,7 +19,7 @@ export function Row() {
               return (
                 <div className="iframe_row">
                   <div style={{ height: "100%" }}>
-                    <Link to={`/video/${item.id}`}>
+                    <Link to={`/video/${item._id}`}>
                       <img
                         className="video_image"
                         src={item.thumbnail}
@@ -62,7 +62,7 @@ export function Row() {
               return (
                 <div className="iframe_row">
                   <div style={{ height: "100%" }}>
-                    <Link to={`/video/${item.id}`}>
+                    <Link to={`/video/${item._id}`}>
                       <img
                         className="video_image"
                         src={item.thumbnail}

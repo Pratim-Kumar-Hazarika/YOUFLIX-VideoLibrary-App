@@ -3,9 +3,8 @@ import { DisplayScreen } from "../DisplayGenreVideoScreen/DisplayScreen";
 import { LeftBar } from "../LeftNavBar/LeftBar";
 
 export const Rock = () => {
-  const { state, dispatch } = useVideo();
-  const filteredRock = state.videodata.filter((item) => item.genre === "rock");
-
+  const { state} = useVideo();
+  const filteredRock = state.data.filter((item) => item.genre === "rock");
   return (
     <>
       <div style={{ padding: "1rem", marginTop: "5rem" }}>
@@ -20,7 +19,7 @@ export const Rock = () => {
           views={item.views}
           image={item.image}
           thumbnail={item.thumbnail}
-          id={item.id}
+          id={item._id}
         />
       ))}
     </>

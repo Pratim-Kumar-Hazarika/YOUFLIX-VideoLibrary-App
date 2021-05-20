@@ -4,7 +4,7 @@ import { LeftBar } from "../LeftNavBar/LeftBar";
 
 export const Metal = () => {
   const { state } = useVideo();
-  const filteredMetal = state.videodata.filter(
+  const filteredMetal = state.data.filter(
     (item) => item.genre === "metal"
   );
   console.log("Metal datas", filteredMetal);
@@ -23,7 +23,7 @@ export const Metal = () => {
           views={item.views}
           image={item.image}
           thumbnail={item.thumbnail}
-          id={item.id}
+          id={item._id}
         />
       ))}
     </>

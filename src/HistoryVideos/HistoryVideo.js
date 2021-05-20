@@ -3,14 +3,30 @@ import "../LikedVideos/LikedVideo.css";
 import { LeftBar } from "../LeftNavBar/LeftBar";
 import { useVideo } from "../Context/VideoProvider";
 import { Toast } from "../Toast/Toast";
+import axios from "axios";
 export function HistoryVideo() {
   const {
     state: { historyVideos },
     dispatch,
     toastMessage 
   } = useVideo();
-
+  const userFromServer = JSON.parse(localStorage.getItem("user"));
   const { darkMode } = useVideo();
+  const userId = JSON.parse(localStorage.getItem("user"));
+  async function deleteVideoClickHandler(item){
+    try {
+      dispatch({ type: "DELETE_VIDEO_FROM_HISTORY", payload: item });
+      const res = await axios.delete(
+        `https://YouFlixBackend.prratim.repl.co/users/${userId[0]._id}/historyVideos`,
+        { data: { _id: item._id } }
+      );
+      console.log("deleted",res)
+    } catch (error) {
+      console.log("Error occured while deleting from historyVideos")
+    }
+  
+  }
+  
   return (
     <div className="like_content_div">
       <div style={{ padding: "1rem", marginTop: "5rem" }}>
@@ -45,13 +61,13 @@ export function HistoryVideo() {
       
         <div className="likedVideoDiv">
           {historyVideos.map((item) => {
-            const { id, thumbnail, name, views, artist } = item;
+            const { _id, thumbnail, name, views, artist } = item;
             return (
               <>
                 <div>
                   <div className="video_div_liked">
                     <div className="thubmnail_div_liked">
-                      <Link to={{ pathname: `/video/${id}` }}>
+                      <Link to={{ pathname: `/video/${_id}` }}>
                         <img
                           className="thumbnail_img_liked"
                           src={thumbnail}
@@ -67,6 +83,17 @@ export function HistoryVideo() {
                         {" "}
                         {artist} ♪
                       </span>
+                      <div
+                      onClick={()=>deleteVideoClickHandler(item)}
+                      
+                      style={{ cursor: "pointer" }}
+                    >
+                      <span
+                        class="iconify dustbinIcon"
+                        data-icon="mdi:delete"
+                        data-inline="false"
+                      ></span>
+                    </div>
                     </div>
                   </div>
                 </div>

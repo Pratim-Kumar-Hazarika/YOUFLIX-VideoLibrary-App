@@ -4,8 +4,7 @@ import { useVideo } from "../Context/VideoProvider";
 
 export const Rap = () => {
   const { state } = useVideo();
-  console.log("I am datas", state.videodata);
-  const filteredhiphoprap = state.videodata.filter(
+  const filteredhiphoprap = state.data.filter(
     (item) => item.genre === "hiphop/rap"
   );
   return (
@@ -22,7 +21,7 @@ export const Rap = () => {
           views={item.views}
           image={item.image}
           thumbnail={item.thumbnail}
-          id={item.id}
+          id={item._id}
         />
       ))}
     </>
