@@ -10,7 +10,6 @@ export function HistoryVideo() {
     dispatch,
     toastMessage 
   } = useVideo();
-  const userFromServer = JSON.parse(localStorage.getItem("user"));
   const { darkMode } = useVideo();
   const userId = JSON.parse(localStorage.getItem("user"));
   async function deleteVideoClickHandler(item){
@@ -58,10 +57,9 @@ export function HistoryVideo() {
             <span>CLEAR HISTORY   {toastMessage && <Toast/>} </span>
           </div>
         </div>
-      
         <div className="likedVideoDiv">
           {historyVideos.map((item) => {
-            const { _id, thumbnail, name, views, artist } = item;
+            const { _id, thumbnail, name, artist } = item;
             return (
               <>
                 <div>
@@ -80,12 +78,10 @@ export function HistoryVideo() {
                         {name}
                       </h3>
                       <span style={{ color: darkMode ? "white" : "black" }}>
-                        {" "}
                         {artist} ♪
                       </span>
                       <div
                       onClick={()=>deleteVideoClickHandler(item)}
-                      
                       style={{ cursor: "pointer" }}
                     >
                       <span

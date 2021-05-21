@@ -80,13 +80,13 @@ export const VideoProvider = ({ children }) => {
       case "HISTORY_VIDEO":
         if (state.historyVideos.length >= 0) {
           const itemInArray = state.historyVideos.find(
-            (item) => item === action.payload
+            (item) => item._id === action.payload._id
           );
           if (itemInArray) {
             return {
               ...state,
               historyVideos: state.historyVideos.map((item) =>
-                item === action.payload ? item : item
+                item._id === action.payload._id ? item : item
               )
             };
           } else {

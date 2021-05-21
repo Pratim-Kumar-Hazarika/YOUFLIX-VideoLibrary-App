@@ -6,7 +6,7 @@ import axios from "axios";
 
 export function LikedVideo() {
   const {
-    state: { onClickLikeVideos ,data},
+    state: { onClickLikeVideos },
     dispatch,
     darkMode
   } = useVideo();

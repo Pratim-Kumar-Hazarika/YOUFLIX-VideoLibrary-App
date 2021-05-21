@@ -8,6 +8,7 @@ import { Toast } from "../Toast/Toast";
 import { LeftBar } from "../LeftNavBar/LeftBar";
 import { useAuth } from "../Context/AuthProvider";
 import axios from "axios";
+import {RightDiv} from "../RightDiv";
 
 export function PlayVideo() {
   const [stateofcolor, setColorState] = useState(false);
@@ -28,26 +29,21 @@ export function PlayVideo() {
   const {login} = useAuth();
   const itemFound = state.data.find((item) => item._id === String(videoId));
   console.log('ITEM FOUND',itemFound)
-  const metalBlues = state.data.filter(
-    (item) =>
-      item.genre === "sobs" || item.genre === "metal" || item.genre === "rock"
-  );
+
   const userId = JSON.parse(localStorage.getItem("user"));
   useEffect(() => {
-    async function sendData(itemFound){
+    dispatch({ type: "HISTORY_VIDEO", payload: itemFound });
+   async function sendData(){
       try {
- 
-        dispatch({ type: "HISTORY_VIDEO", payload: itemFound });
-        console.log("inside  use effect", userId)
         const res = await axios.post(`https://YouFlixBackend.prratim.repl.co/users/${userId[0]._id}/historyVideos`,{
-          _id :itemFound._id
-        })
-        console.log("liked sucessfull", res)
+                _id :itemFound._id
+              })
+              console.log("sucessfully send to server", res)
       } catch (error) {
-        console.log("error occured...")
+        console.log("error occured while sending data")
       }
-    }
-    return sendData()
+   }
+   return sendData()
   }, [itemFound]);
  async function buttonCLick() {
     if(login){
@@ -297,46 +293,8 @@ function addToPlaylistClickHandler(){
           </div>
           {toastMessage && <Toast />}
         </div>
-        <div className="right_div">
-          {metalBlues.map((item) => {
-            const { _id, thumbnail, name, views, artist } = item;
-            return (
-              <>
-                <div key={_id}>
-                  <div className="video_div_right">
-                    <div className="thubmnail_div_right">
-                      <Link to={{ pathname: `/video/${_id}` }}>
-                        <img
-                          className="thumbnail_img_right"
-                          src={thumbnail}
-                          alt="thumbnail"
-                        />
-                      </Link>
-                    </div>
-                    <div className="video_contents_right">
-                      <h3 style={{ color: darkMode ? "white" : "black" }}>
-                        {name}
-                      </h3>
-                      <span style={{ color: darkMode ? "#aaaaaa" : "#606060" }}>
-                        {" "}
-                        {artist} ♪
-                      </span>
-                      <div>
-                        <span>
-                          <span
-                            style={{ color: darkMode ? "#aaaaaa" : "#606060" }}
-                          >
-                            {views}
-                          </span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </>
-            );
-          })}
-        </div>
+        <RightDiv/>
+    
       </div>
     </div>
   );
