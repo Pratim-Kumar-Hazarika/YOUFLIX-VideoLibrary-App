@@ -14,6 +14,8 @@ Presenting you all my v1 of VideoLibrary.
 
  > Data Persistance across browsers
 
+ 
+
 LiveLink : https://youflix-v1.netlify.app/
 
 `Dark Mode`
@@ -28,10 +30,11 @@ LiveLink : https://youflix-v1.netlify.app/
 `VideoListing Page`
 ![image](https://user-images.githubusercontent.com/75177895/117269848-4449e700-ae76-11eb-8e98-a933c203033d.png)
 
-
 `Playlist Page`
 ![image](https://user-images.githubusercontent.com/75177895/117268673-2d56c500-ae75-11eb-9250-0354adfc9bd8.png)
 
+`User Authentication`
+![image](https://user-images.githubusercontent.com/75177895/119188650-92770100-ba98-11eb-85d5-bbff9e66e748.png)
 
 
 
