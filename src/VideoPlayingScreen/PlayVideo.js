@@ -8,8 +8,7 @@ import { Toast } from "../Toast/Toast";
 import { LeftBar } from "../LeftNavBar/LeftBar";
 import { useAuth } from "../Context/AuthProvider";
 import axios from "axios";
-import {RightDiv} from "../RightDiv";
-
+import {RightDiv} from "../RightVideoDiv/RightDiv";
 export function PlayVideo() {
   const [stateofcolor, setColorState] = useState(false);
   const [stateofcolor2, setColorState2] = useState(false);
@@ -28,8 +27,6 @@ export function PlayVideo() {
   } = useVideo();
   const {login} = useAuth();
   const itemFound = state.data.find((item) => item._id === String(videoId));
-  console.log('ITEM FOUND',itemFound)
-
   const userId = JSON.parse(localStorage.getItem("user"));
   useEffect(() => {
     dispatch({ type: "HISTORY_VIDEO", payload: itemFound });
@@ -88,16 +85,6 @@ export function PlayVideo() {
       </svg>
     );
   }
-function addToPlaylistClickHandler(){
- const ifIdExist = state.customplaylists[0].videos.find((item)=>item.itemFound.id === itemFound.id)
-  if(ifIdExist){
-  console.log("Video already added to watch later playlist...",state.customplaylists[0])
-
-}else{
-  dispatch({type:"ADD_TO_PLAYLIST",payload:{itemFound,itemName:"Watch Later"}})
-}  
-}
-
   function MdiThumbDown(props) {
     return (
       <svg
@@ -116,23 +103,39 @@ function addToPlaylistClickHandler(){
       </svg>
     );
   }
-  function checkBoxAddToPlaylistHandler(itemName){
-
-      const ifIdExist =state.customplaylists.filter((item)=>item.name === itemName)
-      if(ifIdExist[0].videos.find((item)=>item.itemFound.id === itemFound.id)){
-         
-      }else{
-       dispatch({type:"ADD_TO_PLAYLIST",payload:{itemName,itemFound}})
+  async function checkBoxAddToPlaylistHandler(itemName){
+    const {_id} = itemFound
+    console.log("the id is", _id)
+      try {
+        const ifIdExist =state.customplaylists.filter((item)=>item.name === itemName)
+        if(ifIdExist[0].video.find((item)=>item._id === itemFound._id)){
+          console.log("Video already added to watch later playlist...",state.customplaylists[0])
+        }else{
+         dispatch({type:"ADD_TO_PLAYLIST",payload:{itemName,itemFound}})
+         const res = await axios.post(`https://YouFlixBackend.prratim.repl.co/users/60a64861860c550bce0766eb/playlist/videos`,{
+          name :itemName,
+          videoId:_id
+        })
+        }
+      } catch (error) {
+        console.log("Error while adding the video to the playlist in server..")
       }
-   
-     
+    
   }
-  function addClickHandLer(e) {
-    // e.preventDefault();
-       dispatch({type:"ADD_NEW_PLAYLIST",payload:inputText})
-    if (inputText !== "") {
-      state.list.push(inputText);
-      setInput("");
+  async function addClickHandLer(e) {
+    try {
+      // e.preventDefault();
+      dispatch({type:"ADD_NEW_PLAYLIST",payload:inputText})
+      const res = await axios.post(`https://YouFlixBackend.prratim.repl.co/users/${userId[0]._id}/playlist`,{
+        name :inputText
+      })
+
+      if (inputText !== "") {
+        state.list.push(inputText);
+        setInput("");
+      }
+    } catch (error) {
+      console.log("error while adding playlistr to the server..")
     }
   }
   const [bgopacity,setBgOpacity] = useState(false)
@@ -143,24 +146,32 @@ function addToPlaylistClickHandler(){
     }else{
       navigate("/login")
     }
-  
   }
   function closeModelHandler(){
     setShow(false)
     setBgOpacity(false)
   }
-  function idMatcherForWatchLater(itemFound){
-    if(state.customplaylists[0].videos.find((item)=>item.itemFound.id === itemFound.id)){
-      return true
-    }else{
-      return false
-    }
-  }
+
   function idMatcherForCheckBox(itemName){
     const itemIs =state.customplaylists.filter((item)=>item.name === itemName)
-    if(itemIs[0].videos.find((item)=>item.itemFound.id === itemFound.id)){
+    if(itemIs[0].video.find((item)=>item._id === itemFound._id)){
       return true
     }return false
+  }
+
+  async function removeFromPlaylistHandler(itemName){
+    const {_id} = itemFound
+    try {
+      dispatch({type:"REMOVE_FROM_PLAYLIST",payload:{itemName,itemFound}})
+      const response = await axios.delete(
+        `https://YouFlixBackend.prratim.repl.co/users/${userId[0]._id}/playlist/videos`,
+      {data:{ name: itemName,videoId:_id} } 
+      );
+      console.log("video  is deleted from the server playlist....",response)
+    } catch (error) {
+      console.log("Error while deleting video from the playlist...")
+    }
+  
   }
   return (
     <div className="main_video_playing_screen" >
@@ -175,23 +186,14 @@ function addToPlaylistClickHandler(){
             ></span>
           </button>
         </div>
-        <div className="input1">
-           <input type="checkbox"  checked={idMatcherForWatchLater(itemFound)} onChange={addToPlaylistClickHandler}/> 
-              <div style={{cursor:"pointer"}}
-               onClick={()=>dispatch({type:"REMOVE_FROM_PLAYLIST",payload:{itemName:"Watch Later",itemFound}})}>
-            <span class="iconify crossIcon" data-icon="mdi:close-box" data-inline="false"></span>
-              </div>
-         
-          <label className="label"> Watch Later</label>
-     
-        </div>
         {state.list.map((itemName) => {
+          console.log("i m list.....",state.list)
           return (
             <div className="input1">
               <input type="checkbox"  checked={idMatcherForCheckBox(itemName)} onChange={()=>checkBoxAddToPlaylistHandler(itemName)} />
               <div style={{cursor:"pointer"}}
-               onClick={()=>dispatch({type:"REMOVE_FROM_PLAYLIST",payload:{itemName,itemFound}})}>
-<span class="iconify crossIcon" data-icon="mdi:close-box" data-inline="false"></span>
+               onClick={()=>removeFromPlaylistHandler(itemName)}>
+              <span class="iconify crossIcon" data-icon="mdi:close-box" data-inline="false"></span>
               </div>
               <label className="label"> {itemName} </label>
             </div>
@@ -294,7 +296,6 @@ function addToPlaylistClickHandler(){
           {toastMessage && <Toast />}
         </div>
         <RightDiv/>
-    
       </div>
     </div>
   );

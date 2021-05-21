@@ -1,8 +1,6 @@
-
 import { DisplayScreen } from "../DisplayGenreVideoScreen/DisplayScreen";
 import { LeftBar } from "../LeftNavBar/LeftBar";
 import { useVideo } from "../Context/VideoProvider";
-
 export const Hiphop = () => {
   const { state } = useVideo();
   const filteredhiphop = state.data.filter(

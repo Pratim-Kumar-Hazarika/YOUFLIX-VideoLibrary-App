@@ -1,14 +1,11 @@
 import { useVideo } from "../Context/VideoProvider";
 import { DisplayScreen } from "../DisplayGenreVideoScreen/DisplayScreen";
 import { LeftBar } from "../LeftNavBar/LeftBar";
-
 export const Metal = () => {
   const { state } = useVideo();
   const filteredMetal = state.data.filter(
     (item) => item.genre === "metal"
   );
-  console.log("Metal datas", filteredMetal);
-
   return (
     <>
       <div style={{ padding: "1rem", marginTop: "5rem" }}>

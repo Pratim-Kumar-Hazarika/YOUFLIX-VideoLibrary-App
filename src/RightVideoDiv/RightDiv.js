@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import { useVideo } from './Context/VideoProvider';
+import { useVideo } from '../Context/VideoProvider';
 export function RightDiv() {
     const {state,darkMode} = useVideo()
     const metalBlues = state.data.filter(

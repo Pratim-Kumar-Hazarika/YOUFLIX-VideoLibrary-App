@@ -1,16 +1,15 @@
 import { useVideo } from "../Context/VideoProvider";
 import { DisplayScreen } from "../DisplayGenreVideoScreen/DisplayScreen";
 import { LeftBar } from "../LeftNavBar/LeftBar";
-
 export const Sobs = () => {
   const { state } = useVideo();
-  const filteredSobs = state.data.filter((item) => item.genre === "sobs");
+  const filteredData = state.data.filter((item) => item.genre === "sobs");
   return (
     <>
       <div style={{ padding: "1rem", marginTop: "5rem" }}>
         <LeftBar />
       </div>
-      {filteredSobs.map((item) => (
+      {filteredData.map((item) => (
         <DisplayScreen
           key={item.id}
           url={item.url}

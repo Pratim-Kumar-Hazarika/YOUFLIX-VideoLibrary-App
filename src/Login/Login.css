@@ -3,16 +3,14 @@
   width: 80%;
   margin-top: 11rem;
 }
-
 ::-webkit-input-placeholder {
   color: gray;
 }
 .text_bold {
   font-weight: bold;
-  color:black;
+  color:red;
 }
 .userContent {
-  /* border: 1px solid black; */
   display: flex;
   font-size: 20spx;
   color: #282c3f;
@@ -38,13 +36,12 @@
   width: 90%;
   color: black;
   border: 1px solid #b6b6b6;
-  border: 1px solid blue;
 }
 
 @media only screen and (max-width: 600px) {
   .signupScreen {
     width: 100%;
-    padding: 30px;
+    padding: 70px 30px 70px 35px;
     margin-left: -2rem;
     margin-right: -2rem;
     box-shadow: 0 0 4px rgb(0 0 0 / 20%);
@@ -53,4 +50,26 @@
   .userContent {
     font-size: 17px;
   }
+}
+.login-btn{
+  margin-top: 1.2rem;
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0.2vw;
+  margin-right: 1rem;
+  background-color: rgba(51, 51, 51, 0.5);
+  padding: 0.6rem 2rem; 
+}
+.login-btn:hover {
+  color: #000;
+  background-color: #e6e6e6;
+  transition: all 0.2s ease-in;
+}
+.input::placeholder {
+  color: gray;
+  opacity: 1;
 }

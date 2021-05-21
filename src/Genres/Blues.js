@@ -1,7 +1,6 @@
 import { DisplayScreen } from "../DisplayGenreVideoScreen/DisplayScreen";
 import { LeftBar } from "../LeftNavBar/LeftBar";
 import { useVideo } from "../Context/VideoProvider";
-
 export const Blues = () => {
   const { state } = useVideo();
   const filteredBlues = state.data.filter(

@@ -1,5 +1,5 @@
 import "./Nav.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthProvider";
 import { useVideo } from "../Context/VideoProvider";
 
@@ -19,7 +19,6 @@ export function RiMoonClearFill(props) {
     </svg>
   );
 }
-
 export function PhSun(props) {
   return (
     <svg
@@ -39,6 +38,7 @@ export function PhSun(props) {
 export function Navbar() {
   const { logOutHandler, login ,signOutHandler} = useAuth();
   const { setDarkMode, darkMode } = useVideo();
+  const navigate = useNavigate()
   return (
     <div>
       <div
@@ -51,7 +51,6 @@ export function Navbar() {
         <div className="header">
           <div>
             <h1 style={{ color: darkMode ? "white" : "black" }}>YouFlix</h1>
-            <button onClick={signOutHandler}>SIGNOUT</button>
           </div>
           <div>
             <Link to="/">
@@ -63,21 +62,6 @@ export function Navbar() {
             </Link>
           </div>
         </div>
-        <div className="searchbar">
-          <div>
-            <input className="inputbar" />
-          </div>
-          <div>
-            <button className="search_btn">
-              <span
-                class="iconify iconify2"
-                data-icon="carbon:search"
-                data-inline="false"
-              ></span>
-            </button>
-          </div>
-        </div>
-       
         <div className="buttons color_modes">
           <div>
             <Link to="/">
@@ -98,7 +82,6 @@ export function Navbar() {
               ></span>
             </Link>
           </div>
-
           <div>
             <Link to="/likedvideo">
               <span
@@ -118,7 +101,6 @@ export function Navbar() {
               ></span>
             </Link>
           </div>
-
            <div>
             <Link to="/login">
               <button style={{display:"none"}} className="nav-btn1" onClick={logOutHandler}>
@@ -134,11 +116,10 @@ export function Navbar() {
         >
           {darkMode ? <RiMoonClearFill /> : <PhSun />}
         </div>
-       
-          <div>
-            <img    src="https://pbs.twimg.com/profile_images/1361579179959939072/ArgCDKFe_400x400.jpg" alt="Avatar" className="avatar  nav_avatar"/>
-          </div>
-        
+        <div>
+       {login && <button onClick={signOutHandler} className="homebtn ">SIGN OUT</button>}  
+       {!login && <button onClick={()=>navigate("/login")} className="homebtn ">SIGN IN</button>}  
+         </div> 
       </div>
     </div>
   );

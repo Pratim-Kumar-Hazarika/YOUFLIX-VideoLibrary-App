@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useVideo } from "../Context/VideoProvider";
 import "./Login.css";
-
 export function SignUp() {
   const navigate = useNavigate();
+  const {darkMode}= useVideo()
   async function signUpClickHandler(event) {
     event.preventDefault();
     try {
@@ -29,26 +30,35 @@ export function SignUp() {
   const [inputEmail, setInputEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   return (
-    <>
+    <div style={{height:"85vh"}}>
       <div className="login-div">
-        <div className="signupScreen">
+        <div className="signupScreen" style={{
+          backgroundColor: darkMode ? "black" : "white",
+          color: darkMode ? "white" : "black",
+          border:darkMode ? "1px solid red":""
+        }}>
           <form>
             <h1>
-              <span className="text_bold"> SIGN UP</span>
+           <span   style={{
+          color: darkMode ? "white" : "black"
+         }}>SIGN</span><span className="text_bold"> UP</span>
             </h1>
             <input
+             className="input"
               value={inputName}
               onChange={(e) => setInputName(e.target.value)}
               type="text"
               placeholder="Enter Name"
             />
             <input
+             className="input"
               value={inputEmail}
               onChange={(e) => setInputEmail(e.target.value)}
               type="text"
               placeholder="Enter Email"
             />
             <input
+             className="input"
               value={inputPass}
               onChange={(e) => setInputPass(e.target.value)}
               type="password"
@@ -61,7 +71,7 @@ export function SignUp() {
             </div>
             <button
               onClick={signUpClickHandler}
-              className="add-to-chart-btn "
+              className="login-btn "
               style={{ fontWeight: "bold" }}
             >
               SIGN UP
@@ -69,6 +79,6 @@ export function SignUp() {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }

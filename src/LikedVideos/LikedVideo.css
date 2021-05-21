@@ -2,7 +2,6 @@
   margin-top: -2rem;
   height: 150vh;
 }
-
 .likedVideoDiv {
   margin-left: 1rem;
   overflow: hidden;
@@ -14,14 +13,12 @@
   overflow: hidden;
   margin-bottom: 1rem;
 }
-
 .dustbinIcon {
   color: #aaaaaa;
 }
 .thumbnail_img_liked {
   width: 100%;
 }
-
 @media only screen and (max-width: 800px) {
   .likesssss {
     margin-left: 2rem;
@@ -78,10 +75,8 @@
     margin-left: 1rem;
     color: #aaaaaa;
     width: 30%;
-
     font-size: 10px;
   }
-
   .likesssss {
     margin-left: 13rem;
     width: 80%;

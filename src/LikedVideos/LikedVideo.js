@@ -3,7 +3,6 @@ import "./LikedVideo.css";
 import { LeftBar } from "../LeftNavBar/LeftBar";
 import { useVideo } from "../Context/VideoProvider";
 import axios from "axios";
-
 export function LikedVideo() {
   const {
     state: { onClickLikeVideos },
@@ -18,11 +17,9 @@ async function deleteVideoClickHandler(item){
       `https://YouFlixBackend.prratim.repl.co/users/${userId[0]._id}/likedVideos`,
       { data: { _id: item._id } }
     );
-    console.log("deleted",res)
   } catch (error) {
     console.log("Error occured while deleting")
   }
-
 }
   return (
     <div className="like_content_div">

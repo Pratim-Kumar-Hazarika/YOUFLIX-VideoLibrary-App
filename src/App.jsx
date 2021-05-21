@@ -27,23 +27,24 @@ export default function App() {
   const { login, signOutHandler } = useAuth()
   useEffect(()=>{
       async function getData(){
+        const userId = JSON.parse(localStorage.getItem("user"));
           try {
             const {data:{videos}} = await axios.get("https://youflixbackend.prratim.repl.co/videos");
             dispatch({type:"DATA_FROM_SERVER",payload:videos})
-            
-            const userId = JSON.parse(localStorage.getItem("user"));
-
             const {data:{user:{likedVideos}}} = await axios.get(`https://YouFlixBackend.prratim.repl.co/users/${userId[0]._id}/likedVideos`)
             dispatch({type:"LIKED_VIDEOS_FROM_SERVER",payload:likedVideos})
-            
             const {data:{user:{historyVideos}}}= await axios.get(`https://YouFlixBackend.prratim.repl.co/users/${userId[0]._id}/historyVideos`)
             dispatch({type:"HISTORY_VIDEOS_FROM_SERVER",payload:historyVideos})
+            const {data:{user:{playlists}}} = await axios.get(`https://YouFlixBackend.prratim.repl.co/users/${userId[0]._id}/playlist`)
+            dispatch({type:"PLAYLIST_FROM_SERVER",payload:playlists})
+            const playlistNames = playlists.map(item=>item.name)
+            dispatch({type:"PLAYLIST_NAMES",payload:playlistNames})
           } catch (error) {
             console.log("error")
           }
       }
       return getData()
-  },[])
+  },[login])
   return (
    
       <div

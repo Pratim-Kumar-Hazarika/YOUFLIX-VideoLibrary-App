@@ -10,7 +10,6 @@ export const Genre = () => {
           <LeftBar />
         </div>
         <div className="img_div_genre">
-
         <div className="img">
           <div className="img_div">
             <Link to="/blues">
@@ -31,7 +30,6 @@ export const Genre = () => {
             </Link>
           </div>
         </div>
-
         <div className="img">
           <div className="img_div">
             <Link to="/rock">
@@ -54,8 +52,6 @@ export const Genre = () => {
          
           </div>
         </div>
-
-
         <div className="img">
           <div className="img_div">
             <Link to="/hiphop">

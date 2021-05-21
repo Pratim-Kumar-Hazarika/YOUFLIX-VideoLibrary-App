@@ -35,7 +35,7 @@ export function AuthProvider({ children }) {
       console.log("id is man", user[0]._id);
       if (userName === username && userPass === password) {
         setLogin(true);
-        navigate("/products");
+        navigate("/");
         localStorage.setItem("user", JSON.stringify(user));
         localStorage.setItem("login", JSON.stringify({ isUserLoggedIn: true }));
       } else {

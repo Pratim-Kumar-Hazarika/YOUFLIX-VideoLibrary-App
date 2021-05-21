@@ -1,7 +1,6 @@
 import { useVideo } from "../Context/VideoProvider";
 import { DisplayScreen } from "../DisplayGenreVideoScreen/DisplayScreen";
 import { LeftBar } from "../LeftNavBar/LeftBar";
-
 export const Rock = () => {
   const { state} = useVideo();
   const filteredRock = state.data.filter((item) => item.genre === "rock");

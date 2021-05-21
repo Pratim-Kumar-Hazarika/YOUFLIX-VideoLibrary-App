@@ -19,11 +19,9 @@ export function HistoryVideo() {
         `https://YouFlixBackend.prratim.repl.co/users/${userId[0]._id}/historyVideos`,
         { data: { _id: item._id } }
       );
-      console.log("deleted",res)
     } catch (error) {
       console.log("Error occured while deleting from historyVideos")
     }
-  
   }
   
   return (

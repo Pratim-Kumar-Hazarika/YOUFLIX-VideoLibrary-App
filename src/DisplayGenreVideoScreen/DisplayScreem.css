@@ -6,7 +6,6 @@
     margin-bottom: 1rem;
     position: relative;
     /* z-index: 1; */
-    
   }
   .ds_img {
     width: 100%;
@@ -37,32 +36,26 @@
 @media only screen and (min-width: 800px) {
   .ds_video_content {
     display: flex;
-    /* border: 1px solid white; */
     width: 70%;
     margin: auto;
     margin-left: 20rem;
     position: relative;
     margin-bottom: 1rem;
-   
     overflow: hidden;
   }
   .ds_img_div{
     overflow: hidden;
-
     width:60%;
     max-width: 400px;
   }
   .ds_titles_views_avatar {
- 
     width: 40%; 
     max-width: 300px;
 }
- 
   .ds_img {
     width: 100%;
     max-width: 400px;
     cursor: pointer;
- 
   }
   .ds_name {
     font-weight: bold;
@@ -71,11 +64,8 @@
     color: #aaaaaa;
   }
   .ds_avatar_img {
-    
     width: 2.7rem;
-   
     bottom: 0;
-   
   }
   .ds_name_div {
     margin-left: 1rem;
@@ -95,7 +85,6 @@
 .ds_artistname{
   font-weight: 800;
   font-size: 12px;
-  /* margin-left: 1rem; */
   margin-top:1.2rem;
 }
   .ds_img:hover {
@@ -103,7 +92,6 @@
     transition: transform ease 0.6s;
   }
   .ds_avatar{
-  
     position: absolute;
     bottom: 0;
     margin-bottom: 3rem;
